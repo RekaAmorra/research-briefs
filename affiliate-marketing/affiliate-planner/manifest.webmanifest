@@ -1,0 +1,14 @@
+{
+  "name": "Affiliate Account Check",
+  "short_name": "Account Check",
+  "description": "How close is my affiliate account to a ban? Planner and self-check list by Reka Amorra.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#13263a",
+  "icons": [
+    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png"}
+  ]
+}
