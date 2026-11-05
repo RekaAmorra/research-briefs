@@ -1,0 +1,473 @@
+/* Three Democracies — Field-Notes / HBR format
+   Follows Reka Amorra's standard long-form LinkedIn article template.
+   Inter for headings/UI/charts, Source Serif 4 for body at 18px. */
+
+:root {
+  --ink:        #13263a;
+  --ink-soft:   #3a4a5c;
+  --ink-mute:   #6b7a8a;
+  --rule:       #d8dee5;
+  --rule-soft:  #e8ecf0;
+  --paper:      #ffffff;
+  --paper-soft: #f6f8fa;
+
+  --blue:       #0b5cad;
+  --blue-soft:  #e4edf7;
+  --red:        #b42318;
+  --red-soft:   #fdecea;
+  --green:      #16794a;
+  --green-soft: #e4f1ea;
+  --amber:      #b54708;
+  --amber-soft: #fbead3;
+  --grey:       #9aa7b4;
+
+  --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --sans:  "Inter", system-ui, -apple-system, sans-serif;
+
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* --- top bar ---------------------------------------------------- */
+.topbar {
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper);
+  padding: 12px 0;
+}
+.topbar-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; flex-wrap: wrap;
+  font-family: var(--sans);
+}
+.wordmark {
+  font-size: 13px; font-weight: 600;
+  color: var(--ink-mute); letter-spacing: 0.04em;
+}
+.wordmark strong { color: var(--ink); font-weight: 700; }
+.lang-switch { display: flex; gap: 2px; font-size: 12px; }
+.lang-switch a {
+  padding: 5px 10px; border-radius: 4px;
+  color: var(--ink-soft); text-decoration: none;
+  font-weight: 500;
+}
+.lang-switch a:hover { color: var(--blue); background: var(--blue-soft); }
+.lang-switch a.current { color: var(--blue); background: var(--blue-soft); font-weight: 600; }
+
+/* --- comment-on-linkedin button --------------------------------- */
+.comment-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 18px; border: 2px solid var(--blue);
+  color: var(--blue); background: var(--paper);
+  text-decoration: none; font-family: var(--sans);
+  font-weight: 600; font-size: 14px; border-radius: 4px;
+}
+.comment-btn:hover { background: var(--blue); color: var(--paper); }
+.comment-btn svg { width: 16px; height: 16px; }
+
+/* --- masthead --------------------------------------------------- */
+.masthead { padding: 48px 0 24px; }
+.kicker {
+  font-family: var(--sans);
+  font-size: 12px; font-weight: 700;
+  color: var(--blue); letter-spacing: 0.1em;
+  text-transform: uppercase; margin: 0 0 20px;
+}
+h1 {
+  font-family: var(--sans); font-weight: 800;
+  font-size: 46px; line-height: 1.1; letter-spacing: -0.015em;
+  color: var(--ink); margin: 0 0 20px;
+}
+.standfirst {
+  font-family: var(--serif);
+  font-size: 20px; line-height: 1.5;
+  color: var(--ink-soft); margin: 0 0 24px;
+  font-style: italic;
+}
+.byline {
+  font-family: var(--sans);
+  font-size: 13px; color: var(--ink-mute);
+  padding-bottom: 20px;
+  border-bottom: 3px solid var(--ink);
+  margin: 0;
+}
+.byline strong { color: var(--ink); font-weight: 600; }
+
+/* --- body prose ------------------------------------------------- */
+main { padding-bottom: 48px; }
+section { margin: 36px 0; }
+
+p { margin: 0 0 18px; }
+.prose p:first-child { margin-top: 0; }
+.prose p:last-child { margin-bottom: 0; }
+
+a { color: var(--blue); text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+
+h2 {
+  font-family: var(--sans); font-weight: 700;
+  font-size: 28px; line-height: 1.2;
+  color: var(--ink); margin: 40px 0 16px;
+  letter-spacing: -0.01em;
+}
+h3 {
+  font-family: var(--sans); font-weight: 700;
+  font-size: 20px; line-height: 1.3;
+  color: var(--ink); margin: 28px 0 12px;
+}
+
+em, i { font-style: italic; }
+strong, b { font-weight: 700; color: var(--ink); }
+
+/* --- numbered section badge ------------------------------------ */
+.sec-head {
+  display: flex; align-items: center; gap: 14px;
+  margin: 48px 0 20px;
+}
+.sec-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--blue); color: var(--paper);
+  font-family: var(--sans); font-weight: 700;
+  font-size: 15px; flex-shrink: 0;
+}
+.sec-title {
+  font-family: var(--sans); font-weight: 700;
+  font-size: 26px; line-height: 1.2;
+  color: var(--ink); margin: 0;
+  letter-spacing: -0.01em;
+}
+
+/* --- BLOCKED INFO BOXES ---------------------------------------- */
+.box {
+  padding: 20px 22px;
+  border-left: 5px solid var(--ink);
+  background: var(--paper-soft);
+  margin: 24px 0;
+  border-radius: 2px;
+}
+.box-label {
+  font-family: var(--sans);
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--ink); margin: 0 0 8px;
+}
+.box p, .box ul, .box ol { margin: 0 0 10px; font-size: 16.5px; line-height: 1.55; }
+.box p:last-child, .box ul:last-child, .box ol:last-child { margin-bottom: 0; }
+.box ul, .box ol { padding-left: 20px; }
+.box li { margin-bottom: 6px; }
+.box li strong { color: var(--ink); }
+
+.box--key   { border-left-color: var(--ink);   background: #eef1f4; }
+.box--key .box-label { color: var(--ink); }
+
+.box--data  { border-left-color: var(--blue);  background: var(--blue-soft); }
+.box--data .box-label { color: var(--blue); }
+
+.box--trap  { border-left-color: var(--red);   background: var(--red-soft); }
+.box--trap .box-label { color: var(--red); }
+
+.box--lesson { border-left-color: var(--green); background: var(--green-soft); }
+.box--lesson .box-label { color: var(--green); }
+
+.box--watch { border-left-color: var(--amber); background: var(--amber-soft); }
+.box--watch .box-label { color: var(--amber); }
+
+.box--call  {
+  border: 2px solid var(--blue); border-left-width: 5px;
+  background: var(--paper);
+  padding: 22px 24px;
+}
+.box--call .box-label { color: var(--blue); }
+
+.box--mytake {
+  background: var(--ink); color: var(--paper);
+  border-left-color: var(--blue);
+}
+.box--mytake .box-label { color: #a7c7e7; }
+.box--mytake strong { color: var(--paper); }
+.box--mytake a { color: #a7c7e7; }
+
+/* --- STAT TILES (4 across) ------------------------------------- */
+.stat-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 12px; margin: 24px 0;
+}
+.stat {
+  padding: 18px 16px; background: var(--paper-soft);
+  border-top: 3px solid var(--blue);
+  border-radius: 2px;
+  font-family: var(--sans);
+}
+.stat-num {
+  font-size: 28px; font-weight: 800;
+  color: var(--ink); line-height: 1;
+  margin: 0 0 8px; letter-spacing: -0.02em;
+}
+.stat-label {
+  font-size: 12px; color: var(--ink-mute);
+  line-height: 1.35;
+}
+
+/* --- INLINE SVG BAR CHARTS (grey bars, one blue accent) ------- */
+.chart {
+  margin: 28px 0;
+  padding: 20px 22px;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  background: var(--paper);
+}
+.chart-title {
+  font-family: var(--sans); font-weight: 700;
+  font-size: 15px; color: var(--ink);
+  margin: 0 0 4px;
+}
+.chart-sub {
+  font-family: var(--sans); font-size: 12px;
+  color: var(--ink-mute); margin: 0 0 16px;
+}
+.chart-row {
+  display: grid;
+  grid-template-columns: 110px 1fr 50px;
+  gap: 10px; align-items: center;
+  font-family: var(--sans);
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+.chart-row .chart-label { color: var(--ink-soft); }
+.chart-row .chart-val { font-weight: 700; text-align: right; color: var(--ink); }
+.chart-bar {
+  height: 14px; background: var(--rule-soft);
+  position: relative; border-radius: 1px;
+}
+.chart-fill { height: 100%; background: var(--grey); border-radius: 1px; }
+.chart-fill.hi { background: var(--blue); }
+.chart-source {
+  font-family: var(--sans);
+  font-size: 11px; color: var(--ink-mute);
+  margin: 14px 0 0; padding-top: 10px;
+  border-top: 1px dashed var(--rule);
+}
+
+/* --- COMPARISON TABLE ------------------------------------------ */
+.table-wrap {
+  margin: 28px 0;
+  overflow-x: auto;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+}
+table.compare {
+  width: 100%; border-collapse: collapse;
+  font-family: var(--sans);
+  font-size: 13.5px;
+}
+table.compare th, table.compare td {
+  padding: 12px 14px; text-align: left;
+  vertical-align: top; border-bottom: 1px solid var(--rule);
+}
+table.compare thead th {
+  background: var(--paper-soft);
+  font-weight: 700; font-size: 13px;
+  color: var(--ink);
+}
+table.compare tbody th {
+  font-weight: 600; color: var(--ink);
+  width: 150px; background: var(--paper);
+  font-size: 12.5px;
+}
+table.compare tr:last-child td,
+table.compare tr:last-child th { border-bottom: none; }
+table.compare caption {
+  caption-side: bottom; text-align: left;
+  padding: 10px 14px; font-size: 11px; color: var(--ink-mute);
+  font-family: var(--sans);
+  border-top: 1px dashed var(--rule);
+}
+
+/* --- CARDS (for parallel items like country stress tests) ----- */
+.cards {
+  display: grid; grid-template-columns: 1fr;
+  gap: 16px; margin: 24px 0;
+}
+.card {
+  padding: 20px 22px; background: var(--paper);
+  border: 1px solid var(--rule); border-top-width: 4px;
+  border-radius: 2px;
+}
+.card--my { border-top-color: var(--red); }
+.card--us { border-top-color: var(--blue); }
+.card--id { border-top-color: var(--amber); }
+
+.card-head {
+  display: flex; justify-content: space-between;
+  align-items: baseline; gap: 12px;
+  margin-bottom: 10px; flex-wrap: wrap;
+}
+.card-country {
+  font-family: var(--sans); font-weight: 700;
+  font-size: 11px; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--ink);
+}
+.card-tag {
+  font-family: var(--sans); font-weight: 700;
+  font-size: 10px; letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 8px; border-radius: 3px;
+}
+.tag--recovered { background: var(--green-soft); color: var(--green); }
+.tag--pending   { background: var(--amber-soft); color: var(--amber); }
+.tag--failing   { background: var(--red-soft);  color: var(--red); }
+
+.card h3 {
+  font-family: var(--sans); font-weight: 700;
+  font-size: 19px; line-height: 1.25;
+  margin: 0 0 10px; color: var(--ink);
+}
+.card p {
+  font-size: 15.5px; line-height: 1.55;
+  color: var(--ink-soft); margin: 0 0 10px;
+}
+.card p:last-child { margin-bottom: 0; }
+
+/* --- QUESTION CARDS (light blue, left border) ----------------- */
+.q-cards { display: grid; grid-template-columns: 1fr; gap: 10px; margin: 20px 0; }
+.q-card {
+  padding: 14px 18px;
+  background: var(--blue-soft);
+  border-left: 4px solid var(--blue);
+  border-radius: 2px;
+  font-family: var(--sans);
+  font-size: 15px; line-height: 1.5;
+}
+.q-for {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--blue); display: block; margin-bottom: 4px;
+}
+
+/* --- PROPOSAL CARDS (numbered blue circle) -------------------- */
+.proposals { display: grid; grid-template-columns: 1fr; gap: 14px; margin: 24px 0; }
+.prop {
+  display: grid; grid-template-columns: 44px 1fr;
+  gap: 16px; padding: 18px 20px;
+  background: var(--paper-soft);
+  border-radius: 2px;
+}
+.prop-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--blue); color: var(--paper);
+  font-family: var(--sans); font-weight: 700;
+  font-size: 14px;
+}
+.prop-body { font-family: var(--sans); font-size: 15px; line-height: 1.5; }
+.prop-body strong { display: block; margin-bottom: 4px; color: var(--ink); }
+.prop-body .measure {
+  display: block; margin-top: 8px;
+  color: var(--green); font-weight: 600; font-size: 13px;
+}
+
+/* --- FLOWCHART ------------------------------------------------- */
+.flowchart {
+  margin: 28px 0;
+  padding: 20px 10px;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  background: var(--paper);
+  text-align: center;
+}
+.flowchart svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+.flow-caption {
+  font-family: var(--sans);
+  font-size: 11px; color: var(--ink-mute);
+  margin: 12px 14px 0;
+}
+
+/* --- SOURCES --------------------------------------------------- */
+details.sources {
+  margin: 36px 0 20px;
+  padding: 16px 20px;
+  background: var(--paper-soft);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+}
+details.sources summary {
+  font-family: var(--sans);
+  font-weight: 700; font-size: 14px;
+  cursor: pointer; list-style: none;
+  color: var(--ink);
+}
+details.sources summary::-webkit-details-marker { display: none; }
+details.sources summary::after { content: " ▸"; color: var(--ink-mute); }
+details.sources[open] summary::after { content: " ▾"; }
+details.sources ol {
+  font-family: var(--sans);
+  margin: 14px 0 0; padding-left: 22px;
+  font-size: 13px; color: var(--ink-soft);
+}
+details.sources ol li { margin-bottom: 6px; line-height: 1.5; }
+
+/* --- CTA + disclaimer + footer --------------------------------- */
+.bottom-cta {
+  text-align: center;
+  padding: 36px 0 24px;
+  border-top: 1px solid var(--rule);
+  margin-top: 36px;
+}
+.bottom-cta p {
+  font-family: var(--sans); font-size: 14px;
+  color: var(--ink-soft); margin: 0 0 14px;
+}
+.author-strip {
+  display: flex; align-items: center; gap: 14px;
+  padding: 20px 0; border-top: 1px solid var(--rule);
+  margin-top: 20px;
+  font-family: var(--sans); font-size: 13px;
+  color: var(--ink-soft);
+}
+.avatar {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--blue); color: var(--paper);
+  display: inline-flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 15px; flex-shrink: 0;
+}
+.author-strip strong { display: block; color: var(--ink); font-size: 14px; }
+.disclaimer {
+  font-family: var(--sans);
+  font-size: 11px; color: var(--ink-mute);
+  line-height: 1.6;
+  padding: 18px 0 32px;
+  border-top: 1px solid var(--rule);
+  margin-top: 12px;
+}
+
+/* --- responsive ----------------------------------------------- */
+@media (max-width: 640px) {
+  h1 { font-size: 34px; }
+  .standfirst { font-size: 17px; }
+  .sec-title { font-size: 21px; }
+  .stat-grid { grid-template-columns: repeat(2, 1fr); }
+  .stat-num { font-size: 24px; }
+  .chart-row { grid-template-columns: 80px 1fr 40px; font-size: 12px; }
+  table.compare th, table.compare td { padding: 10px; font-size: 12px; }
+  table.compare tbody th { width: 110px; font-size: 11px; }
+  .prop { grid-template-columns: 36px 1fr; gap: 12px; padding: 14px 16px; }
+}
