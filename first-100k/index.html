@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Why the first $100,000 is the hardest · Reka Amorra</title>
+<meta property="og:title" content="Why the first $100,000 is the hardest · Reka Amorra">
+<meta property="og:description" content="Charlie Munger's compounding lesson, drawn in boxes and arrows, for people who earn commission. EN · BM · ID · 中文">
+<meta property="og:url" content="https://rekaamorra.github.io/research-briefs/first-100k/">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1d2a3a;--blue:#0f7c8c;--red:#b42318;--green:#16794a;--amber:#b54708;--grey:#9aa7b4;--line:#e5e9ee;--soft:#f4f8f9;--bg:#ffffff;--text:#1f2d3d;
+ --pgreen:#cfe9d9;--pred:#f7d4d1;--pblue:#d3ecef;--pamber:#fbe3c9;
+ box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,"Noto Sans SC",system-ui,sans-serif;font-size:17px;line-height:1.65}
+.sans,h1,h2,h3,.kicker,.byline,.box .lab,.tile,.toggle,.topbar,.btn,.card,.sum li b,table,.chip,.num{font-family:Inter,"Noto Sans SC",system-ui,-apple-system,"Segoe UI",sans-serif}
+.topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:#fff;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;padding:10px 16px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:#fff;z-index:10}
+.wordmark{font-weight:800;font-size:14px;color:var(--ink)}
+.toggle{display:flex;gap:4px}
+.toggle button{border:1px solid var(--line);background:#fff;color:var(--ink);font-size:12px;font-weight:600;padding:5px 8px;border-radius:6px;cursor:pointer}
+.toggle button.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+.wrap{max-width:760px;margin:0 auto;padding:16px 16px 40px}
+.kicker{color:var(--blue);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin:18px 0 8px}
+h1{font-size:clamp(30px,6.5vw,46px);font-weight:800;line-height:1.08;color:var(--ink);margin:0 0 12px;letter-spacing:-.01em}
+.standfirst{color:#5b6b7b;font-size:18px;margin:0 0 14px}
+.byline{font-size:13px;color:#5b6b7b;padding-bottom:12px;border-bottom:1px solid var(--line);margin-bottom:22px}
+.byline b{color:var(--ink)}
+.btn{display:inline-block;background:var(--blue);color:#fff;text-decoration:none;font-weight:700;font-size:14px;padding:10px 16px;border-radius:8px;margin:4px 0 18px}
+.btn.ghost{background:#fff;color:var(--blue);border:2px solid var(--blue)}
+.box{border:1px solid var(--line);border-left:6px solid var(--ink);background:var(--soft);padding:16px 18px;margin:20px 0;border-radius:16px}
+.box .lab{display:block;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px;color:var(--ink)}
+.box.key{border-color:#cfe3e7;border-left-color:var(--blue);background:#e9f4f6}.box.key .lab{color:var(--blue)}.box.data{border-color:var(--blue)}.box.data .lab{color:var(--blue)}
+.box.trap{border-color:var(--red);background:#fdf3f2}.box.trap .lab{color:var(--red)}
+.box.lesson{border-color:var(--green);background:#f1f8f4}.box.lesson .lab{color:var(--green)}
+.box.watch{border-color:var(--amber);background:#fdf6ee}.box.watch .lab{color:var(--amber)}
+.box.call{border:3px solid var(--blue);border-left-width:3px;background:#fff}
+.box.take{background:#fff;border-color:var(--line);border-left-color:var(--blue)}.box.take .lab{color:var(--blue)}.take .note{font-size:13px;color:#5b6b7b;margin:0 0 10px;font-style:italic}
+.box.over{border:2px dashed var(--blue);border-left-width:2px;background:#fff}
+.box ul{margin:0;padding-left:20px}.box li{margin:4px 0}
+p{margin:0 0 14px}
+h2{display:flex;align-items:center;gap:12px;font-size:22px;font-weight:800;color:var(--ink);margin:34px 0 12px;line-height:1.2}
+.num{flex:none;width:36px;height:36px;border-radius:12px;background:var(--blue);color:#fff;font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.fig{margin:16px 0 22px}
+.fig svg{width:100%;max-width:470px;height:auto;display:block;margin:0 auto}
+.fig .cap{font-family:Inter,sans-serif;font-size:12px;color:#5b6b7b;margin-top:6px}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}
+.tile{border:1px solid var(--line);border-radius:14px;padding:12px;text-align:center}
+.tile .v{font-size:22px;font-weight:800;color:var(--ink)}.tile .l{font-size:12px;color:#5b6b7b;margin-top:4px}
+.tile.hi{border-color:var(--blue);background:#eef4fb}.tile.hi .v{color:var(--blue)}
+.cards{display:grid;grid-template-columns:1fr;gap:12px;margin:14px 0}
+.card{border:1px solid var(--line);border-top:5px solid var(--blue);border-radius:14px;padding:14px;font-size:15px;background:#fff}
+.card.r{border-top-color:var(--red)}.card.g{border-top-color:var(--green)}
+.card .chip{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:2px 7px;border-radius:4px;margin-bottom:6px;background:var(--pblue);color:var(--blue)}
+.card.r .chip{background:var(--pred);color:var(--red)}.card.g .chip{background:var(--pgreen);color:var(--green)}
+.check ol{margin:0;padding-left:22px}.check li{margin:6px 0}
+details{border:1px solid var(--line);border-radius:8px;padding:10px 14px;margin:20px 0;font-size:15px}
+summary{cursor:pointer;font-family:Inter,sans-serif;font-weight:700;color:var(--ink)}
+.bio{display:flex;gap:14px;align-items:center;margin:26px 0 12px;font-size:15px}
+.av{flex:none;width:52px;height:52px;border-radius:50%;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-family:Inter,sans-serif;font-weight:800}
+.foot{font-size:13px;color:#5b6b7b;border-top:1px solid var(--line);padding-top:14px;line-height:1.5}
+.lang{display:none}.lang.on{display:block}
+@media(max-width:560px){.tiles{grid-template-columns:1fr 1fr 1fr;gap:6px}.tile .v{font-size:17px}.cards{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="wordmark">Reka Amorra</div>
+<div class="toggle" id="tg">
+<button data-l="en">EN</button><button data-l="bm">BM</button><button data-l="id">ID</button><button data-l="zh">中文</button>
+</div></div>
+<div class="wrap" id="root"></div>
+
+<script>
+// Edit this once the LinkedIn post is live.
+var LINKEDIN_POST_URL = "https://www.linkedin.com/";
+
+var T = {
+/* ================= ENGLISH ================= */
+en:{
+ htmlLang:"en",
+ kicker:"Money basics · 01", title:"Why is the first $100,000 the hardest?",
+ standfirst:"Charlie Munger's rule for building capital, drawn into boxes and arrows.",
+ byline:"<b>Reka Amorra</b> · 7 November 2026 · 5 min read",
+ comment:"Comment on LinkedIn",
+ sumLab:"The short version",
+ sum:["Munger: <b>the first $100,000</b> is the hardest. After that, the money starts to pull its weight.",
+      "Wages do not compound. Time does not compound. <b>Only capital compounds.</b>",
+      "$6,000 a year at 10% earns <b>$600</b>. $100,000 at 10% earns <b>$10,000</b>. Same rate, different game.",
+      "Four rules: earn more than you spend, save the gap, invest it, <b>do not interrupt it</b>.",
+      "Avoid stupidity (margin, easy credit, hot tips) before you chase brilliance."],
+ open:["Why does the first $100,000 feel like climbing, and everything after it feel like coasting?",
+       "Charlie Munger had a plain answer. At the start you are working with muscle, not money. Every dollar is your sweat. You save $500 and the car breaks down. You put away $1,000 and the water heater goes. Being poor is expensive, and the world keeps sending reminders.",
+       "I took one Munger talk on this and drew it. If you sell on commission like many of us do, the drawings matter more than the words. Commission looks like money. Most of the time it is still sweat."],
+ s1:"Labour does not compound",
+ s1p:["Munger's test is simple: if hard work alone made people rich, coal miners would be billionaires. He saw factory men, bricklayers and clerks work harder than him every day and stay poor, because their sweat evaporated the moment it hit the floor. They never built capital.",
+      "A raise today, inflation tomorrow. A fat salary, then taxes. A third job, then your body gives up. Labour can keep you fed. Labour cannot compound."],
+ f1:{title:"Two loops: the treadmill and the capital loop",a:"THE TREADMILL",b:"THE CAPITAL LOOP",
+     a1:"Work",a2:"Wage",a3:"Spend",a4:"Back to zero",b1:"Earn > spend",b2:"Save the gap",b3:"Invest",b4:"Capital grows",b5:"Earns while you sleep",cap:"Illustration, not data. Same effort in both loops; only the second one keeps anything."},
+ s2:"The quiet years",
+ s2p:["Compounding has a cruel shape. For years the line is almost flat. $6,000 saved and invested earns maybe $600 if things go well. That is one plane ticket. Nothing life-changing.",
+      "So most people quit. They look at the small return, say \"why bother\", and buy the phone or the holiday instead. Munger calls this strangling compounding before it ever gets a chance.",
+      "The boring years are the toll you pay to reach the part of the curve that bends. You cannot skip the toll. The numbers do not bend because you are impatient."],
+ f2:{title:"The curve only bends after the first $100,000",x:"Years",y:"Capital",quit:"Most people quit here",line:"$100,000",pull:"The money starts pulling its weight",cap:"Illustration, not data. Shape of a steady contribution compounding over time."},
+ s3:"Small numbers destroy patience",
+ s3p:["The rate never changes. What changes is the base. At 10%, a small base pays pocket money and a large base pays a salary you do not have to show up for.",
+      "Munger's own comparison: $800,000 at 10% is about $80,000 a year, close to $6,700 a month, the same as a part-time job, except nobody has to turn up."],
+ tiles:[{v:"$600",l:"from $6,000 at 10%"},{v:"$10,000",l:"from $100,000 at 10%",hi:1},{v:"$80,000",l:"from $800,000 at 10%"}],
+ tileCap:"Simple 10% illustration used in the talk. Not a forecast; real returns vary and can be negative.",
+ s4:"Lifestyle inflation is the trap",
+ s4p:["The fastest way to stay poor is to grow your lifestyle at the same speed as your income. Get a raise, buy the bigger car, move to the bigger apartment, book the holiday you could not afford last year. People call it rewarding themselves. Munger calls it shooting yourself in the foot.",
+      "He watched lawyers, doctors and executives earn six figures and live like royalty: the German car, the house with rooms nobody uses, the school fees they could not really carry. From outside, success. Inside, one bad month from panic.",
+      "Real progress is invisible. It is the balance you do not touch. The dinner is gone in two hours and the holiday in a week. The capital works quietly every day, whether you are awake, asleep or ill."],
+ f3:{title:"Same raise, two futures",r:"Pay rise",a1:"Bigger car, bigger house",a2:"Gap = 0",a3:"Treadmill, for life",b1:"Same lifestyle",b2:"Gap saved\nand invested",b3:"First $100,000",cap:"Illustration, not data."},
+ s5:"The stupidity tax",
+ s5p:["You do not need brilliance to get rich. You need to avoid stupidity. Munger's list: borrowing to buy status, loading credit cards, car loans, houses you cannot afford, margin, hot tips, get-rich-quick schemes.",
+      "The cost is invisible at first. Then you discover that you spent the years when time was on your side carrying an 18% balance while bragging about a 10% stock return. That is not investing. That is self-delusion.",
+      "In 1973 he watched clever people lose fortunes because they bought stocks on margin. The market did not care how much they believed in their picks."],
+ f4:{title:"Compounding runs both ways",a:"AGAINST YOU",b:"FOR YOU",a1:"Credit card ~18%",a2:"Car loan, margin, hot tips",a3:"Balance grows while you sleep",b1:"Capital ~10%",b2:"Owned outright, left alone",b3:"Income grows while you sleep",cap:"Illustration, not data. Rates are examples from the talk, not current market figures."},
+ s6:"What $100,000 actually buys",
+ s6p:["Not riches. Munger is clear that $100,000 does not make you rich. It is proof of concept. It shows you the game works, and from there everything compounds faster, including your confidence to take a calculated risk.",
+      "What changes is your position. Banks take your calls. You can buy stocks when they are cheap and hold them while everyone else is panicking. You can start a business without borrowing. You can walk away from a bad boss. You can afford to be wrong, and recover. Until you have capital, you are a labourer with dreams."],
+ ladderTitle:"Munger's ladder",
+ ladder:["Earn more than you spend","Save the gap","Invest it","Do not interrupt it","First $100,000","Capital does the heavy lifting"],
+ ladderCap:"Framework drawn from the talk.",
+ checkLab:"Save this: check before you spend",
+ check:["Is my spending growing as fast as my income?","Do I carry any debt that compounds against me faster than my investments compound for me?","Have I pulled money out of investments in the last two years for something that is already gone?","If I was wrong on one decision this year, could I recover without borrowing?","Do I know what my \"$100,000\" is in my own currency and life?"],
+ takeLab:"My analysis",
+ take:["<b>Commission is wages in disguise.</b> Affiliate income stops the day you stop posting. Munger would call that labour. It only becomes capital when some of it is parked and left alone.",
+       "<b>The affiliate version of lifestyle inflation</b> is buying every product you promote, upgrading the phone for the content, and calling it an investment. Some of it is. Most of it is a treadmill with better lighting.",
+       "<b>Your content library compounds too.</b> Old videos keep earning while you sleep, the same way capital does. The flat years are the years nobody watches. People quit there, same as the curve.",
+       "<b>Pick your own number.</b> For a Malaysian or Indonesian earner the line is not $100,000. It is the amount where 10% starts to feel like real money to you. For many of us that is the first RM100,000 or Rp300 million. Still hard. Still worth it."],
+ srcLab:"Sources and credit",
+ src:["This piece is drawn from a YouTube talk narrated in Charlie Munger's voice about the first $100,000 (auto-transcribed; the video is a narrated presentation of his ideas, not a verified recording of a specific speech). All ideas belong to Charlie Munger (1924–2023), vice chairman of Berkshire Hathaway. The line about the first $100,000 is widely attributed to Munger in Janet Lowe, <i>Damn Right!</i> (2000).","Diagrams, structure and the \"My analysis\" section are my own."],
+ bio:"Reka Amorra writes short research briefs on affiliate marketing, money basics and creator life for Malaysia and Indonesia.",
+ disc:"The views here are my own and are not financial, investment or legal advice. Figures are the talk's own illustrations, not forecasts. Research and drafting were assisted by AI tools."
+},
+/* ================= BAHASA MALAYSIA ================= */
+bm:{
+ htmlLang:"ms",
+ kicker:"Asas Kewangan · 01", title:"Mengapa $100,000 yang pertama paling sukar?",
+ standfirst:"Peraturan Charlie Munger untuk membina modal, dilukis dalam kotak dan anak panah.",
+ byline:"<b>Reka Amorra</b> · 7 November 2026 · 5 minit bacaan",
+ comment:"Komen di LinkedIn",
+ sumLab:"Ringkasan pantas",
+ sum:["Munger: <b>$100,000 yang pertama</b> paling sukar. Selepas itu, wang mula bekerja untuk anda.",
+      "Gaji tidak berganda. Masa tidak berganda. <b>Hanya modal yang berganda.</b>",
+      "$6,000 setahun pada 10% menghasilkan <b>$600</b>. $100,000 pada 10% menghasilkan <b>$10,000</b>. Kadar sama, permainan berbeza.",
+      "Empat peraturan: belanja kurang daripada pendapatan, simpan bakinya, laburkan, <b>jangan ganggu</b>.",
+      "Elakkan kebodohan (margin, kredit mudah, tip panas) sebelum mengejar kebijaksanaan."],
+ open:["Mengapa $100,000 yang pertama terasa seperti mendaki, dan yang seterusnya terasa seperti meluncur?",
+       "Charlie Munger ada jawapan yang mudah. Pada permulaan kita bekerja dengan tenaga, bukan dengan wang. Setiap ringgit ialah peluh. Baru simpan $500, kereta rosak. Baru ketepikan $1,000, pemanas air pula rosak. Menjadi miskin itu mahal, dan dunia tidak pernah lupa mengingatkan.",
+       "Saya ambil satu ceramah Munger tentang perkara ini dan melukisnya. Jika anda hidup dengan komisen seperti ramai antara kita, gambar lebih penting daripada ayat. Komisen nampak seperti wang. Selalunya ia masih peluh."],
+ s1:"Tenaga tidak berganda",
+ s1p:["Ujian Munger mudah: jika kerja keras semata-mata boleh menjadikan orang kaya, pelombong arang batu sudah lama jadi bilionair. Beliau melihat pekerja kilang, tukang batu dan kerani bekerja lebih keras daripadanya setiap hari, namun kekal miskin, kerana peluh mereka menyejat sebaik sahaja jatuh ke lantai. Mereka tidak pernah membina modal.",
+      "Hari ini naik gaji, esok inflasi memakannya. Gaji lumayan, kemudian cukai. Kerja ketiga, kemudian badan menyerah. Tenaga boleh memberi anda makan. Tenaga tidak boleh berganda."],
+ f1:{title:"Dua kitaran: treadmill dan kitaran modal",a:"TREADMILL",b:"KITARAN MODAL",
+     a1:"Bekerja",a2:"Gaji",a3:"Belanja",a4:"Kembali ke sifar",b1:"Pendapatan > belanja",b2:"Simpan baki",b3:"Labur",b4:"Modal bertambah",b5:"Berhasil semasa anda tidur",cap:"Ilustrasi, bukan data. Usaha sama dalam kedua-dua kitaran; hanya yang kedua menyimpan sesuatu."},
+ s2:"Tahun-tahun yang sunyi",
+ s2p:["Bentuk pengangdaan itu kejam. Bertahun-tahun garisnya hampir mendatar. $6,000 yang disimpan dan dilaburkan mungkin menghasilkan $600 jika semuanya berjalan baik. Itu satu tiket kapal terbang. Bukan sesuatu yang mengubah hidup.",
+      "Maka kebanyakan orang berhenti. Mereka lihat pulangan yang kecil, berkata \"buat apa susah-susah\", lalu membeli telefon atau bercuti. Munger menyebutnya sebagai mencekik pengangdaan sebelum ia sempat bernafas.",
+      "Tahun-tahun yang membosankan ialah tol yang perlu dibayar untuk sampai ke bahagian lengkung yang melonjak. Tol itu tidak boleh dilangkau. Angka tidak akan membengkok hanya kerana anda tidak sabar."],
+ f2:{title:"Lengkung hanya melonjak selepas $100,000 yang pertama",x:"Tahun",y:"Modal",quit:"Kebanyakan orang berhenti di sini",line:"$100,000",pull:"Wang mula bekerja untuk anda",cap:"Ilustrasi, bukan data. Bentuk caruman tetap yang berganda mengikut masa."},
+ s3:"Angka kecil mematikan kesabaran",
+ s3p:["Kadarnya tidak pernah berubah. Yang berubah ialah asasnya. Pada 10%, asas yang kecil membayar duit poket, manakala asas yang besar membayar gaji tanpa perlu hadir ke pejabat.",
+      "Perbandingan Munger sendiri: $800,000 pada 10% ialah kira-kira $80,000 setahun, hampir $6,700 sebulan, sama seperti kerja sambilan, cuma tiada siapa perlu hadir."],
+ tiles:[{v:"$600",l:"daripada $6,000 pada 10%"},{v:"$10,000",l:"daripada $100,000 pada 10%",hi:1},{v:"$80,000",l:"daripada $800,000 pada 10%"}],
+ tileCap:"Ilustrasi 10% yang mudah seperti dalam ceramah. Bukan ramalan; pulangan sebenar berbeza dan boleh negatif.",
+ s4:"Inflasi gaya hidup ialah perangkapnya",
+ s4p:["Cara paling pantas untuk kekal miskin ialah membesarkan gaya hidup selaju pendapatan. Naik gaji, beli kereta lebih besar, pindah ke rumah lebih besar, tempah percutian yang tahun lalu tidak mampu. Orang menyebutnya menghargai diri. Munger menyebutnya menembak kaki sendiri.",
+      "Beliau melihat peguam, doktor dan eksekutif berpendapatan enam angka tetapi hidup seperti bangsawan: kereta Jerman, rumah dengan bilik yang tidak digunakan, yuran sekolah yang sebenarnya tidak tertanggung. Dari luar, nampak berjaya. Di dalam, satu bulan buruk sahaja daripada panik.",
+      "Kemajuan sebenar tidak kelihatan. Ia ialah baki yang anda tidak sentuh. Makan malam habis dalam dua jam, percutian habis dalam seminggu. Modal pula bekerja senyap-senyap setiap hari, sama ada anda jaga, tidur atau sakit."],
+ f3:{title:"Kenaikan gaji sama, dua masa depan",r:"Naik gaji",a1:"Kereta lebih besar,\nrumah lebih besar",a2:"Baki = 0",a3:"Treadmill, seumur hidup",b1:"Gaya hidup kekal",b2:"Baki disimpan\ndan dilabur",b3:"$100,000 yang pertama",cap:"Ilustrasi, bukan data."},
+ s5:"Cukai kebodohan",
+ s5p:["Anda tidak perlu genius untuk menjadi kaya. Anda perlu mengelak kebodohan. Senarai Munger: berhutang untuk membeli status, kad kredit penuh, pinjaman kereta, rumah yang tidak mampu, margin, tip panas, skim cepat kaya.",
+      "Kosnya tidak kelihatan pada mulanya. Kemudian anda sedar tahun-tahun ketika masa masih berpihak kepada anda telah dihabiskan dengan menanggung baki 18% sambil berbangga dengan pulangan saham 10%. Itu bukan pelaburan. Itu menipu diri sendiri.",
+      "Pada 1973 beliau melihat orang-orang pandai kehilangan harta kerana membeli saham dengan margin. Pasaran tidak peduli sejauh mana mereka yakin dengan pilihan mereka."],
+ f4:{title:"Pengangdaan bergerak dua arah",a:"MENENTANG ANDA",b:"MEMIHAK ANDA",a1:"Kad kredit ~18%",a2:"Pinjaman kereta, margin, tip panas",a3:"Baki hutang membesar semasa anda tidur",b1:"Modal ~10%",b2:"Milik penuh, dibiarkan",b3:"Pendapatan membesar semasa anda tidur",cap:"Ilustrasi, bukan data. Kadar ialah contoh daripada ceramah, bukan angka pasaran semasa."},
+ s6:"Apa yang $100,000 sebenarnya beli",
+ s6p:["Bukan kekayaan. Munger jelas bahawa $100,000 tidak menjadikan anda kaya. Ia bukti konsep. Ia menunjukkan permainan ini berfungsi, dan dari situ semuanya berganda lebih pantas, termasuk keyakinan anda untuk mengambil risiko terhitung.",
+      "Yang berubah ialah kedudukan anda. Bank menjawab panggilan anda. Anda boleh membeli saham ketika murah dan memegangnya ketika orang lain panik. Anda boleh memulakan perniagaan tanpa berhutang. Anda boleh meninggalkan bos yang teruk. Anda mampu tersilap, dan pulih. Selagi tiada modal, anda hanyalah pekerja yang bermimpi."],
+ ladderTitle:"Tangga Munger",
+ ladder:["Belanja kurang daripada pendapatan","Simpan bakinya","Laburkan","Jangan ganggu","$100,000 yang pertama","Modal buat kerja berat"],
+ ladderCap:"Rangka kerja yang dilukis daripada ceramah.",
+ checkLab:"Simpan ini: semak sebelum berbelanja",
+ check:["Adakah perbelanjaan saya membesar selaju pendapatan saya?","Adakah saya menanggung hutang yang berganda menentang saya lebih pantas daripada pelaburan saya berganda untuk saya?","Dalam dua tahun lepas, adakah saya mengeluarkan wang pelaburan untuk sesuatu yang kini sudah tiada?","Jika saya tersilap dalam satu keputusan tahun ini, bolehkah saya pulih tanpa berhutang?","Tahukah saya berapa \"$100,000\" saya dalam mata wang dan kehidupan saya sendiri?"],
+ takeLab:"Analisis saya",
+ take:["<b>Komisen ialah gaji yang menyamar.</b> Pendapatan affiliate berhenti pada hari kita berhenti memuat naik kandungan. Munger akan menyebutnya tenaga. Ia hanya menjadi modal apabila sebahagiannya disimpan dan dibiarkan.",
+       "<b>Inflasi gaya hidup versi affiliate</b> ialah membeli setiap produk yang kita promosi, menukar telefon demi kandungan, dan menamakannya pelaburan. Sebahagiannya memang pelaburan. Kebanyakannya treadmill dengan pencahayaan yang lebih cantik.",
+       "<b>Pustaka kandungan kita juga berganda.</b> Video lama terus menjana semasa kita tidur, sama seperti modal. Tahun-tahun yang mendatar ialah tahun tiada siapa menonton. Orang berhenti di situ, sama seperti lengkung itu.",
+       "<b>Pilih angka sendiri.</b> Bagi yang berpendapatan di Malaysia atau Indonesia, garisannya bukan $100,000. Ia jumlah yang membuatkan 10% terasa seperti wang sebenar bagi anda. Bagi ramai antara kita, itu RM100,000 atau Rp300 juta yang pertama. Masih sukar. Masih berbaloi."],
+ srcLab:"Sumber dan penghargaan",
+ src:["Tulisan ini dilukis daripada ceramah YouTube yang dinarasikan dengan suara Charlie Munger tentang $100,000 yang pertama (transkrip automatik; video itu ialah persembahan bernarasi idea beliau, bukan rakaman ucapan tertentu yang disahkan). Semua idea milik Charlie Munger (1924–2023), naib pengerusi Berkshire Hathaway. Kata-kata tentang $100,000 yang pertama lazim dikaitkan dengan Munger dalam Janet Lowe, <i>Damn Right!</i> (2000).","Gambar rajah, struktur dan bahagian \"Analisis saya\" ialah hasil saya sendiri."],
+ bio:"Reka Amorra menulis ringkasan kajian pendek tentang pemasaran affiliate, asas kewangan dan kehidupan pencipta kandungan untuk Malaysia dan Indonesia.",
+ disc:"Pandangan di sini ialah pandangan peribadi saya dan bukan nasihat kewangan, pelaburan atau undang-undang. Angka ialah ilustrasi daripada ceramah itu sendiri, bukan ramalan. Kajian dan penulisan dibantu oleh alat AI."
+},
+/* ================= BAHASA INDONESIA ================= */
+id:{
+ htmlLang:"id",
+ kicker:"Dasar Keuangan · 01", title:"Mengapa $100.000 pertama paling sulit?",
+ standfirst:"Aturan Charlie Munger untuk membangun modal, digambar dalam kotak dan panah.",
+ byline:"<b>Reka Amorra</b> · 7 November 2026 · 5 menit baca",
+ comment:"Komentar di LinkedIn",
+ sumLab:"Versi singkat",
+ sum:["Munger: <b>$100.000 pertama</b> paling sulit. Setelah itu, uang mulai bekerja untuk Anda.",
+      "Gaji tidak bertumbuh majemuk. Waktu tidak bertumbuh majemuk. <b>Hanya modal yang bertumbuh majemuk.</b>",
+      "$6.000 setahun pada 10% menghasilkan <b>$600</b>. $100.000 pada 10% menghasilkan <b>$10.000</b>. Tingkat sama, permainan berbeda.",
+      "Empat aturan: belanja lebih kecil dari penghasilan, tabung selisihnya, investasikan, <b>jangan diganggu</b>.",
+      "Hindari kebodohan (margin, kredit mudah, tips panas) sebelum mengejar kecerdasan."],
+ open:["Mengapa $100.000 pertama terasa seperti mendaki, dan setelahnya terasa seperti meluncur?",
+       "Charlie Munger punya jawaban sederhana. Di awal kita bekerja dengan otot, bukan dengan uang. Setiap dolar adalah keringat. Baru menabung $500, mobil mogok. Baru menyisihkan $1.000, pemanas air rusak. Jadi orang miskin itu mahal, dan dunia tidak pernah lupa mengingatkan.",
+       "Saya ambil satu ceramah Munger soal ini dan menggambarnya. Kalau Anda hidup dari komisi seperti banyak dari kita, gambar lebih penting daripada kalimat. Komisi kelihatan seperti uang. Sering kali ia masih keringat."],
+ s1:"Tenaga tidak bertumbuh majemuk",
+ s1p:["Ujian Munger sederhana: kalau kerja keras saja bisa membuat orang kaya, penambang batu bara sudah jadi miliarder. Ia melihat buruh pabrik, tukang batu dan juru tulis bekerja lebih keras darinya setiap hari dan tetap miskin, karena keringat mereka menguap begitu jatuh ke lantai. Mereka tidak pernah membangun modal.",
+      "Hari ini naik gaji, besok inflasi memakannya. Gaji besar, lalu pajak. Pekerjaan ketiga, lalu badan menyerah. Tenaga bisa memberi Anda makan. Tenaga tidak bisa bertumbuh majemuk."],
+ f1:{title:"Dua lingkaran: treadmill dan lingkaran modal",a:"TREADMILL",b:"LINGKARAN MODAL",
+     a1:"Bekerja",a2:"Gaji",a3:"Belanja",a4:"Kembali ke nol",b1:"Penghasilan > belanja",b2:"Tabung selisih",b3:"Investasi",b4:"Modal bertambah",b5:"Menghasilkan saat Anda tidur",cap:"Ilustrasi, bukan data. Usaha sama di kedua lingkaran; hanya yang kedua menyimpan sesuatu."},
+ s2:"Tahun-tahun yang sunyi",
+ s2p:["Bentuk pertumbuhan majemuk itu kejam. Bertahun-tahun garisnya nyaris datar. $6.000 yang ditabung dan diinvestasikan mungkin menghasilkan $600 kalau semuanya lancar. Itu satu tiket pesawat. Bukan sesuatu yang mengubah hidup.",
+      "Maka kebanyakan orang berhenti. Mereka melihat imbal hasil yang kecil, bilang \"buat apa repot\", lalu membeli ponsel atau liburan. Munger menyebutnya mencekik pertumbuhan majemuk sebelum sempat bernapas.",
+      "Tahun-tahun yang membosankan adalah tol yang harus dibayar untuk sampai ke bagian kurva yang melesat. Tol itu tidak bisa dilewati. Angka tidak akan membengkok hanya karena Anda tidak sabar."],
+ f2:{title:"Kurva baru melesat setelah $100.000 pertama",x:"Tahun",y:"Modal",quit:"Kebanyakan orang berhenti di sini",line:"$100.000",pull:"Uang mulai bekerja untuk Anda",cap:"Ilustrasi, bukan data. Bentuk setoran tetap yang bertumbuh majemuk seiring waktu."},
+ s3:"Angka kecil mematikan kesabaran",
+ s3p:["Tingkatnya tidak pernah berubah. Yang berubah adalah basisnya. Pada 10%, basis kecil membayar uang jajan, basis besar membayar gaji yang tidak mengharuskan Anda masuk kantor.",
+      "Perbandingan Munger sendiri: $800.000 pada 10% sekitar $80.000 setahun, hampir $6.700 sebulan, setara kerja paruh waktu, hanya saja tidak ada yang harus hadir."],
+ tiles:[{v:"$600",l:"dari $6.000 pada 10%"},{v:"$10.000",l:"dari $100.000 pada 10%",hi:1},{v:"$80.000",l:"dari $800.000 pada 10%"}],
+ tileCap:"Ilustrasi 10% sederhana seperti dalam ceramah. Bukan prakiraan; imbal hasil nyata bervariasi dan bisa negatif.",
+ s4:"Inflasi gaya hidup adalah jebakannya",
+ s4p:["Cara tercepat untuk tetap miskin adalah membesarkan gaya hidup secepat penghasilan. Naik gaji, beli mobil lebih besar, pindah ke apartemen lebih besar, pesan liburan yang tahun lalu tidak terjangkau. Orang menyebutnya menghargai diri sendiri. Munger menyebutnya menembak kaki sendiri.",
+      "Ia melihat pengacara, dokter dan eksekutif berpenghasilan enam digit tetapi hidup seperti bangsawan: mobil Jerman, rumah dengan kamar yang tidak dipakai, biaya sekolah yang sebenarnya tidak tertanggung. Dari luar, sukses. Di dalam, satu bulan buruk saja dari panik.",
+      "Kemajuan sejati tidak terlihat. Ia adalah saldo yang tidak Anda sentuh. Makan malam habis dalam dua jam, liburan habis dalam seminggu. Modal bekerja diam-diam setiap hari, entah Anda bangun, tidur atau sakit."],
+ f3:{title:"Kenaikan gaji sama, dua masa depan",r:"Naik gaji",a1:"Mobil lebih besar,\nrumah lebih besar",a2:"Selisih = 0",a3:"Treadmill, seumur hidup",b1:"Gaya hidup tetap",b2:"Selisih ditabung\ndan diinvestasikan",b3:"$100.000 pertama",cap:"Ilustrasi, bukan data."},
+ s5:"Pajak kebodohan",
+ s5p:["Anda tidak perlu jenius untuk jadi kaya. Anda perlu menghindari kebodohan. Daftar Munger: berutang untuk membeli status, kartu kredit penuh, kredit mobil, rumah yang tidak terjangkau, margin, tips panas, skema cepat kaya.",
+      "Biayanya tidak terlihat di awal. Lalu Anda sadar tahun-tahun saat waktu masih berpihak pada Anda dihabiskan dengan menanggung saldo 18% sambil membanggakan imbal hasil saham 10%. Itu bukan investasi. Itu menipu diri sendiri.",
+      "Pada 1973 ia melihat orang-orang pintar kehilangan kekayaan karena membeli saham dengan margin. Pasar tidak peduli seberapa yakin mereka pada pilihannya."],
+ f4:{title:"Pertumbuhan majemuk bergerak dua arah",a:"MELAWAN ANDA",b:"MEMIHAK ANDA",a1:"Kartu kredit ~18%",a2:"Kredit mobil, margin, tips panas",a3:"Saldo utang membesar saat Anda tidur",b1:"Modal ~10%",b2:"Milik penuh, dibiarkan",b3:"Penghasilan membesar saat Anda tidur",cap:"Ilustrasi, bukan data. Tingkat bunga adalah contoh dari ceramah, bukan angka pasar saat ini."},
+ s6:"Apa yang sebenarnya dibeli $100.000",
+ s6p:["Bukan kekayaan. Munger tegas bahwa $100.000 tidak membuat Anda kaya. Itu bukti konsep. Ia menunjukkan permainannya berjalan, dan dari situ semuanya bertumbuh lebih cepat, termasuk keberanian Anda mengambil risiko terukur.",
+      "Yang berubah adalah posisi Anda. Bank mengangkat telepon Anda. Anda bisa membeli saham saat murah dan memegangnya saat orang lain panik. Anda bisa memulai usaha tanpa berutang. Anda bisa meninggalkan bos yang buruk. Anda sanggup salah, dan pulih. Sebelum punya modal, Anda hanya buruh yang bermimpi."],
+ ladderTitle:"Tangga Munger",
+ ladder:["Belanja lebih kecil dari penghasilan","Tabung selisihnya","Investasikan","Jangan diganggu","$100.000 pertama","Modal yang bekerja keras"],
+ ladderCap:"Kerangka yang digambar dari ceramah.",
+ checkLab:"Simpan ini: cek sebelum belanja",
+ check:["Apakah pengeluaran saya tumbuh secepat penghasilan saya?","Apakah saya menanggung utang yang bertumbuh melawan saya lebih cepat daripada investasi saya bertumbuh untuk saya?","Dalam dua tahun terakhir, apakah saya menarik uang investasi untuk sesuatu yang sekarang sudah habis?","Kalau saya salah dalam satu keputusan tahun ini, bisakah saya pulih tanpa berutang?","Tahukah saya berapa \"$100.000\" saya dalam mata uang dan hidup saya sendiri?"],
+ takeLab:"Analisis saya",
+ take:["<b>Komisi adalah gaji yang menyamar.</b> Penghasilan afiliasi berhenti di hari kita berhenti posting. Munger akan menyebutnya tenaga. Ia baru jadi modal ketika sebagian disisihkan dan dibiarkan.",
+       "<b>Inflasi gaya hidup versi afiliasi</b> adalah membeli setiap produk yang kita promosikan, ganti ponsel demi konten, lalu menyebutnya investasi. Sebagian memang investasi. Kebanyakan hanya treadmill dengan pencahayaan lebih bagus.",
+       "<b>Pustaka konten kita juga bertumbuh majemuk.</b> Video lama terus menghasilkan saat kita tidur, sama seperti modal. Tahun-tahun yang datar adalah tahun ketika tidak ada yang menonton. Orang berhenti di situ, sama seperti kurvanya.",
+       "<b>Pilih angka sendiri.</b> Bagi yang berpenghasilan di Indonesia atau Malaysia, garisnya bukan $100.000. Garisnya adalah jumlah ketika 10% mulai terasa seperti uang sungguhan bagi Anda. Bagi banyak dari kita, itu Rp300 juta atau RM100.000 pertama. Tetap sulit. Tetap layak."],
+ srcLab:"Sumber dan kredit",
+ src:["Tulisan ini digambar dari ceramah YouTube yang dinarasikan dengan suara Charlie Munger tentang $100.000 pertama (transkrip otomatis; video itu adalah presentasi bernarasi atas gagasannya, bukan rekaman pidato tertentu yang terverifikasi). Semua gagasan milik Charlie Munger (1924–2023), wakil ketua Berkshire Hathaway. Kalimat tentang $100.000 pertama umum dikaitkan dengan Munger dalam Janet Lowe, <i>Damn Right!</i> (2000).","Diagram, struktur dan bagian \"Analisis saya\" adalah karya saya sendiri."],
+ bio:"Reka Amorra menulis ringkasan riset pendek tentang pemasaran afiliasi, dasar keuangan dan kehidupan kreator untuk Indonesia dan Malaysia.",
+ disc:"Pandangan di sini adalah pandangan pribadi saya dan bukan nasihat keuangan, investasi atau hukum. Angka adalah ilustrasi dari ceramah itu sendiri, bukan prakiraan. Riset dan penulisan dibantu alat AI."
+},
+/* ================= 中文 ================= */
+zh:{
+ htmlLang:"zh",
+ kicker:"理财基础 · 01", title:"为什么第一个十万美元最难？",
+ standfirst:"查理·芒格的资本积累法则，用方框和箭头画出来。",
+ byline:"<b>Reka Amorra</b> · 2026年11月7日 · 阅读约5分钟",
+ comment:"到 LinkedIn 留言",
+ sumLab:"一分钟看完",
+ sum:["芒格：<b>第一个十万美元</b>最难。过了这条线，钱才开始替你干活。",
+      "工资不会复利，时间不会复利，<b>只有资本会复利。</b>",
+      "每年6,000美元，10%回报是<b>600美元</b>；10万美元，10%回报是<b>1万美元</b>。利率相同，却是两种游戏。",
+      "四条规则：花得比赚得少，存下差额，拿去投资，<b>别去打扰它</b>。",
+      "先避开愚蠢（融资融券、轻松信贷、内幕消息），再谈聪明。"],
+ open:["为什么第一个十万美元像爬坡，之后的钱却像滑行？",
+       "查理·芒格的回答很朴素：起步时靠的是力气，不是钱。每一块钱都是汗水。刚存下500美元，车坏了；刚放下1,000美元，热水器又坏了。穷是很贵的，而且世界从不忘记提醒你。",
+       "我把芒格的一次谈话画成了图。如果你和我们很多人一样靠佣金过日子，图比文字更要紧。佣金看起来像钱，大多数时候它还是汗水。"],
+ s1:"劳动不会复利",
+ s1p:["芒格的检验很简单：如果光靠努力就能致富，煤矿工人早就是亿万富翁了。他看着工厂工人、泥瓦匠、文员每天比他更拼命，却依然贫穷，因为他们的汗水一落地就蒸发了。他们从来没有积累资本。",
+      "今天加薪，明天通胀就把它吃掉；高薪之后是税；第三份工作之后，身体先垮。劳动能让你吃饱，劳动不会复利。"],
+ f1:{title:"两个循环：跑步机与资本循环",a:"跑步机",b:"资本循环",
+     a1:"工作",a2:"工资",a3:"花掉",a4:"归零",b1:"收入 > 支出",b2:"存下差额",b3:"投资",b4:"资本增长",b5:"你睡觉时它在赚钱",cap:"示意图，非数据。两个循环付出相同，只有第二个留得下东西。"},
+ s2:"安静的那几年",
+ s2p:["复利的形状很残酷。好几年里，这条线几乎是平的。存下并投资6,000美元，顺利的话也许赚600美元。那是一张机票，谈不上改变人生。",
+      "于是大多数人放弃了。他们看着那点回报，说一句“何必呢”，转头去买手机、去度假。芒格说，这是在复利还没来得及呼吸之前，就把它掐死了。",
+      "无聊的那几年，是通往曲线拐点的过路费。过路费不能跳过。数字不会因为你没耐心就弯起来。"],
+ f2:{title:"曲线要过了第一个十万美元才会弯",x:"年",y:"资本",quit:"大多数人在这里放弃",line:"10万美元",pull:"钱开始替你干活",cap:"示意图，非数据。固定投入随时间复利的形状。"},
+ s3:"小数字磨光耐心",
+ s3p:["利率从来没变，变的是本金。同样是10%，小本金只够零花，大本金却是一份不用上班的薪水。",
+      "芒格自己的比较：80万美元按10%，一年约8万美元，接近每月6,700美元，相当于一份兼职，只是没人需要打卡。"],
+ tiles:[{v:"$600",l:"6,000美元 × 10%"},{v:"$10,000",l:"10万美元 × 10%",hi:1},{v:"$80,000",l:"80万美元 × 10%"}],
+ tileCap:"谈话中使用的简单10%示例。不是预测；真实回报会波动，也可能为负。",
+ s4:"生活方式通胀是陷阱",
+ s4p:["保持贫穷最快的方法，就是让生活方式和收入一起膨胀。加薪了，就买更大的车，搬进更大的公寓，订去年订不起的假期。人们管这叫犒劳自己，芒格管这叫朝自己脚上开枪。",
+      "他见过律师、医生、高管年入六位数，却活得像贵族：德国车、有空房间的大房子、其实负担不起的学费。外表成功，内里离恐慌只差一个糟糕的月份。",
+      "真正的进步是看不见的，是你不去动的那个余额。一顿晚饭两小时就没了，一次假期一周就没了。资本却每天安静地干活，无论你醒着、睡着还是生病。"],
+ f3:{title:"同样的加薪，两种未来",r:"加薪",a1:"更大的车，更大的房",a2:"差额 = 0",a3:"跑步机，一辈子",b1:"生活方式不变",b2:"差额存下并投资",b3:"第一个十万美元",cap:"示意图，非数据。"},
+ s5:"愚蠢税",
+ s5p:["致富不需要天才，需要的是避开愚蠢。芒格的清单：借钱买面子、刷爆信用卡、车贷、买不起的房、融资融券、内幕消息、快速致富的骗局。",
+      "代价一开始看不见。后来你才发现，时间站在你这边的那些年，被你用来背着18%的信用卡余额，一边还在炫耀10%的股票回报。那不是投资，那是自欺。",
+      "1973年，他看着一群聪明人因为融资买股票而倾家荡产。市场不在乎他们对自己的选股有多自信。"],
+ f4:{title:"复利是双向的",a:"对你不利",b:"对你有利",a1:"信用卡 ~18%",a2:"车贷、融资、内幕消息",a3:"你睡觉时债务在长",b1:"资本 ~10%",b2:"全额持有，不去打扰",b3:"你睡觉时收入在长",cap:"示意图，非数据。利率为谈话中的举例，不是当前市场数字。"},
+ s6:"十万美元真正买到的是什么",
+ s6p:["不是财富。芒格说得很清楚，十万美元不会让你富有。它是概念验证：证明这套游戏行得通，从此一切复利得更快，包括你承担可计算风险的底气。",
+      "变的是你的位置。银行会接你的电话。你可以在股票便宜时买入，在别人恐慌时拿住。你可以不借钱就创业。你可以离开糟糕的老板。你可以犯错，然后恢复。没有资本之前，你只是一个有梦想的劳动者。"],
+ ladderTitle:"芒格的阶梯",
+ ladder:["花得比赚得少","存下差额","拿去投资","别去打扰它","第一个十万美元","资本来干重活"],
+ ladderCap:"根据谈话整理的框架。",
+ checkLab:"存下来：花钱前先看这几条",
+ check:["我的支出是否和收入涨得一样快？","我是否背着某笔债务，它对我不利的复利比我投资对我有利的复利更快？","过去两年，我是否从投资里取钱，去买了现在已经没了的东西？","如果今年某个决定错了，我能不借钱就恢复吗？","在我自己的货币和生活里，我的“十万美元”是多少？"],
+ takeLab:"我的分析",
+ take:["<b>佣金是换了衣服的工资。</b>联盟收入在你停止发帖那天就停了。芒格会把它叫作劳动。只有把其中一部分存下并放着不动，它才变成资本。",
+       "<b>联盟营销版的生活方式通胀</b>，就是把自己推广的每样产品都买下来，为了拍内容换手机，然后管这叫投资。有一部分确实是，大部分只是灯光更好的跑步机。",
+       "<b>你的内容库也会复利。</b>老视频在你睡觉时继续赚钱，和资本一样。平坦的那几年，就是没人看的那几年。人们在那里放弃，和曲线上的情况一模一样。",
+       "<b>选你自己的数字。</b>对在马来西亚或印尼赚钱的人来说，那条线不是十万美元，而是10%开始像“真钱”的那个金额。对我们很多人来说，是第一个十万令吉或三亿印尼盾。还是难，还是值得。"],
+ srcLab:"来源与致谢",
+ src:["本文取材自一段以查理·芒格口吻讲述“第一个十万美元”的 YouTube 谈话（自动转写；该视频是对其观点的叙述式呈现，并非经核实的某次演讲录音）。所有观点归查理·芒格（1924–2023，伯克希尔·哈撒韦副董事长）所有。关于第一个十万美元的说法，常见于珍妮特·洛《Damn Right!》（2000）对芒格的引述。","图表、结构与“我的分析”部分为本人原创。"],
+ bio:"Reka Amorra 为马来西亚和印尼的读者撰写关于联盟营销、理财基础与创作者生活的短篇研究简报。",
+ disc:"本文观点仅代表本人，不构成任何财务、投资或法律建议。数字为该谈话自身的示例，不是预测。研究与撰写由 AI 工具辅助。"
+}
+};
+
+/* ---------- SVG builders (white background, pastel markers) ---------- */
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;")}
+function bx(x,y,w,h,fill,stroke,txt,size,bold){
+ var lines=String(txt).split("\n"),lh=size*1.25,y0=y+h/2-(lines.length-1)*lh/2;
+ var t=lines.map(function(l,i){return '<tspan x="'+(x+w/2)+'" y="'+(y0+i*lh)+'">'+esc(l)+'</tspan>'}).join("");
+ return '<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" rx="8" fill="'+fill+'" stroke="'+stroke+'" stroke-width="1.5"/><text font-family="Inter,sans-serif" font-size="'+size+'" font-weight="'+(bold?700:500)+'" fill="#1d2a3a" text-anchor="middle" dominant-baseline="middle">'+t+'</text>';
+}
+var ARROW='<defs><marker id="ah" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#5b6b7b"/></marker><marker id="ahb" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f7c8c"/></marker><marker id="ahr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#b42318"/></marker></defs>';
+function ar(x1,y1,x2,y2,c){var m=c==="b"?"ahb":c==="r"?"ahr":"ah";var col=c==="b"?"#0f7c8c":c==="r"?"#b42318":"#5b6b7b";return '<path d="M'+x1+','+y1+' L'+x2+','+y2+'" stroke="'+col+'" stroke-width="1.8" fill="none" marker-end="url(#'+m+')"/>'}
+function title(s){var w=[],line="";String(s).split(" ").forEach(function(x){if((line+" "+x).trim().length>44){w.push(line.trim());line=x}else line+=" "+x});w.push(line.trim());
+ return w.map(function(l,i){return '<text x="0" y="'+(15+i*15)+'" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="#1d2a3a">'+esc(l)+'</text>'}).join("")}
+function lab(x,y,s,col,anchor){return '<text x="'+x+'" y="'+y+'" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="'+(col||"#5b6b7b")+'" text-anchor="'+(anchor||"start")+'" letter-spacing=".08em">'+esc(s)+'</text>'}
+
+function fig1(f){ // two loops, stacked
+ var s='<svg viewBox="0 0 400 420" xmlns="http://www.w3.org/2000/svg">'+ARROW+title(f.title);
+ s+=lab(20,44,f.a,"#b42318");
+ s+=bx(20,56,120,40,"#f7d4d1","#b42318",f.a1,12,1)+bx(260,56,120,40,"#f7d4d1","#b42318",f.a2,12,1)+bx(260,130,120,40,"#f7d4d1","#b42318",f.a3,12,1)+bx(20,130,120,40,"#f7d4d1","#b42318",f.a4,12,1);
+ s+=ar(140,76,260,76,"r")+ar(320,96,320,130,"r")+ar(260,150,140,150,"r")+ar(80,130,80,96,"r");
+ s+='<text x="200" y="118" font-family="Inter,sans-serif" font-size="13" fill="#b42318" text-anchor="middle">⟲</text>';
+ s+='<path d="M20,196 L380,196" stroke="#e5e9ee" stroke-width="1"/>';
+ s+=lab(20,220,f.b,"#16794a");
+ s+=bx(20,232,130,40,"#cfe9d9","#16794a",f.b1,11,1)+bx(250,232,130,40,"#cfe9d9","#16794a",f.b2,11,1)+bx(250,306,130,40,"#cfe9d9","#16794a",f.b3,12,1)+bx(20,306,130,40,"#cfe9d9","#16794a",f.b4,11,1);
+ s+=ar(150,252,250,252,"b")+ar(315,272,315,306,"b")+ar(250,326,150,326,"b")+ar(85,306,85,272,"b");
+ s+=ar(85,346,85,372,"b")+bx(20,372,360,38,"#ffffff","#0f7c8c",f.b5,12,1);
+ s+='</svg>';return s;
+}
+function fig2(f){ // compounding curve
+ var pts=[],x0=40,y0=250,xw=340,yh=190;
+ function v(t){return (Math.pow(1.11,t*30)-1)/(Math.pow(1.11,30)-1)}
+ for(var i=0;i<=40;i++){var t=i/40;pts.push([x0+t*xw,y0-v(t)*yh])}
+ var d=pts.map(function(p,i){return (i?"L":"M")+p[0].toFixed(1)+","+p[1].toFixed(1)}).join(" ");
+ var s='<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">'+ARROW+title(f.title);
+ s+='<path d="M'+x0+','+y0+' L'+(x0+xw)+','+y0+'" stroke="#9aa7b4" stroke-width="1.5"/><path d="M'+x0+','+y0+' L'+x0+',50" stroke="#9aa7b4" stroke-width="1.5"/>';
+ s+='<text x="'+(x0+xw)+'" y="'+(y0+18)+'" font-family="Inter,sans-serif" font-size="11" fill="#5b6b7b" text-anchor="end">'+esc(f.x)+'</text><text x="'+(x0+6)+'" y="56" font-family="Inter,sans-serif" font-size="11" fill="#5b6b7b">'+esc(f.y)+'</text>';
+ var th=0.58,yl=y0-v(th)*yh,xl=x0+th*xw;
+ s+='<path d="M'+x0+','+yl.toFixed(1)+' L'+(x0+xw)+','+yl.toFixed(1)+'" stroke="#0f7c8c" stroke-width="1.2" stroke-dasharray="5,4"/>';
+ s+='<rect x="'+(x0+4)+'" y="'+(yl+4)+'" width="70" height="16" rx="4" fill="#d3ecef"/><text x="'+(x0+39)+'" y="'+(yl+16)+'" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="#0f7c8c" text-anchor="middle">'+esc(f.line)+'</text>';
+ s+='<path d="'+d+'" stroke="#0f7c8c" stroke-width="3" fill="none"/>';
+ var tq=0.3,xq=x0+tq*xw,yq=y0-v(tq)*yh;
+ s+='<circle cx="'+xq+'" cy="'+yq.toFixed(1)+'" r="7" fill="#f7d4d1" stroke="#b42318" stroke-width="1.5"/>';
+ s+='<text x="'+(xq-20)+'" y="'+(yq-44)+'" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#b42318" text-anchor="start">'+esc(f.quit)+'</text>'+ar(xq-2,yq-40,xq,yq-10,"r");
+ s+='<circle cx="'+xl.toFixed(1)+'" cy="'+yl.toFixed(1)+'" r="7" fill="#cfe9d9" stroke="#16794a" stroke-width="1.5"/>';
+ s+='<text x="380" y="'+(yl+26)+'" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#16794a" text-anchor="end">'+esc(f.pull)+'</text>'+ar(xl+26,yl+14,xl+7,yl+6,"b");
+ s+='</svg>';return s;
+}
+function fig3(f){ // fork, stacked
+ var s='<svg viewBox="0 0 400 330" xmlns="http://www.w3.org/2000/svg">'+ARROW+title(f.title);
+ s+=bx(140,36,120,40,"#d3ecef","#0f7c8c",f.r,13,1);
+ s+=ar(170,76,90,110,"r")+ar(230,76,310,110,"b");
+ s+=bx(20,110,150,44,"#f7d4d1","#b42318",f.a1,11,1)+ar(95,154,95,178,"r")+bx(20,178,150,40,"#f7d4d1","#b42318",f.a2,12,1)+ar(95,218,95,242,"r")+bx(20,242,150,44,"#f7d4d1","#b42318",f.a3,11,1);
+ s+=bx(230,110,150,44,"#cfe9d9","#16794a",f.b1,11,1)+ar(305,154,305,178,"b")+bx(230,178,150,40,"#cfe9d9","#16794a",f.b2,10,1)+ar(305,218,305,242,"b")+bx(230,242,150,44,"#cfe9d9","#16794a",f.b3,11,1);
+ s+='</svg>';return s;
+}
+function fig4(f){ // two directions, stacked
+ var s='<svg viewBox="0 0 400 390" xmlns="http://www.w3.org/2000/svg">'+ARROW+title(f.title);
+ s+=lab(20,44,f.a,"#b42318");
+ s+=bx(20,54,360,36,"#f7d4d1","#b42318",f.a1,12,1)+ar(200,90,200,104,"r")+bx(20,104,360,36,"#f7d4d1","#b42318",f.a2,11,1)+ar(200,140,200,154,"r")+bx(20,154,360,36,"#ffffff","#b42318",f.a3,11,1);
+ s+='<path d="M20,210 L380,210" stroke="#e5e9ee" stroke-width="1"/>';
+ s+=lab(20,236,f.b,"#16794a");
+ s+=bx(20,246,360,36,"#cfe9d9","#16794a",f.b1,12,1)+ar(200,282,200,296,"b")+bx(20,296,360,36,"#cfe9d9","#16794a",f.b2,11,1)+ar(200,332,200,346,"b")+bx(20,346,360,36,"#ffffff","#16794a",f.b3,11,1);
+ s+='</svg>';return s;
+}
+function fig5(t,steps){ // ladder
+ var s='<svg viewBox="0 0 400 390" xmlns="http://www.w3.org/2000/svg">'+ARROW+title(t);
+ var n=steps.length;
+ for(var i=0;i<n;i++){
+  var y=36+i*58,last=i===n-1,fill=last?"#1d2a3a":(i===n-2?"#d3ecef":"#ffffff"),stroke=i>=n-2?"#0f7c8c":"#9aa7b4";
+  s+='<circle cx="38" cy="'+(y+20)+'" r="15" fill="#0f7c8c"/><text x="38" y="'+(y+21)+'" font-family="Inter,sans-serif" font-size="12" font-weight="800" fill="#fff" text-anchor="middle" dominant-baseline="middle">'+(i+1)+'</text>';
+  s+='<rect x="66" y="'+y+'" width="314" height="40" rx="8" fill="'+fill+'" stroke="'+stroke+'" stroke-width="1.5"/><text x="82" y="'+(y+21)+'" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="'+(last?"#fff":"#1d2a3a")+'" dominant-baseline="middle">'+esc(steps[i])+'</text>';
+  if(i<n-1) s+=ar(223,y+40,223,y+58,"b");
+ }
+ s+='</svg>';return s;
+}
+
+/* ---------- Render ---------- */
+var NOTE={"en": "The following are my own analysis, not findings from the sources.", "bm": "Berikut ialah analisis saya sendiri, bukan dapatan daripada sumber.", "id": "Berikut adalah analisis saya sendiri, bukan temuan dari sumber.", "zh": "以下是我个人的分析，并非来源中的结论。"};
+function ps(a){return a.map(function(p){return "<p>"+p+"</p>"}).join("")}
+function box(cls,labTxt,inner){return '<div class="box '+cls+'"><span class="lab">'+labTxt+'</span>'+inner+'</div>'}
+function render(k){
+ var t=T[k],h="";
+ document.documentElement.lang=t.htmlLang;
+ h+='<div class="kicker">'+t.kicker+'</div><h1>'+t.title+'</h1><p class="standfirst">'+t.standfirst+'</p><div class="byline">'+t.byline+'</div>';
+ h+='<a class="btn" href="'+LINKEDIN_POST_URL+'" target="_blank" rel="noopener">'+t.comment+' →</a>';
+ h+=box("key",t.sumLab,"<ul>"+t.sum.map(function(x){return "<li>"+x+"</li>"}).join("")+"</ul>");
+ h+=ps(t.open);
+ h+='<h2><span class="num">01</span>'+t.s1+'</h2>'+ps(t.s1p)+'<div class="fig">'+fig1(t.f1)+'<div class="cap">'+t.f1.cap+'</div></div>';
+ h+='<h2><span class="num">02</span>'+t.s2+'</h2>'+ps(t.s2p)+'<div class="fig">'+fig2(t.f2)+'<div class="cap">'+t.f2.cap+'</div></div>';
+ h+='<h2><span class="num">03</span>'+t.s3+'</h2>'+ps(t.s3p)+'<div class="tiles">'+t.tiles.map(function(x){return '<div class="tile'+(x.hi?' hi':'')+'"><div class="v">'+x.v+'</div><div class="l">'+x.l+'</div></div>'}).join("")+'</div><div class="fig"><div class="cap">'+t.tileCap+'</div></div>';
+ h+='<h2><span class="num">04</span>'+t.s4+'</h2>'+ps(t.s4p)+'<div class="fig">'+fig3(t.f3)+'<div class="cap">'+t.f3.cap+'</div></div>';
+ h+='<h2><span class="num">05</span>'+t.s5+'</h2>'+ps(t.s5p)+'<div class="fig">'+fig4(t.f4)+'<div class="cap">'+t.f4.cap+'</div></div>';
+ h+='<h2><span class="num">06</span>'+t.s6+'</h2>'+ps(t.s6p);
+ h+='<div class="fig">'+fig5(t.ladderTitle,t.ladder)+'<div class="cap">'+t.ladderCap+'</div></div>';
+ h+=box("watch check",t.checkLab,"<ol>"+t.check.map(function(x){return "<li>"+x+"</li>"}).join("")+"</ol>");
+ h+='<h2>'+t.takeLab+'</h2><p style="font-size:13px;color:#5b6b7b;font-style:italic;margin-top:-4px">'+NOTE[k]+'</p><div class="cards">'+t.take.map(function(x,i){return '<div class="card'+(i%2?' g':'')+'">'+x+'</div>'}).join("")+'</div>';
+ h+='<a class="btn ghost" href="'+LINKEDIN_POST_URL+'" target="_blank" rel="noopener">'+t.comment+' →</a>';
+ h+='<details open><summary>'+t.srcLab+'</summary>'+ps(t.src)+'</details>';
+ h+='<div class="bio"><div class="av">RA</div><div>'+t.bio+'</div></div>';
+ h+='<div class="foot">'+t.disc+'<br><br>© 2026 Reka Amorra, Research brief</div>';
+ document.getElementById("root").innerHTML=h;
+ var bs=document.querySelectorAll("#tg button");for(var i=0;i<bs.length;i++)bs[i].className=bs[i].getAttribute("data-l")===k?"on":"";
+}
+function pick(){var hsh=(location.hash||"").replace("#","");return T[hsh]?hsh:"en"}
+document.getElementById("tg").addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;location.hash=b.getAttribute("data-l")});
+window.addEventListener("hashchange",function(){render(pick());window.scrollTo(0,0)});
+render(pick());
+</script>
+</body>
+</html>
