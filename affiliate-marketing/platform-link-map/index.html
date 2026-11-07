@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Which marketplace links to which social platform in Southeast Asia, and what each link means for you | Reka Amorra</title>
+<meta name="description" content="A tappable map of how Shopee, Lazada and TikTok Shop link to Instagram, Facebook, YouTube, TikTok and other platforms in Southeast Asia, with rules, payout speeds and what is not confirmed.">
+<meta name="author" content="Reka Amorra">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Which marketplace links to which social platform in Southeast Asia, and what each link means for you">
+<meta property="og:description" content="A tappable map of how Shopee, Lazada and TikTok Shop link to Instagram, Facebook, YouTube, TikTok and other platforms in Southeast Asia, with rules, payout speeds and what is not confirmed.">
+<meta property="og:url" content="https://rekaamorra.github.io/research-briefs/affiliate-marketing/platform-link-map/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1d2433;--mute:#5d6778;--line:#e6e9f0;--accent:#4a3fc7;--lav:#eeebfb;--mint:#e5f5ec;--sky:#e4effb;--blush:#fdeaea;--green:#1b7f5a;--red:#b3261e}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#fff;color:var(--ink);font-family:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;font-size:17px;line-height:1.7}
+.top{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid var(--line)}
+.top .in{max-width:720px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{font-weight:800;letter-spacing:.2px}
+.tog{display:flex;gap:4px;background:var(--lav);padding:4px;border-radius:999px}
+.tog button{border:0;background:transparent;font:inherit;font-size:14px;font-weight:700;color:var(--mute);padding:5px 12px;border-radius:999px;cursor:pointer}
+.tog button[aria-pressed="true"]{background:var(--accent);color:#fff}
+.tog button:focus-visible,.li-btn:focus-visible,summary:focus-visible,input:focus-visible+label{outline:3px solid #9b92ee;outline-offset:2px}
+main{max-width:720px;margin:0 auto;padding:8px 16px 56px}
+.lang[hidden]{display:none}
+.btnrow{display:flex;justify-content:flex-end;margin:14px 0 0}
+.btnrow.bottom{justify-content:flex-start;margin:28px 0 0}
+.li-btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:15px;padding:9px 18px;border-radius:999px}
+.li-btn:hover{background:#3a30a8}
+.mast{padding:10px 0 6px}
+.kicker{margin:12px 0 6px;color:var(--accent);font-weight:700;font-size:15px}
+h1{margin:0 0 12px;font-size:clamp(28px,6.4vw,42px);line-height:1.16;font-weight:800;letter-spacing:-.4px}
+[lang="zh-Hans"] h1{letter-spacing:0;line-height:1.3}
+.stand{margin:0 0 14px;color:var(--mute);font-size:19px;line-height:1.55}
+.by{display:flex;flex-wrap:wrap;gap:4px 16px;margin:0;font-size:15px;color:var(--mute)}
+.by b{color:var(--ink)}
+h2{margin:40px 0 10px;font-size:25px;line-height:1.28;font-weight:800;letter-spacing:-.2px}
+h3{margin:0 0 6px;font-size:18px;line-height:1.35;font-weight:700}
+p{margin:0 0 14px}
+.tldr{background:var(--lav);border-radius:22px;padding:20px 22px 10px;margin:22px 0 26px}
+.tldr h2{margin:0 0 8px;font-size:20px}
+.tldr ul{margin:0;padding-left:20px}
+.tldr li{margin:0 0 10px}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:26px 0 4px}
+.tile{border-radius:16px;padding:14px 14px 12px;display:flex;flex-direction:column;gap:6px}
+.tile strong{font-size:21px;line-height:1.15;font-weight:800}
+.tile span{font-size:13.5px;line-height:1.4;color:var(--mute)}
+.lav{background:var(--lav)}.mint{background:var(--mint)}.sky{background:var(--sky)}
+.formula{background:var(--sky);border-radius:16px;padding:14px 18px;margin:6px 0 10px;display:flex;flex-direction:column;gap:2px}
+.formula span{font-size:14px;color:var(--mute);font-weight:600}
+.formula b{font-size:19px;line-height:1.4}
+.bars{margin:20px 0 6px;padding:18px 18px 8px;border-radius:20px;background:#f6f7fb}
+.bars figcaption{font-weight:800;font-size:18px}
+.axis{font-size:14px;color:var(--mute);margin:2px 0 12px}
+.brow{display:grid;grid-template-columns:104px 1fr 64px;gap:10px;align-items:center;margin:0 0 10px;font-size:15px}
+.bl{font-weight:600}
+.bt{background:#e9ecf3;border-radius:999px;height:22px;overflow:hidden;display:block}
+.bar{display:block;height:100%;border-radius:999px;background:#bcc5d3}
+.bar.hi{background:var(--accent)}
+.bv{font-weight:700;text-align:right}
+.src{font-size:13.5px;color:var(--mute);margin:8px 0 8px}
+.fh{margin:28px 0 12px}
+.flow{list-style:none;margin:0;padding:0}
+.flow li{position:relative;display:flex;gap:14px;padding:0 0 18px}
+.flow li:not(.last)::before{content:"";position:absolute;left:15px;top:34px;bottom:2px;width:2px;background:#d3d8e6}
+.badge{flex:0 0 32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;display:grid;place-items:center;font-size:15px}
+.flow li.last .badge{background:var(--green)}
+.flow div{display:flex;flex-direction:column;line-height:1.5}
+.flow div span{color:var(--mute);font-size:15.5px}
+.note{background:var(--blush);border-radius:16px;padding:12px 16px;font-size:15.5px;margin:2px 0 6px}
+.trap{background:var(--blush);border-radius:20px;padding:18px 20px 6px;margin:8px 0}
+.cmp{display:flex;flex-direction:column;gap:14px;margin:8px 0}
+.crow h3{font-size:16px;color:var(--mute);margin:0 0 6px}
+.cells{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cell{border-radius:14px;padding:12px 14px;background:#f6f7fb;font-size:15.5px;line-height:1.55}
+.cell:nth-child(2){background:var(--sky)}
+.cell em{display:block;font-style:normal;font-weight:800;margin-bottom:3px;color:var(--accent)}
+.own{background:#fff;border-left:4px solid var(--accent);padding:2px 0 2px 14px;font-style:italic;color:var(--mute)}
+.recs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}
+.rec{border-radius:18px;padding:16px 18px 6px}
+.rec p{font-size:16px;line-height:1.6}
+.rec .ms{color:var(--green)}
+.rec .ms b{font-weight:800}
+.check{background:var(--mint);border-radius:22px;padding:18px 22px 10px;margin:34px 0 10px}
+.check h2{margin:0 0 10px;font-size:21px}
+.check ul{list-style:none;margin:0;padding:0}
+.check li{display:flex;gap:12px;align-items:flex-start;margin:0 0 12px}
+.check input{margin-top:6px;width:20px;height:20px;accent-color:var(--green);flex:0 0 20px}
+.check label{cursor:pointer}
+.bio{display:flex;gap:14px;align-items:center;margin:34px 0 8px}
+.bio p{margin:0}
+.av{flex:0 0 48px;height:48px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:800}
+.disc{font-size:14px;color:var(--mute);line-height:1.6}
+.srcs{margin:12px 0}
+.srcs summary{cursor:pointer;font-weight:700}
+.srcs p{font-size:14.5px;color:var(--mute);margin:8px 0}
+.srcs ol{padding-left:20px;font-size:14.5px;line-height:1.55}
+.srcs a{color:var(--accent);overflow-wrap:anywhere}
+footer{margin-top:26px;padding-top:14px;border-top:1px solid var(--line);font-size:14px;color:var(--mute)}
+@media (max-width:640px){
+ body{font-size:16.5px}
+ .tiles{grid-template-columns:1fr 1fr}
+ .recs,.cells{grid-template-columns:1fr}
+ .brow{grid-template-columns:92px 1fr 56px}
+ h2{font-size:22px;margin-top:34px}
+}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+
+.mapbox{margin:14px 0 6px}
+.mapbox svg{display:block;width:100%;height:auto}
+.mapbox .nd{cursor:pointer;outline:none}
+.mapbox .nd rect{stroke-width:1.5;transition:stroke-width .15s}
+.mapbox .mk rect{fill:#eeebfb;stroke:#5b3fd1}
+.mapbox .sc rect{fill:#e5f5ec;stroke:#1b7f5a}
+.mapbox .nd:hover rect{stroke-width:3}
+.mapbox .nd.sel rect{stroke-width:4}
+.mapbox .nd:focus-visible rect{stroke:#4a3fc7;stroke-width:4}
+.mapbox text{font-family:inherit;font-size:20px;font-weight:700;fill:#1d2433;pointer-events:none}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;margin:8px 0 12px;font-size:14px;color:var(--mute)}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+.legend svg{width:32px;height:8px;flex:0 0 32px}
+.mappanel{background:#f6f7fb;border-radius:16px;padding:14px 16px 6px;min-height:76px;font-size:15.5px;line-height:1.55}
+.mappanel .hint{margin:0 0 8px;color:var(--mute)}
+.mappanel .ttl{margin:0 0 8px;font-weight:800}
+.mappanel .it{border-left:4px solid #c9d1dc;padding:2px 0 2px 12px;margin:0 0 12px}
+.mappanel .it b{display:block}
+.paygrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}
+.pay{border-radius:18px;padding:14px 16px 4px}
+.pay h3{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:17px}
+.tag{font-size:13px;font-weight:700;padding:2px 10px;border-radius:999px;background:#fff;white-space:nowrap}
+.pay p{font-size:15.5px;line-height:1.55}
+.gry{background:#f1f3f7}
+.rules{display:grid;gap:12px;margin:12px 0}
+.rule{border-radius:18px;background:var(--blush);padding:14px 18px 4px}
+.rule p{font-size:16px}
+.unk{background:#f1f3f7;border-radius:20px;padding:16px 20px 6px;margin:10px 0}
+.unk ul{margin:0;padding-left:20px}
+.unk li{margin:0 0 8px}
+@media (max-width:640px){.paygrid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="top"><div class="in"><span class="brand">Reka Amorra</span><div class="tog" role="group" aria-label="Language"><button type="button" id="t-en" aria-pressed="true">EN</button><button type="button" id="t-bm" aria-pressed="false">BM</button><button type="button" id="t-id" aria-pressed="false">ID</button><button type="button" id="t-zh" aria-pressed="false">中文</button></div></div></div>
+<main>
+<article class="lang" id="lang-en" lang="en">
+<div class="btnrow"><a class="li-btn" target="_blank" rel="noopener">Comment on LinkedIn</a></div>
+<header class="mast">
+<p class="kicker">Affiliate basics for Malaysia and Indonesia</p>
+<h1>Which marketplace links to which social platform in Southeast Asia, and what each link means for you</h1>
+<p class="stand">A map of how Shopee, Lazada and TikTok Shop connect to Instagram, Facebook, YouTube, TikTok and everything else, with the rules and payout speeds from official pages.</p>
+<p class="by"><b>Reka Amorra</b><span>7 Nov 2026</span><span>7 min read</span></p>
+</header>
+<section class="tldr"><h2>The short version</h2><ul><li>Native tagging exists on only some routes: Shopee with Instagram, Facebook and YouTube; Lazada with Facebook; TikTok Shop with TikTok. The rest are plain links.</li><li>Each native link stays with its platform. YouTube says sharing your YouTube affiliate links outside YouTube can suspend your affiliate features. TikTok Shop’s policy bans off-platform links in its content.</li><li>Payout speed differs a lot. Shopee pays weekly (Indonesia terms). TikTok Shop follows the seller’s settlement, 1 to 15 days after delivery on the Malaysia page, longer if flagged. YouTube pays 60 to 120 days after purchase.</li><li>Register every account where you post Shopee links. Indonesia’s terms treat unreported accounts as a violation.</li><li>Some links are not confirmed: Lazada on Instagram, Lazada on YouTube, and Threads, X, Pinterest or WhatsApp as official programmes.</li></ul></section>
+<p>An affiliate in Malaysia or Indonesia can post on Instagram, Facebook, YouTube, TikTok and Threads, and promote Shopee, Lazada and TikTok Shop. Three marketplaces and five kinds of channel make 15 possible links.</p>
+<p>Some of those links are built into the platform. Some are plain links. Some are not allowed. The map below sorts all 15.</p>
+<p>I read official help pages where they exist and press reports for launches. Where I could only find third-party guides, I say so.</p>
+<div class="tiles"><div class="tile mint"><strong>5</strong><span>native links, built into the platform</span></div><div class="tile sky"><strong>4</strong><span>plain links, fine with care</span></div><div class="tile lav"><strong>4</strong><span>banned or risky links</span></div><div class="tile lav"><strong>2</strong><span>links I could not confirm</span></div></div>
+<h2>The map: tap a platform</h2>
+<div class="mapbox">
+<svg id="en-svg" viewBox="0 0 680 352" role="img" aria-label="Map of marketplace and social platform links">
+<g id="en-edges"></g>
+<g class="nd mk" data-k="m:shopee" tabindex="0" role="button" aria-label="Shopee"><rect x="20" y="12" width="190" height="52" rx="12"/><text x="115" y="38" text-anchor="middle" dominant-baseline="central">Shopee</text></g>
+<g class="nd mk" data-k="m:lazada" tabindex="0" role="button" aria-label="Lazada"><rect x="245" y="12" width="190" height="52" rx="12"/><text x="340" y="38" text-anchor="middle" dominant-baseline="central">Lazada</text></g>
+<g class="nd mk" data-k="m:tts" tabindex="0" role="button" aria-label="TikTok Shop"><rect x="470" y="12" width="190" height="52" rx="12"/><text x="565" y="38" text-anchor="middle" dominant-baseline="central">TikTok Shop</text></g>
+<g class="nd sc" data-k="s:ig" tabindex="0" role="button" aria-label="Instagram"><rect x="10" y="288" width="124" height="52" rx="12"/><text x="72" y="314" text-anchor="middle" dominant-baseline="central">Instagram</text></g>
+<g class="nd sc" data-k="s:fb" tabindex="0" role="button" aria-label="Facebook"><rect x="144" y="288" width="124" height="52" rx="12"/><text x="206" y="314" text-anchor="middle" dominant-baseline="central">Facebook</text></g>
+<g class="nd sc" data-k="s:yt" tabindex="0" role="button" aria-label="YouTube"><rect x="278" y="288" width="124" height="52" rx="12"/><text x="340" y="314" text-anchor="middle" dominant-baseline="central">YouTube</text></g>
+<g class="nd sc" data-k="s:tt" tabindex="0" role="button" aria-label="TikTok"><rect x="412" y="288" width="124" height="52" rx="12"/><text x="474" y="314" text-anchor="middle" dominant-baseline="central">TikTok</text></g>
+<g class="nd sc" data-k="s:ot" tabindex="0" role="button" aria-label="Others"><rect x="546" y="288" width="124" height="52" rx="12"/><text x="608" y="314" text-anchor="middle" dominant-baseline="central">Others</text></g>
+</svg>
+<div class="legend"><span><svg viewBox="0 0 32 8" aria-hidden="true"><line x1="1" y1="4" x2="31" y2="4" stroke="#1b7f5a" stroke-width="3.2" stroke-linecap="round"/></svg>Native tagging</span><span><svg viewBox="0 0 32 8" aria-hidden="true"><line x1="1" y1="4" x2="31" y2="4" stroke="#3b82c4" stroke-width="2.4" stroke-dasharray="8 6"/></svg>Plain link only</span><span><svg viewBox="0 0 32 8" aria-hidden="true"><line x1="1" y1="4" x2="31" y2="4" stroke="#b3261e" stroke-width="2.4" stroke-dasharray="3 7" stroke-linecap="round"/></svg>Banned or risky</span><span><svg viewBox="0 0 32 8" aria-hidden="true"><line x1="1" y1="4" x2="31" y2="4" stroke="#8a93a3" stroke-width="1.6" stroke-dasharray="4 5"/></svg>Not confirmed</span></div>
+<div class="mappanel" id="en-panel" aria-live="polite"><p class="hint">Tap a platform to see only its links.</p></div>
+</div>
+<h2>How fast each route pays</h2><div class="paygrid">
+<div class="pay mint"><h3>Shopee<span class="tag">Weekly</span></h3><p>Paid every week by bank transfer. Under Rp500,000 goes to ShopeePay (Indonesia terms). I did not find the Malaysia schedule on an official page.</p></div>
+<div class="pay sky"><h3>TikTok Shop<span class="tag">Days</span></h3><p>Paid after the seller’s order settles: 1, 3, 8 or 15 days after delivery on the Malaysia page, and up to 30 days if TikTok flags the account or order.</p></div>
+<div class="pay lav"><h3>YouTube<span class="tag">Months</span></h3><p>Paid through AdSense 60 to 120 days after purchase, and reversed if the item is returned.</p></div>
+<div class="pay gry"><h3>Lazada<span class="tag">Not confirmed</span></h3><p>I did not find an official payout schedule. Third-party guides say monthly, which I could not verify.</p></div>
+</div>
+<h2>Three rules that cross platforms</h2><div class="rules">
+<div class="rule"><h3>Keep each native link on its own platform</h3><p>YouTube says sharing your YouTube affiliate links outside YouTube can suspend your affiliate features. TikTok Shop bans links and handles that send viewers off-platform in its content.</p></div>
+<div class="rule"><h3>One marketplace per piece of content</h3><p>Shopee Indonesia’s terms say content must not carry links to other e-commerce platforms. Pick one marketplace for each post.</p></div>
+<div class="rule"><h3>Register every account that carries links</h3><p>Indonesia’s terms treat links on accounts not reported to Shopee as a violation. Malaysia asks for a public, verified account at sign-up. Facebook must be a Page, not a personal profile.</p></div>
+</div>
+<h2>One Shopee detail: indirect orders</h2><p>If a buyer clicks your link but buys a different item, that is an indirect order. Shopee’s seller pages say the seller-funded commission on indirect orders is half of the rate the seller set. In Malaysia that is 50% from 24 May 2026, up from 30%. Your dashboard shows the direct and indirect split, and that is the number to trust.</p>
+<h2>What is still not confirmed</h2><div class="unk"><ul><li>Lazada on Instagram: reports say it will follow, and I found no sign that it is live.</li><li>Lazada on YouTube: nothing found.</li><li>Threads, X, Pinterest and WhatsApp as official programmes: none found.</li><li>Whether a Lazada link pasted into Instagram’s Add products works: Instagram says the product must be in a Meta commerce catalog.</li><li>Shopee Malaysia’s and Lazada’s payout schedules on official pages.</li></ul></div>
+<h2>What I would do</h2><p class="own">The following are my own analysis, not findings from the sources.</p><div class="recs">
+<div class="rec mint"><h3>Draw your own map</h3><p>List every platform you post on and the marketplace each link goes to. Mark each as native or plain.</p><p class="ms"><b>Measure:</b> every platform on your list has one marketplace next to it.</p></div>
+<div class="rec sky"><h3>Test a native tag against a plain link</h3><p>Where a native tag exists, post one piece with the tag and a similar one with a plain link, two weeks each. Compare orders and commission per post.</p><p class="ms"><b>Measure:</b> commission per post, tag versus plain link.</p></div>
+<div class="rec lav"><h3>One marketplace per post</h3><p>Do not mix links to two marketplaces in one post or video.</p><p class="ms"><b>Measure:</b> zero posts with links to two marketplaces.</p></div>
+<div class="rec mint"><h3>Plan cash by route</h3><p>Write down the expected payout date for each route. Do not plan YouTube money like Shopee money.</p><p class="ms"><b>Measure:</b> a calendar with one payout date per route.</p></div>
+<div class="rec sky"><h3>Keep an account register</h3><p>Keep a list of the accounts that carry Shopee links and check that each one is registered in Shopee Affiliate.</p><p class="ms"><b>Measure:</b> no account carries links without being registered.</p></div>
+<div class="rec lav"><h3>Recheck the unknowns monthly</h3><p>Lazada on Instagram may launch. Check the not-confirmed list once a month and date your note.</p><p class="ms"><b>Measure:</b> one dated note per month.</p></div>
+</div>
+<section class="check"><h2>Save this: check before you add a new platform</h2><ul>
+<li><input type="checkbox" id="en-c0"><label for="en-c0">Which marketplace will this platform link to, and is the link native or plain?</label></li>
+<li><input type="checkbox" id="en-c1"><label for="en-c1">Is the account public, and is it registered in my Shopee Affiliate list?</label></li>
+<li><input type="checkbox" id="en-c2"><label for="en-c2">Will this post carry links to only one marketplace?</label></li>
+<li><input type="checkbox" id="en-c3"><label for="en-c3">Do I know how fast I get paid on this route?</label></li>
+<li><input type="checkbox" id="en-c4"><label for="en-c4">Is a native tag better than a plain link here? Do I have a test planned?</label></li>
+<li><input type="checkbox" id="en-c5"><label for="en-c5">Have I checked the not-confirmed list this month?</label></li>
+</ul></section>
+<div class="bio"><span class="av">RA</span><p>Reka Amorra writes about affiliate work in Malaysia and Indonesia.</p></div>
+<p class="disc">These are my own views and analysis. They do not represent any organisation. This piece is not affiliated with Shopee, Lazada, TikTok, Meta, YouTube or any platform it mentions. Rules and figures come from the public pages listed below and can change, so check your own accounts. Nothing here is financial, tax or legal advice.</p>
+<details class="srcs"><summary>Sources</summary><p>All pages are public. I read them in November 2026. Several pages are months old, and some Lazada details come from third-party guides, so the live version may differ.</p><ol>
+<li><a href="https://help.shopee.com.my/portal/10/article/205759-How-to-Sign-Up-for-the-Shopee-Affiliate-Program" target="_blank" rel="noopener">Shopee Help Center Malaysia, How to Sign Up for the Shopee Affiliate Program (updated 11 September 2026)</a></li>
+<li><a href="https://help.shopee.com.my/portal/10/article/206088-How-to-Join-the-Instagram-Affiliate-Partnerships-Program" target="_blank" rel="noopener">Shopee Help Center Malaysia, How to Join the Instagram Affiliate Partnerships Program (updated 29 October 2026)</a></li>
+<li><a href="https://help.shopee.sg/portal/10/article/208269?previousPage=other%20articles" target="_blank" rel="noopener">Shopee Help Center Singapore, Meta Cross-Linking Initiative FAQ</a></li>
+<li><a href="https://help.shopee.co.id/portal/4/article/71217-Syarat-dan-Ketentuan-Program-Afiliasi-Shopee-untuk-Individu" target="_blank" rel="noopener">Shopee Help Center Indonesia, Syarat dan Ketentuan Program Afiliasi Shopee untuk Individu (updated 22 October 2026)</a></li>
+<li><a href="https://seller.shopee.com.my/edu/article/26669" target="_blank" rel="noopener">Shopee Seller Education Malaysia, Affiliate Marketing Solution (AMS) Commission Rules</a></li>
+<li><a href="https://seller.shopee.co.id/edu/article/11241" target="_blank" rel="noopener">Shopee Seller Education Indonesia, Cara Mengakses Affiliate Marketing Shopee</a></li>
+<li><a href="https://seller-my.tiktok.com/university/essay?knowledge_id=10008404" target="_blank" rel="noopener">TikTok Shop Seller University Malaysia, TikTok Shop Content Policy</a></li>
+<li><a href="https://seller-my.tiktok.com/university/essay?knowledge_id=6295179426662160" target="_blank" rel="noopener">TikTok Shop Seller University Malaysia, Payment Settlement</a></li>
+<li><a href="https://support.google.com/youtube/answer/13376398" target="_blank" rel="noopener">YouTube Help, YouTube Shopping affiliate program overview and eligibility</a></li>
+<li><a href="https://creators.instagram.com/blog/new-ways-to-earn-making-reels-shoppable?" target="_blank" rel="noopener">Instagram for Creators, “New Ways to Earn: Making Reels Shoppable”, 24 March 2026</a></li>
+<li><a href="https://www.campaignindonesia.id/en/article/shopee-dan-meta-perluas-afiliasi-ke-instagram/1963713" target="_blank" rel="noopener">Campaign Indonesia, Aulia Masna, “Shopee and Meta Expand Their Partnership to Instagram”, 6 July 2026</a></li>
+<li><a href="https://sg.finance.yahoo.com/news/lazada-joins-metas-affiliate-partnerships-020000387.html" target="_blank" rel="noopener">Lazada press release via Yahoo Finance, “Lazada Joins Meta’s Affiliate Partnerships Programme”, 8 July 2026</a></li>
+<li><a href="https://www.marketing-interactive.com/lazada-deepens-creator-commerce-push-through-meta-affiliate-partnership" target="_blank" rel="noopener">Marketing-Interactive, “Lazada deepens creator commerce push through Meta affiliate partnership”</a></li>
+<li><a href="https://aws1.campaignasia.com/article/youtube-and-shopee-are-redefining-creator-commerce-in-southeast-asia/503660" target="_blank" rel="noopener">Campaign Asia, “YouTube and Shopee are redefining creator commerce in Southeast Asia”</a></li>
+<li><a href="https://www.bernama.com/en/news.php/?id=2383633" target="_blank" rel="noopener">Bernama, LazAffiliates Malaysia (January 2025, older)</a></li>
+<li><a href="https://involve.asia/blog/lazada-malaysia-affiliate-program/" target="_blank" rel="noopener">Involve Asia, Lazada Malaysia affiliate guide (third-party guide)</a></li>
+</ol></details>
+<div class="btnrow bottom"><a class="li-btn" target="_blank" rel="noopener">Comment on LinkedIn</a></div>
+<footer>© 2026 Reka Amorra, Research brief</footer>
+</article>
+<article class="lang" id="lang-bm" lang="ms" hidden>
+<div class="btnrow"><a class="li-btn" target="_blank" rel="noopener">Komen di LinkedIn</a></div>
+<header class="mast">
+<p class="kicker">Asas affiliate untuk Malaysia dan Indonesia</p>
+<h1>Pasaran mana yang boleh dipautkan ke platform sosial mana di Asia Tenggara, dan maksud setiap pautan kepada anda</h1>
+<p class="stand">Peta bagaimana Shopee, Lazada dan TikTok Shop bersambung dengan Instagram, Facebook, YouTube, TikTok dan platform lain, lengkap dengan peraturan dan kelajuan bayaran daripada halaman rasmi.</p>
+<p class="by"><b>Reka Amorra</b><span>7 Nov 2026</span><span>7 minit bacaan</span></p>
+</header>
+<section class="tldr"><h2>Ringkasnya</h2><ul><li>Penandaan asli hanya ada pada sesetengah laluan: Shopee dengan Instagram, Facebook dan YouTube; Lazada dengan Facebook; TikTok Shop dengan TikTok. Selebihnya pautan biasa.</li><li>Setiap pautan asli kekal pada platformnya. YouTube kata berkongsi pautan affiliate YouTube di luar YouTube boleh menggantung ciri affiliate anda. Dasar TikTok Shop melarang pautan luar platform dalam kandungannya.</li><li>Kelajuan bayaran sangat berbeza. Shopee membayar setiap minggu (terma Indonesia). TikTok Shop mengikut penyelesaian penjual, 1 hingga 15 hari selepas penghantaran pada halaman Malaysia, lebih lama jika ditanda. YouTube membayar 60 hingga 120 hari selepas pembelian.</li><li>Daftarkan setiap akaun tempat anda siarkan pautan Shopee. Terma Indonesia menganggap akaun yang tidak dilaporkan sebagai pelanggaran.</li><li>Ada yang belum disahkan: Lazada di Instagram, Lazada di YouTube, serta Threads, X, Pinterest atau WhatsApp sebagai program rasmi.</li></ul></section>
+<p>Seorang affiliate di Malaysia atau Indonesia boleh siarkan di Instagram, Facebook, YouTube, TikTok dan Threads, dan mempromosikan Shopee, Lazada dan TikTok Shop. Tiga pasaran dan lima jenis saluran memberi 15 kemungkinan pautan.</p>
+<p>Sesetengah pautan terbina dalam platform. Sesetengah pautan biasa. Sesetengah tidak dibenarkan. Peta di bawah menyusun kesemua 15.</p>
+<p>Saya baca halaman bantuan rasmi jika ada dan laporan akhbar untuk pelancaran. Jika saya hanya jumpa panduan pihak ketiga, saya nyatakannya.</p>
+<div class="tiles"><div class="tile mint"><strong>5</strong><span>pautan asli, terbina dalam platform</span></div><div class="tile sky"><strong>4</strong><span>pautan biasa, boleh dengan berhati-hati</span></div><div class="tile lav"><strong>4</strong><span>pautan dilarang atau berisiko</span></div><div class="tile lav"><strong>2</strong><span>pautan yang tidak dapat saya sahkan</span></div></div>
+<h2>Peta: ketik satu platform</h2>
+<div class="mapbox">
+<svg id="bm-svg" viewBox="0 0 680 352" role="img" aria-label="Peta pautan antara pasaran dan platform sosial">
+<g id="bm-edges"></g>
+<g class="nd mk" data-k="m:shopee" tabindex="0" role="button" aria-label="Shopee"><rect x="20" y="12" width="190" height="52" rx="12"/><text x="115" y="38" text-anchor="middle" dominant-baseline="central">Shopee</text></g>
+<g class="nd mk" data-k="m:lazada" tabindex="0" role="button" aria-label="Lazada"><rect x="245" y="12" width="190" height="52" rx="12"/><text x="340" y="38" text-anchor="middle" dominant-baseline="central">Lazada</text></g>
+<g class="nd mk" data-k="m:tts" tabindex="0" role="button" aria-label="TikTok Shop"><rect x="470" y="12" width="190" height="52" rx="12"/><text x="565" y="38" text-anchor="middle" dominant-baseline="central">TikTok Shop</text></g>
+<g class="nd sc" data-k="s:ig" tabindex="0" role="button" aria-label="Instagram"><rect x="10" y="288" width="124" height="52" rx="12"/><text x="72" y="314" text-anchor="middle" dominant-baseline="central">Instagram</text></g>
+<g class="nd sc" data-k="s:fb" tabindex="0" role="button" aria-label="Facebook"><rect x="144" y="288" width="124" height="52" rx="12"/><text x="206" y="314" text-anchor="middle" dominant-baseline="central">Facebook</text></g>
+<g class="nd sc" data-k="s:yt" tabindex="0" role="button" aria-label="YouTube"><rect x="278" y="288" width="124" height="52" rx="12"/><text x="340" y="314" text-anchor="middle" dominant-baseline="central">YouTube</text></g>
+<g class="nd sc" data-k="s:tt" tabindex="0" role="button" aria-label="TikTok"><rect x="412" y="288" width="124" height="52" rx="12"/><text x="474" y="314" text-anchor="middle" dominant-baseline="central">TikTok</text></g>
+<g class="nd sc" data-k="s:ot" tabindex="0" role="button" aria-label="Lain-lain"><rect x="546" y="288" width="124" height="52" rx="12"/><text x="608" y="314" text-anchor="middle" dominant-baseline="central">Lain-lain</text></g>
+</svg>
+<div class="legend"><span><svg viewBox="0 0 32 8" aria-hidden="true"><line x1="1" y1="4" x2="31" y2="4" stroke="#1b7f5a" stroke-width="3.2" stroke-linecap="round"/></svg>Penandaan asli</span><span><svg viewBox="0 0 32 8" aria-hidden="true"><line x1="1" y1="4" x2="31" y2="4" stroke="#3b82c4" stroke-width="2.4" stroke-dasharray="8 6"/></svg>Pautan biasa sahaja</span><span><svg viewBox="0 0 32 8" aria-hidden="true"><line x1="1" y1="4" x2="31" y2="4" stroke="#b3261e" stroke-width="2.4" stroke-dasharray="3 7" stroke-linecap="round"/></svg>Dilarang atau berisiko</span><span><svg viewBox="0 0 32 8" aria-hidden="true"><line x1="1" y1="4" x2="31" y2="4" stroke="#8a93a3" stroke-width="1.6" stroke-dasharray="4 5"/></svg>Belum disahkan</span></div>
+<div class="mappanel" id="bm-panel" aria-live="polite"><p class="hint">Ketik satu platform untuk lihat pautannya sahaja.</p></div>
+</div>
+<h2>Berapa cepat setiap laluan membayar</h2><div class="paygrid">
+<div class="pay mint"><h3>Shopee<span class="tag">Mingguan</span></h3><p>Dibayar setiap minggu melalui pemindahan bank. Di bawah Rp500,000 masuk ke ShopeePay (terma Indonesia). Saya tidak jumpa jadual Malaysia pada halaman rasmi.</p></div>
+<div class="pay sky"><h3>TikTok Shop<span class="tag">Beberapa hari</span></h3><p>Dibayar selepas pesanan penjual diselesaikan: 1, 3, 8 atau 15 hari selepas penghantaran pada halaman Malaysia, dan sehingga 30 hari jika TikTok menanda akaun atau pesanan.</p></div>
+<div class="pay lav"><h3>YouTube<span class="tag">Beberapa bulan</span></h3><p>Dibayar melalui AdSense 60 hingga 120 hari selepas pembelian, dan dibatalkan jika barang dipulangkan.</p></div>
+<div class="pay gry"><h3>Lazada<span class="tag">Belum disahkan</span></h3><p>Saya tidak jumpa jadual bayaran rasmi. Panduan pihak ketiga kata bulanan, yang saya tidak dapat sahkan.</p></div>
+</div>
+<h2>Tiga peraturan yang merentas platform</h2><div class="rules">
+<div class="rule"><h3>Biarkan setiap pautan asli pada platformnya</h3><p>YouTube kata berkongsi pautan affiliate YouTube di luar YouTube boleh menggantung ciri affiliate anda. TikTok Shop melarang pautan dan nama akaun yang membawa penonton keluar platform dalam kandungannya.</p></div>
+<div class="rule"><h3>Satu pasaran bagi satu kandungan</h3><p>Terma Shopee Indonesia kata kandungan tidak boleh membawa pautan ke platform e-dagang lain. Pilih satu pasaran bagi setiap hantaran.</p></div>
+<div class="rule"><h3>Daftarkan setiap akaun yang membawa pautan</h3><p>Terma Indonesia menganggap pautan pada akaun yang tidak dilaporkan kepada Shopee sebagai pelanggaran. Malaysia meminta akaun awam yang disahkan semasa pendaftaran. Facebook mesti Page, bukan profil peribadi.</p></div>
+</div>
+<h2>Satu perincian Shopee: pesanan tidak langsung</h2><p>Jika pembeli klik pautan anda tetapi membeli barang lain, itu pesanan tidak langsung. Halaman penjual Shopee kata komisen yang dibiayai penjual untuk pesanan tidak langsung ialah separuh daripada kadar yang ditetapkan penjual. Di Malaysia ia 50% sejak 24 Mei 2026, naik daripada 30%. Dashboard anda menunjukkan pecahan langsung dan tidak langsung, dan itulah angka yang patut dipercayai.</p>
+<h2>Apa yang masih belum disahkan</h2><div class="unk"><ul><li>Lazada di Instagram: laporan kata ia akan menyusul, dan saya tidak jumpa tanda ia sudah aktif.</li><li>Lazada di YouTube: tiada apa dijumpai.</li><li>Threads, X, Pinterest dan WhatsApp sebagai program rasmi: tiada dijumpai.</li><li>Sama ada pautan Lazada yang ditampal ke Add products Instagram berfungsi: Instagram kata produk mesti ada dalam katalog komers Meta.</li><li>Jadual bayaran Shopee Malaysia dan Lazada pada halaman rasmi.</li></ul></div>
+<h2>Apa yang saya akan buat</h2><p class="own">Yang berikut ialah analisis saya sendiri, bukan dapatan daripada sumber.</p><div class="recs">
+<div class="rec mint"><h3>Lukis peta anda sendiri</h3><p>Senaraikan setiap platform tempat anda siarkan dan pasaran yang dituju oleh setiap pautan. Tandakan asli atau biasa.</p><p class="ms"><b>Ukuran:</b> setiap platform dalam senarai ada satu pasaran di sebelahnya.</p></div>
+<div class="rec sky"><h3>Uji penanda asli berbanding pautan biasa</h3><p>Jika penanda asli ada, siarkan satu kandungan dengan penanda dan satu lagi yang serupa dengan pautan biasa, dua minggu setiap satu. Bandingkan pesanan dan komisen bagi setiap hantaran.</p><p class="ms"><b>Ukuran:</b> komisen bagi setiap hantaran, penanda berbanding pautan biasa.</p></div>
+<div class="rec lav"><h3>Satu pasaran bagi satu hantaran</h3><p>Jangan campur pautan dua pasaran dalam satu hantaran atau video.</p><p class="ms"><b>Ukuran:</b> tiada hantaran dengan pautan ke dua pasaran.</p></div>
+<div class="rec mint"><h3>Rancang tunai ikut laluan</h3><p>Tulis tarikh bayaran yang dijangka bagi setiap laluan. Jangan rancang wang YouTube seperti wang Shopee.</p><p class="ms"><b>Ukuran:</b> kalendar dengan satu tarikh bayaran bagi setiap laluan.</p></div>
+<div class="rec sky"><h3>Simpan daftar akaun</h3><p>Simpan senarai akaun yang membawa pautan Shopee dan semak setiap satu berdaftar dalam Shopee Affiliate.</p><p class="ms"><b>Ukuran:</b> tiada akaun membawa pautan tanpa didaftarkan.</p></div>
+<div class="rec lav"><h3>Semak semula perkara yang belum pasti setiap bulan</h3><p>Lazada di Instagram mungkin dilancarkan. Semak senarai belum disahkan sebulan sekali dan tarikhkan nota anda.</p><p class="ms"><b>Ukuran:</b> satu nota bertarikh setiap bulan.</p></div>
+</div>
+<section class="check"><h2>Simpan ini: semak sebelum anda menambah platform baharu</h2><ul>
+<li><input type="checkbox" id="bm-c0"><label for="bm-c0">Platform ini akan dipautkan ke pasaran mana, dan pautannya asli atau biasa?</label></li>
+<li><input type="checkbox" id="bm-c1"><label for="bm-c1">Akaun ini awam, dan sudah didaftarkan dalam senarai Shopee Affiliate saya?</label></li>
+<li><input type="checkbox" id="bm-c2"><label for="bm-c2">Hantaran ini hanya membawa pautan ke satu pasaran?</label></li>
+<li><input type="checkbox" id="bm-c3"><label for="bm-c3">Saya tahu berapa cepat saya dibayar melalui laluan ini?</label></li>
+<li><input type="checkbox" id="bm-c4"><label for="bm-c4">Adakah penanda asli lebih baik daripada pautan biasa di sini? Ada ujian dirancang?</label></li>
+<li><input type="checkbox" id="bm-c5"><label for="bm-c5">Saya sudah semak senarai belum disahkan bulan ini?</label></li>
+</ul></section>
+<div class="bio"><span class="av">RA</span><p>Reka Amorra menulis tentang kerja affiliate di Malaysia dan Indonesia.</p></div>
+<p class="disc">Ini ialah pandangan dan analisis peribadi saya. Ia tidak mewakili mana-mana organisasi. Tulisan ini tidak berkaitan dengan Shopee, Lazada, TikTok, Meta, YouTube atau mana-mana platform yang disebut. Peraturan dan angka diambil daripada halaman awam yang disenaraikan di bawah dan boleh berubah, jadi semak akaun anda sendiri. Tiada apa di sini yang merupakan nasihat kewangan, cukai atau undang-undang.</p>
+<details class="srcs"><summary>Sumber</summary><p>Semua halaman ialah halaman awam. Saya membacanya pada November 2026. Beberapa halaman sudah berbulan umurnya, dan sebahagian butiran Lazada datang daripada panduan pihak ketiga, jadi versi terkini mungkin berbeza.</p><ol>
+<li><a href="https://help.shopee.com.my/portal/10/article/205759-How-to-Sign-Up-for-the-Shopee-Affiliate-Program" target="_blank" rel="noopener">Shopee Help Center Malaysia, How to Sign Up for the Shopee Affiliate Program (updated 11 September 2026)</a></li>
+<li><a href="https://help.shopee.com.my/portal/10/article/206088-How-to-Join-the-Instagram-Affiliate-Partnerships-Program" target="_blank" rel="noopener">Shopee Help Center Malaysia, How to Join the Instagram Affiliate Partnerships Program (updated 29 October 2026)</a></li>
+<li><a href="https://help.shopee.sg/portal/10/article/208269?previousPage=other%20articles" target="_blank" rel="noopener">Shopee Help Center Singapore, Meta Cross-Linking Initiative FAQ</a></li>
+<li><a href="https://help.shopee.co.id/portal/4/article/71217-Syarat-dan-Ketentuan-Program-Afiliasi-Shopee-untuk-Individu" target="_blank" rel="noopener">Shopee Help Center Indonesia, Syarat dan Ketentuan Program Afiliasi Shopee untuk Individu (updated 22 October 2026)</a></li>
+<li><a href="https://seller.shopee.com.my/edu/article/26669" target="_blank" rel="noopener">Shopee Seller Education Malaysia, Affiliate Marketing Solution (AMS) Commission Rules</a></li>
+<li><a href="https://seller.shopee.co.id/edu/article/11241" target="_blank" rel="noopener">Shopee Seller Education Indonesia, Cara Mengakses Affiliate Marketing Shopee</a></li>
+<li><a href="https://seller-my.tiktok.com/university/essay?knowledge_id=10008404" target="_blank" rel="noopener">TikTok Shop Seller University Malaysia, TikTok Shop Content Policy</a></li>
+<li><a href="https://seller-my.tiktok.com/university/essay?knowledge_id=6295179426662160" target="_blank" rel="noopener">TikTok Shop Seller University Malaysia, Payment Settlement</a></li>
+<li><a href="https://support.google.com/youtube/answer/13376398" target="_blank" rel="noopener">YouTube Help, YouTube Shopping affiliate program overview and eligibility</a></li>
+<li><a href="https://creators.instagram.com/blog/new-ways-to-earn-making-reels-shoppable?" target="_blank" rel="noopener">Instagram for Creators, “New Ways to Earn: Making Reels Shoppable”, 24 March 2026</a></li>
+<li><a href="https://www.campaignindonesia.id/en/article/shopee-dan-meta-perluas-afiliasi-ke-instagram/1963713" target="_blank" rel="noopener">Campaign Indonesia, Aulia Masna, “Shopee and Meta Expand Their Partnership to Instagram”, 6 July 2026</a></li>
+<li><a href="https://sg.finance.yahoo.com/news/lazada-joins-metas-affiliate-partnerships-020000387.html" target="_blank" rel="noopener">Lazada press release via Yahoo Finance, “Lazada Joins Meta’s Affiliate Partnerships Programme”, 8 July 2026</a></li>
+<li><a href="https://www.marketing-interactive.com/lazada-deepens-creator-commerce-push-through-meta-affiliate-partnership" target="_blank" rel="noopener">Marketing-Interactive, “Lazada deepens creator commerce push through Meta affiliate partnership”</a></li>
+<li><a href="https://aws1.campaignasia.com/article/youtube-and-shopee-are-redefining-creator-commerce-in-southeast-asia/503660" target="_blank" rel="noopener">Campaign Asia, “YouTube and Shopee are redefining creator commerce in Southeast Asia”</a></li>
+<li><a href="https://www.bernama.com/en/news.php/?id=2383633" target="_blank" rel="noopener">Bernama, LazAffiliates Malaysia (January 2025, older)</a></li>
+<li><a href="https://involve.asia/blog/lazada-malaysia-affiliate-program/" target="_blank" rel="noopener">Involve Asia, Lazada Malaysia affiliate guide (third-party guide)</a></li>
+</ol></details>
+<div class="btnrow bottom"><a class="li-btn" target="_blank" rel="noopener">Komen di LinkedIn</a></div>
+<footer>© 2026 Reka Amorra, Research brief</footer>
+</article>
+<article class="lang" id="lang-id" lang="id" hidden>
+<div class="btnrow"><a class="li-btn" target="_blank" rel="noopener">Komentar di LinkedIn</a></div>
+<header class="mast">
+<p class="kicker">Dasar-dasar affiliate untuk Malaysia dan Indonesia</p>
+<h1>Marketplace mana yang terhubung ke platform sosial mana di Asia Tenggara, dan artinya buat kamu</h1>
+<p class="stand">Peta bagaimana Shopee, Lazada, dan TikTok Shop terhubung dengan Instagram, Facebook, YouTube, TikTok, dan platform lain, lengkap dengan aturan dan kecepatan pembayaran dari halaman resmi.</p>
+<p class="by"><b>Reka Amorra</b><span>7 Nov 2026</span><span>7 menit baca</span></p>
+</header>
+<section class="tldr"><h2>Singkatnya</h2><ul><li>Penandaan asli hanya ada di sebagian jalur: Shopee dengan Instagram, Facebook, dan YouTube; Lazada dengan Facebook; TikTok Shop dengan TikTok. Sisanya link biasa.</li><li>Setiap tautan asli tetap milik platformnya. YouTube bilang membagikan link affiliate YouTube di luar YouTube bisa menangguhkan fitur affiliate-mu. Kebijakan TikTok Shop melarang link di luar platform dalam kontennya.</li><li>Kecepatan pembayaran sangat beda. Shopee membayar tiap minggu (ketentuan Indonesia). TikTok Shop mengikuti penyelesaian penjual, 1 sampai 15 hari setelah pesanan tiba di halaman Malaysia, lebih lama kalau ditandai. YouTube membayar 60 sampai 120 hari setelah pembelian.</li><li>Daftarkan setiap akun tempat kamu memasang link Shopee. Ketentuan Indonesia menganggap akun yang tidak dilaporkan sebagai pelanggaran.</li><li>Ada yang belum dikonfirmasi: Lazada di Instagram, Lazada di YouTube, dan Threads, X, Pinterest, atau WhatsApp sebagai program resmi.</li></ul></section>
+<p>Seorang affiliate di Malaysia atau Indonesia bisa posting di Instagram, Facebook, YouTube, TikTok, dan Threads, dan mempromosikan Shopee, Lazada, dan TikTok Shop. Tiga marketplace dan lima jenis kanal menghasilkan 15 kemungkinan hubungan.</p>
+<p>Sebagian hubungan itu menyatu di platform. Sebagian hanya link biasa. Sebagian tidak diperbolehkan. Peta di bawah memilah ke-15-nya.</p>
+<p>Saya membaca halaman bantuan resmi kalau ada dan berita peluncuran. Kalau hanya menemukan panduan pihak ketiga, saya sebutkan.</p>
+<div class="tiles"><div class="tile mint"><strong>5</strong><span>hubungan asli, menyatu di platform</span></div><div class="tile sky"><strong>4</strong><span>link biasa, boleh dengan hati-hati</span></div><div class="tile lav"><strong>4</strong><span>link dilarang atau berisiko</span></div><div class="tile lav"><strong>2</strong><span>hubungan yang tidak bisa saya konfirmasi</span></div></div>
+<h2>Peta: ketuk satu platform</h2>
+<div class="mapbox">
+<svg id="id-svg" viewBox="0 0 680 352" role="img" aria-label="Peta hubungan antara marketplace dan platform sosial">
+<g id="id-edges"></g>
+<g class="nd mk" data-k="m:shopee" tabindex="0" role="button" aria-label="Shopee"><rect x="20" y="12" width="190" height="52" rx="12"/><text x="115" y="38" text-anchor="middle" dominant-baseline="central">Shopee</text></g>
+<g class="nd mk" data-k="m:lazada" tabindex="0" role="button" aria-label="Lazada"><rect x="245" y="12" width="190" height="52" rx="12"/><text x="340" y="38" text-anchor="middle" dominant-baseline="central">Lazada</text></g>
+<g class="nd mk" data-k="m:tts" tabindex="0" role="button" aria-label="TikTok Shop"><rect x="470" y="12" width="190" height="52" rx="12"/><text x="565" y="38" text-anchor="middle" dominant-baseline="central">TikTok Shop</text></g>
+<g class="nd sc" data-k="s:ig" tabindex="0" role="button" aria-label="Instagram"><rect x="10" y="288" width="124" height="52" rx="12"/><text x="72" y="314" text-anchor="middle" dominant-baseline="central">Instagram</text></g>
+<g class="nd sc" data-k="s:fb" tabindex="0" role="button" aria-label="Facebook"><rect x="144" y="288" width="124" height="52" rx="12"/><text x="206" y="314" text-anchor="middle" dominant-baseline="central">Facebook</text></g>
+<g class="nd sc" data-k="s:yt" tabindex="0" role="button" aria-label="YouTube"><rect x="278" y="288" width="124" height="52" rx="12"/><text x="340" y="314" text-anchor="middle" dominant-baseline="central">YouTube</text></g>
+<g class="nd sc" data-k="s:tt" tabindex="0" role="button" aria-label="TikTok"><rect x="412" y="288" width="124" height="52" rx="12"/><text x="474" y="314" text-anchor="middle" dominant-baseline="central">TikTok</text></g>
+<g class="nd sc" data-k="s:ot" tabindex="0" role="button" aria-label="Lainnya"><rect x="546" y="288" width="124" height="52" rx="12"/><text x="608" y="314" text-anchor="middle" dominant-baseline="central">Lainnya</text></g>
+</svg>
+<div class="legend"><span><svg viewBox="0 0 32 8" aria-hidden="true"><line x1="1" y1="4" x2="31" y2="4" stroke="#1b7f5a" stroke-width="3.2" stroke-linecap="round"/></svg>Penandaan asli</span><span><svg viewBox="0 0 32 8" aria-hidden="true"><line x1="1" y1="4" x2="31" y2="4" stroke="#3b82c4" stroke-width="2.4" stroke-dasharray="8 6"/></svg>Link biasa saja</span><span><svg viewBox="0 0 32 8" aria-hidden="true"><line x1="1" y1="4" x2="31" y2="4" stroke="#b3261e" stroke-width="2.4" stroke-dasharray="3 7" stroke-linecap="round"/></svg>Dilarang atau berisiko</span><span><svg viewBox="0 0 32 8" aria-hidden="true"><line x1="1" y1="4" x2="31" y2="4" stroke="#8a93a3" stroke-width="1.6" stroke-dasharray="4 5"/></svg>Belum dikonfirmasi</span></div>
+<div class="mappanel" id="id-panel" aria-live="polite"><p class="hint">Ketuk satu platform untuk melihat link-nya saja.</p></div>
+</div>
+<h2>Secepat apa tiap jalur membayar</h2><div class="paygrid">
+<div class="pay mint"><h3>Shopee<span class="tag">Mingguan</span></h3><p>Dibayar tiap minggu lewat transfer bank. Di bawah Rp500.000 masuk ke ShopeePay (ketentuan Indonesia). Saya tidak menemukan jadwal Malaysia di halaman resmi.</p></div>
+<div class="pay sky"><h3>TikTok Shop<span class="tag">Hitungan hari</span></h3><p>Dibayar setelah pesanan penjual diselesaikan: 1, 3, 8, atau 15 hari setelah pesanan tiba di halaman Malaysia, dan sampai 30 hari kalau TikTok menandai akun atau pesanan.</p></div>
+<div class="pay lav"><h3>YouTube<span class="tag">Hitungan bulan</span></h3><p>Dibayar lewat AdSense 60 sampai 120 hari setelah pembelian, dan dibatalkan kalau barang dikembalikan.</p></div>
+<div class="pay gry"><h3>Lazada<span class="tag">Belum dikonfirmasi</span></h3><p>Saya tidak menemukan jadwal pembayaran resmi. Panduan pihak ketiga bilang bulanan, yang tidak bisa saya verifikasi.</p></div>
+</div>
+<h2>Tiga aturan yang berlaku lintas platform</h2><div class="rules">
+<div class="rule"><h3>Biarkan tiap tautan asli di platformnya</h3><p>YouTube bilang membagikan link affiliate YouTube di luar YouTube bisa menangguhkan fitur affiliate-mu. TikTok Shop melarang link dan nama akun yang mengarahkan penonton keluar platform di kontennya.</p></div>
+<div class="rule"><h3>Satu marketplace untuk satu konten</h3><p>Ketentuan Shopee Indonesia bilang konten tidak boleh memuat link ke platform e-commerce lain. Pilih satu marketplace untuk tiap postingan.</p></div>
+<div class="rule"><h3>Daftarkan setiap akun yang membawa link</h3><p>Ketentuan Indonesia menganggap link di akun yang tidak dilaporkan ke Shopee sebagai pelanggaran. Malaysia meminta akun publik yang diverifikasi saat daftar. Facebook harus berupa Halaman, bukan profil pribadi.</p></div>
+</div>
+<h2>Satu detail Shopee: pesanan tidak langsung</h2><p>Kalau pembeli klik link kamu tetapi membeli barang lain, itu pesanan tidak langsung. Halaman penjual Shopee menyebut komisi yang dibiayai penjual untuk pesanan tidak langsung adalah setengah dari persentase yang ditetapkan penjual. Di Malaysia itu 50% sejak 24 Mei 2026, naik dari 30%. Dashboard kamu menampilkan pembagian langsung dan tidak langsung, dan itulah angka yang patut dipercaya.</p>
+<h2>Yang masih belum dikonfirmasi</h2><div class="unk"><ul><li>Lazada di Instagram: laporan bilang akan menyusul, dan saya tidak menemukan tanda bahwa itu sudah aktif.</li><li>Lazada di YouTube: tidak ditemukan apa pun.</li><li>Threads, X, Pinterest, dan WhatsApp sebagai program resmi: tidak ditemukan.</li><li>Apakah link Lazada yang ditempel ke Add products Instagram berfungsi: Instagram bilang produk harus ada di katalog komersial Meta.</li><li>Jadwal pembayaran Shopee Malaysia dan Lazada di halaman resmi.</li></ul></div>
+<h2>Yang akan saya lakukan</h2><p class="own">Berikut ini analisis saya sendiri, bukan temuan dari sumber.</p><div class="recs">
+<div class="rec mint"><h3>Gambar peta kamu sendiri</h3><p>Daftar semua platform tempat kamu posting dan marketplace yang dituju tiap link. Tandai asli atau biasa.</p><p class="ms"><b>Ukuran:</b> tiap platform di daftarmu punya satu marketplace di sebelahnya.</p></div>
+<div class="rec sky"><h3>Uji penanda asli melawan link biasa</h3><p>Kalau penanda asli ada, posting satu konten dengan penanda dan satu konten serupa dengan link biasa, masing-masing dua minggu. Bandingkan pesanan dan komisi per postingan.</p><p class="ms"><b>Ukuran:</b> komisi per postingan, penanda dibanding link biasa.</p></div>
+<div class="rec lav"><h3>Satu marketplace per postingan</h3><p>Jangan campur link dua marketplace dalam satu postingan atau video.</p><p class="ms"><b>Ukuran:</b> tidak ada postingan dengan link ke dua marketplace.</p></div>
+<div class="rec mint"><h3>Rencanakan uang tunai per jalur</h3><p>Catat perkiraan tanggal pembayaran tiap jalur. Jangan merencanakan uang YouTube seperti uang Shopee.</p><p class="ms"><b>Ukuran:</b> kalender dengan satu tanggal pembayaran per jalur.</p></div>
+<div class="rec sky"><h3>Simpan daftar akun</h3><p>Simpan daftar akun yang membawa link Shopee dan cek tiap akun sudah terdaftar di Shopee Affiliate.</p><p class="ms"><b>Ukuran:</b> tidak ada akun membawa link tanpa terdaftar.</p></div>
+<div class="rec lav"><h3>Cek ulang yang belum pasti tiap bulan</h3><p>Lazada di Instagram bisa saja diluncurkan. Cek daftar belum dikonfirmasi sebulan sekali dan beri tanggal pada catatanmu.</p><p class="ms"><b>Ukuran:</b> satu catatan bertanggal tiap bulan.</p></div>
+</div>
+<section class="check"><h2>Simpan ini: cek sebelum menambah platform baru</h2><ul>
+<li><input type="checkbox" id="id-c0"><label for="id-c0">Platform ini akan terhubung ke marketplace mana, dan link-nya asli atau biasa?</label></li>
+<li><input type="checkbox" id="id-c1"><label for="id-c1">Akun ini publik, dan sudah terdaftar di daftar Shopee Affiliate saya?</label></li>
+<li><input type="checkbox" id="id-c2"><label for="id-c2">Postingan ini hanya membawa link ke satu marketplace?</label></li>
+<li><input type="checkbox" id="id-c3"><label for="id-c3">Saya tahu secepat apa saya dibayar lewat jalur ini?</label></li>
+<li><input type="checkbox" id="id-c4"><label for="id-c4">Apakah penanda asli lebih baik daripada link biasa di sini? Ada uji coba yang direncanakan?</label></li>
+<li><input type="checkbox" id="id-c5"><label for="id-c5">Saya sudah cek daftar belum dikonfirmasi bulan ini?</label></li>
+</ul></section>
+<div class="bio"><span class="av">RA</span><p>Reka Amorra menulis tentang kerja affiliate di Malaysia dan Indonesia.</p></div>
+<p class="disc">Ini adalah pandangan dan analisis pribadi saya. Isinya tidak mewakili organisasi mana pun. Tulisan ini tidak berafiliasi dengan Shopee, Lazada, TikTok, Meta, YouTube, atau platform mana pun yang disebut. Aturan dan angka diambil dari halaman publik yang tercantum di bawah dan bisa berubah, jadi cek akun kamu sendiri. Tidak ada isi di sini yang merupakan nasihat keuangan, pajak, atau hukum.</p>
+<details class="srcs"><summary>Sumber</summary><p>Semua halaman bersifat publik. Saya membacanya pada November 2026. Beberapa halaman sudah berbulan-bulan umurnya, dan sebagian detail Lazada berasal dari panduan pihak ketiga, jadi versi terbarunya mungkin berbeda.</p><ol>
+<li><a href="https://help.shopee.com.my/portal/10/article/205759-How-to-Sign-Up-for-the-Shopee-Affiliate-Program" target="_blank" rel="noopener">Shopee Help Center Malaysia, How to Sign Up for the Shopee Affiliate Program (updated 11 September 2026)</a></li>
+<li><a href="https://help.shopee.com.my/portal/10/article/206088-How-to-Join-the-Instagram-Affiliate-Partnerships-Program" target="_blank" rel="noopener">Shopee Help Center Malaysia, How to Join the Instagram Affiliate Partnerships Program (updated 29 October 2026)</a></li>
+<li><a href="https://help.shopee.sg/portal/10/article/208269?previousPage=other%20articles" target="_blank" rel="noopener">Shopee Help Center Singapore, Meta Cross-Linking Initiative FAQ</a></li>
+<li><a href="https://help.shopee.co.id/portal/4/article/71217-Syarat-dan-Ketentuan-Program-Afiliasi-Shopee-untuk-Individu" target="_blank" rel="noopener">Shopee Help Center Indonesia, Syarat dan Ketentuan Program Afiliasi Shopee untuk Individu (updated 22 October 2026)</a></li>
+<li><a href="https://seller.shopee.com.my/edu/article/26669" target="_blank" rel="noopener">Shopee Seller Education Malaysia, Affiliate Marketing Solution (AMS) Commission Rules</a></li>
+<li><a href="https://seller.shopee.co.id/edu/article/11241" target="_blank" rel="noopener">Shopee Seller Education Indonesia, Cara Mengakses Affiliate Marketing Shopee</a></li>
+<li><a href="https://seller-my.tiktok.com/university/essay?knowledge_id=10008404" target="_blank" rel="noopener">TikTok Shop Seller University Malaysia, TikTok Shop Content Policy</a></li>
+<li><a href="https://seller-my.tiktok.com/university/essay?knowledge_id=6295179426662160" target="_blank" rel="noopener">TikTok Shop Seller University Malaysia, Payment Settlement</a></li>
+<li><a href="https://support.google.com/youtube/answer/13376398" target="_blank" rel="noopener">YouTube Help, YouTube Shopping affiliate program overview and eligibility</a></li>
+<li><a href="https://creators.instagram.com/blog/new-ways-to-earn-making-reels-shoppable?" target="_blank" rel="noopener">Instagram for Creators, “New Ways to Earn: Making Reels Shoppable”, 24 March 2026</a></li>
+<li><a href="https://www.campaignindonesia.id/en/article/shopee-dan-meta-perluas-afiliasi-ke-instagram/1963713" target="_blank" rel="noopener">Campaign Indonesia, Aulia Masna, “Shopee and Meta Expand Their Partnership to Instagram”, 6 July 2026</a></li>
+<li><a href="https://sg.finance.yahoo.com/news/lazada-joins-metas-affiliate-partnerships-020000387.html" target="_blank" rel="noopener">Lazada press release via Yahoo Finance, “Lazada Joins Meta’s Affiliate Partnerships Programme”, 8 July 2026</a></li>
+<li><a href="https://www.marketing-interactive.com/lazada-deepens-creator-commerce-push-through-meta-affiliate-partnership" target="_blank" rel="noopener">Marketing-Interactive, “Lazada deepens creator commerce push through Meta affiliate partnership”</a></li>
+<li><a href="https://aws1.campaignasia.com/article/youtube-and-shopee-are-redefining-creator-commerce-in-southeast-asia/503660" target="_blank" rel="noopener">Campaign Asia, “YouTube and Shopee are redefining creator commerce in Southeast Asia”</a></li>
+<li><a href="https://www.bernama.com/en/news.php/?id=2383633" target="_blank" rel="noopener">Bernama, LazAffiliates Malaysia (January 2025, older)</a></li>
+<li><a href="https://involve.asia/blog/lazada-malaysia-affiliate-program/" target="_blank" rel="noopener">Involve Asia, Lazada Malaysia affiliate guide (third-party guide)</a></li>
+</ol></details>
+<div class="btnrow bottom"><a class="li-btn" target="_blank" rel="noopener">Komentar di LinkedIn</a></div>
+<footer>© 2026 Reka Amorra, Research brief</footer>
+</article>
+<article class="lang" id="lang-zh" lang="zh-Hans" hidden>
+<div class="btnrow"><a class="li-btn" target="_blank" rel="noopener">在 LinkedIn 评论</a></div>
+<header class="mast">
+<p class="kicker">马来西亚和印尼的联盟营销基础</p>
+<h1>东南亚哪个电商平台能连接哪个社交平台，以及每条连接对你意味着什么</h1>
+<p class="stand">一张地图，看 Shopee、Lazada 和 TikTok Shop 怎样连接 Instagram、Facebook、YouTube、TikTok 和其他平台，附上官方页面里的规则和付款速度。</p>
+<p class="by"><b>Reka Amorra</b><span>2026 年 11 月 7 日</span><span>阅读约 7 分钟</span></p>
+</header>
+<section class="tldr"><h2>先看结论</h2><ul><li>原生标记只存在于部分路线：Shopee 对应 Instagram、Facebook 和 YouTube；Lazada 对应 Facebook；TikTok Shop 对应 TikTok。其余都是普通链接。</li><li>每条原生链接都留在自己的平台上。YouTube 说，把 YouTube 联盟链接分享到 YouTube 以外，可能会暂停你的联盟功能。TikTok Shop 的政策禁止在它的内容里放平台外的链接。</li><li>付款速度差别很大。Shopee 每周付款（印尼条款）。TikTok Shop 跟着卖家的结算周期，马来西亚页面写签收后 1 至 15 天，被标记则更久。YouTube 在购买后 60 至 120 天付款。</li><li>把每个发 Shopee 链接的账号都登记。印尼条款把没有报备的账号当作违规。</li><li>有些还没确认：Lazada 在 Instagram、Lazada 在 YouTube，以及 Threads、X、Pinterest 或 WhatsApp 作为官方计划。</li></ul></section>
+<p>马来西亚或印尼的联盟创作者可以在 Instagram、Facebook、YouTube、TikTok 和 Threads 上发布，推广 Shopee、Lazada 和 TikTok Shop。三个电商平台加五类渠道，共有 15 种可能的连接。</p>
+<p>有些连接是平台内置的，有些只是普通链接，有些是不允许的。下面的地图把 15 种都分好类。</p>
+<p>有官方帮助页面的，我读官方页面；产品发布则看新闻报道。只找到第三方指南的地方，我会说明。</p>
+<div class="tiles"><div class="tile mint"><strong>5</strong><span>条原生连接，平台内置</span></div><div class="tile sky"><strong>4</strong><span>条普通链接，小心使用即可</span></div><div class="tile lav"><strong>4</strong><span>条被禁或有风险的连接</span></div><div class="tile lav"><strong>2</strong><span>条我无法确认的连接</span></div></div>
+<h2>地图：点一个平台</h2>
+<div class="mapbox">
+<svg id="zh-svg" viewBox="0 0 680 352" role="img" aria-label="电商平台与社交平台连接地图">
+<g id="zh-edges"></g>
+<g class="nd mk" data-k="m:shopee" tabindex="0" role="button" aria-label="Shopee"><rect x="20" y="12" width="190" height="52" rx="12"/><text x="115" y="38" text-anchor="middle" dominant-baseline="central">Shopee</text></g>
+<g class="nd mk" data-k="m:lazada" tabindex="0" role="button" aria-label="Lazada"><rect x="245" y="12" width="190" height="52" rx="12"/><text x="340" y="38" text-anchor="middle" dominant-baseline="central">Lazada</text></g>
+<g class="nd mk" data-k="m:tts" tabindex="0" role="button" aria-label="TikTok Shop"><rect x="470" y="12" width="190" height="52" rx="12"/><text x="565" y="38" text-anchor="middle" dominant-baseline="central">TikTok Shop</text></g>
+<g class="nd sc" data-k="s:ig" tabindex="0" role="button" aria-label="Instagram"><rect x="10" y="288" width="124" height="52" rx="12"/><text x="72" y="314" text-anchor="middle" dominant-baseline="central">Instagram</text></g>
+<g class="nd sc" data-k="s:fb" tabindex="0" role="button" aria-label="Facebook"><rect x="144" y="288" width="124" height="52" rx="12"/><text x="206" y="314" text-anchor="middle" dominant-baseline="central">Facebook</text></g>
+<g class="nd sc" data-k="s:yt" tabindex="0" role="button" aria-label="YouTube"><rect x="278" y="288" width="124" height="52" rx="12"/><text x="340" y="314" text-anchor="middle" dominant-baseline="central">YouTube</text></g>
+<g class="nd sc" data-k="s:tt" tabindex="0" role="button" aria-label="TikTok"><rect x="412" y="288" width="124" height="52" rx="12"/><text x="474" y="314" text-anchor="middle" dominant-baseline="central">TikTok</text></g>
+<g class="nd sc" data-k="s:ot" tabindex="0" role="button" aria-label="其他"><rect x="546" y="288" width="124" height="52" rx="12"/><text x="608" y="314" text-anchor="middle" dominant-baseline="central">其他</text></g>
+</svg>
+<div class="legend"><span><svg viewBox="0 0 32 8" aria-hidden="true"><line x1="1" y1="4" x2="31" y2="4" stroke="#1b7f5a" stroke-width="3.2" stroke-linecap="round"/></svg>原生标记</span><span><svg viewBox="0 0 32 8" aria-hidden="true"><line x1="1" y1="4" x2="31" y2="4" stroke="#3b82c4" stroke-width="2.4" stroke-dasharray="8 6"/></svg>仅普通链接</span><span><svg viewBox="0 0 32 8" aria-hidden="true"><line x1="1" y1="4" x2="31" y2="4" stroke="#b3261e" stroke-width="2.4" stroke-dasharray="3 7" stroke-linecap="round"/></svg>被禁或有风险</span><span><svg viewBox="0 0 32 8" aria-hidden="true"><line x1="1" y1="4" x2="31" y2="4" stroke="#8a93a3" stroke-width="1.6" stroke-dasharray="4 5"/></svg>未确认</span></div>
+<div class="mappanel" id="zh-panel" aria-live="polite"><p class="hint">点一个平台，只看它的连接。</p></div>
+</div>
+<h2>每条路线多快付款</h2><div class="paygrid">
+<div class="pay mint"><h3>Shopee<span class="tag">每周</span></h3><p>每周通过银行转账付款。低于 Rp500,000 的转入 ShopeePay（印尼条款）。我没有在官方页面找到马来西亚的付款日程。</p></div>
+<div class="pay sky"><h3>TikTok Shop<span class="tag">几天</span></h3><p>卖家的订单结算后付款：马来西亚页面写签收后 1、3、8 或 15 天，如果 TikTok 标记账号或订单，最多 30 天。</p></div>
+<div class="pay lav"><h3>YouTube<span class="tag">几个月</span></h3><p>购买后 60 至 120 天通过 AdSense 付款，如果商品被退回会被撤销。</p></div>
+<div class="pay gry"><h3>Lazada<span class="tag">未确认</span></h3><p>我没有找到官方的付款日程。第三方指南说是每月，我无法核实。</p></div>
+</div>
+<h2>三条跨平台的规则</h2><div class="rules">
+<div class="rule"><h3>让每条原生链接留在自己的平台上</h3><p>YouTube 说，把 YouTube 联盟链接分享到 YouTube 以外，可能会暂停你的联盟功能。TikTok Shop 禁止在它的内容里放把观众带出平台的链接和账号名。</p></div>
+<div class="rule"><h3>一条内容只放一个电商平台</h3><p>Shopee 印尼条款说，内容不能带其他电商平台的链接。每个帖子选一个电商平台。</p></div>
+<div class="rule"><h3>登记每个带链接的账号</h3><p>印尼条款把没有向 Shopee 报备的账号上的链接当作违规。马来西亚要求注册时用已验证的公开账号。Facebook 必须是主页，不能是个人档案。</p></div>
+</div>
+<h2>Shopee 的一个细节：间接订单</h2><p>如果买家点了你的链接却买了别的商品，这就是间接订单。Shopee 的卖家页面说，间接订单中由卖家出资的佣金，是卖家所设比例的一半。在马来西亚，从 2026 年 5 月 24 日起是 50%，之前是 30%。你的后台会显示直接和间接订单的拆分，以这个数字为准。</p>
+<h2>还没确认的部分</h2><div class="unk"><ul><li>Lazada 在 Instagram：报道说之后会跟进，我没有找到它已上线的迹象。</li><li>Lazada 在 YouTube：什么都没找到。</li><li>Threads、X、Pinterest 和 WhatsApp 作为官方计划：没找到。</li><li>把 Lazada 链接粘贴到 Instagram 的 Add products 能不能用：Instagram 说商品必须在 Meta 的商品目录里。</li><li>官方页面上 Shopee 马来西亚和 Lazada 的付款日程。</li></ul></div>
+<h2>我会怎么做</h2><p class="own">以下是我自己的分析，不是来源里的结论。</p><div class="recs">
+<div class="rec mint"><h3>画出你自己的地图</h3><p>列出你发布的每个平台，以及每条链接通向哪个电商平台。标明是原生还是普通。</p><p class="ms"><b>衡量：</b> 清单上的每个平台旁边都有一个电商平台。</p></div>
+<div class="rec sky"><h3>拿原生标记和普通链接做对比测试</h3><p>有原生标记的地方，发一条带标记的内容和一条类似的带普通链接的内容，各两周。比较每条帖子的订单和佣金。</p><p class="ms"><b>衡量：</b> 每条帖子的佣金，标记对比普通链接。</p></div>
+<div class="rec lav"><h3>一个帖子只放一个电商平台</h3><p>不要在一个帖子或视频里混放两个电商平台的链接。</p><p class="ms"><b>衡量：</b> 没有帖子同时带两个电商平台的链接。</p></div>
+<div class="rec mint"><h3>按路线规划现金</h3><p>写下每条路线预计的付款日期。不要把 YouTube 的钱当作 Shopee 的钱来规划。</p><p class="ms"><b>衡量：</b> 每条路线都有一个付款日期的日历。</p></div>
+<div class="rec sky"><h3>做一份账号登记表</h3><p>列出所有带 Shopee 链接的账号，并检查每一个都已在 Shopee 联盟登记。</p><p class="ms"><b>衡量：</b> 没有未登记的账号带链接。</p></div>
+<div class="rec lav"><h3>每月重查一次未确认的部分</h3><p>Lazada 在 Instagram 可能会上线。每月看一次未确认清单，并给笔记标上日期。</p><p class="ms"><b>衡量：</b> 每月一条带日期的笔记。</p></div>
+</div>
+<section class="check"><h2>收藏这个：添加新平台之前先检查</h2><ul>
+<li><input type="checkbox" id="zh-c0"><label for="zh-c0">这个平台会连到哪个电商平台，链接是原生的还是普通的？</label></li>
+<li><input type="checkbox" id="zh-c1"><label for="zh-c1">这个账号是公开的，并且已登记在我的 Shopee 联盟清单里了吗？</label></li>
+<li><input type="checkbox" id="zh-c2"><label for="zh-c2">这个帖子只带一个电商平台的链接吗？</label></li>
+<li><input type="checkbox" id="zh-c3"><label for="zh-c3">我知道这条路线多快能收到钱吗？</label></li>
+<li><input type="checkbox" id="zh-c4"><label for="zh-c4">在这里原生标记比普通链接更好吗？我计划好测试了吗？</label></li>
+<li><input type="checkbox" id="zh-c5"><label for="zh-c5">这个月我查过未确认清单了吗？</label></li>
+</ul></section>
+<div class="bio"><span class="av">RA</span><p>Reka Amorra 撰写马来西亚和印尼的联盟营销工作。</p></div>
+<p class="disc">以上是我个人的看法和分析，不代表任何机构。本文与 Shopee、Lazada、TikTok、Meta、YouTube 或文中提到的任何平台没有关联。规则和数字来自下面列出的公开页面，可能会变，请以你自己的账号为准。本文不构成财务、税务或法律建议。</p>
+<details class="srcs"><summary>来源</summary><p>所有页面都是公开的。我在 2026 年 11 月阅读了它们。部分页面已经发布几个月，Lazada 的一些细节来自第三方指南，现行版本可能不同。</p><ol>
+<li><a href="https://help.shopee.com.my/portal/10/article/205759-How-to-Sign-Up-for-the-Shopee-Affiliate-Program" target="_blank" rel="noopener">Shopee Help Center Malaysia, How to Sign Up for the Shopee Affiliate Program (updated 11 September 2026)</a></li>
+<li><a href="https://help.shopee.com.my/portal/10/article/206088-How-to-Join-the-Instagram-Affiliate-Partnerships-Program" target="_blank" rel="noopener">Shopee Help Center Malaysia, How to Join the Instagram Affiliate Partnerships Program (updated 29 October 2026)</a></li>
+<li><a href="https://help.shopee.sg/portal/10/article/208269?previousPage=other%20articles" target="_blank" rel="noopener">Shopee Help Center Singapore, Meta Cross-Linking Initiative FAQ</a></li>
+<li><a href="https://help.shopee.co.id/portal/4/article/71217-Syarat-dan-Ketentuan-Program-Afiliasi-Shopee-untuk-Individu" target="_blank" rel="noopener">Shopee Help Center Indonesia, Syarat dan Ketentuan Program Afiliasi Shopee untuk Individu (updated 22 October 2026)</a></li>
+<li><a href="https://seller.shopee.com.my/edu/article/26669" target="_blank" rel="noopener">Shopee Seller Education Malaysia, Affiliate Marketing Solution (AMS) Commission Rules</a></li>
+<li><a href="https://seller.shopee.co.id/edu/article/11241" target="_blank" rel="noopener">Shopee Seller Education Indonesia, Cara Mengakses Affiliate Marketing Shopee</a></li>
+<li><a href="https://seller-my.tiktok.com/university/essay?knowledge_id=10008404" target="_blank" rel="noopener">TikTok Shop Seller University Malaysia, TikTok Shop Content Policy</a></li>
+<li><a href="https://seller-my.tiktok.com/university/essay?knowledge_id=6295179426662160" target="_blank" rel="noopener">TikTok Shop Seller University Malaysia, Payment Settlement</a></li>
+<li><a href="https://support.google.com/youtube/answer/13376398" target="_blank" rel="noopener">YouTube Help, YouTube Shopping affiliate program overview and eligibility</a></li>
+<li><a href="https://creators.instagram.com/blog/new-ways-to-earn-making-reels-shoppable?" target="_blank" rel="noopener">Instagram for Creators, “New Ways to Earn: Making Reels Shoppable”, 24 March 2026</a></li>
+<li><a href="https://www.campaignindonesia.id/en/article/shopee-dan-meta-perluas-afiliasi-ke-instagram/1963713" target="_blank" rel="noopener">Campaign Indonesia, Aulia Masna, “Shopee and Meta Expand Their Partnership to Instagram”, 6 July 2026</a></li>
+<li><a href="https://sg.finance.yahoo.com/news/lazada-joins-metas-affiliate-partnerships-020000387.html" target="_blank" rel="noopener">Lazada press release via Yahoo Finance, “Lazada Joins Meta’s Affiliate Partnerships Programme”, 8 July 2026</a></li>
+<li><a href="https://www.marketing-interactive.com/lazada-deepens-creator-commerce-push-through-meta-affiliate-partnership" target="_blank" rel="noopener">Marketing-Interactive, “Lazada deepens creator commerce push through Meta affiliate partnership”</a></li>
+<li><a href="https://aws1.campaignasia.com/article/youtube-and-shopee-are-redefining-creator-commerce-in-southeast-asia/503660" target="_blank" rel="noopener">Campaign Asia, “YouTube and Shopee are redefining creator commerce in Southeast Asia”</a></li>
+<li><a href="https://www.bernama.com/en/news.php/?id=2383633" target="_blank" rel="noopener">Bernama, LazAffiliates Malaysia (January 2025, older)</a></li>
+<li><a href="https://involve.asia/blog/lazada-malaysia-affiliate-program/" target="_blank" rel="noopener">Involve Asia, Lazada Malaysia affiliate guide (third-party guide)</a></li>
+</ol></details>
+<div class="btnrow bottom"><a class="li-btn" target="_blank" rel="noopener">在 LinkedIn 评论</a></div>
+<footer>© 2026 Reka Amorra, Research brief</footer>
+</article>
+</main>
+<script>
+(function(){
+  var LINKEDIN_POST_URL = "REPLACE_WITH_LINKEDIN_POST_URL";
+  var url = LINKEDIN_POST_URL.indexOf("REPLACE") === 0 ? "https://www.linkedin.com/" : LINKEDIN_POST_URL;
+  var btns = document.querySelectorAll(".li-btn");
+  for (var i = 0; i < btns.length; i++) { btns[i].setAttribute("href", url); }
+  var langs = ["en","bm","id","zh"];
+  var titles = {"en": "Which marketplace links to which social platform in Southeast Asia, and what each link means for you | Reka Amorra", "bm": "Pasaran mana yang boleh dipautkan ke platform sosial mana di Asia Tenggara, dan maksud setiap pautan kepada anda | Reka Amorra", "id": "Marketplace mana yang terhubung ke platform sosial mana di Asia Tenggara, dan artinya buat kamu | Reka Amorra", "zh": "东南亚哪个电商平台能连接哪个社交平台，以及每条连接对你意味着什么 | Reka Amorra"};
+  var codes = {en:"en", bm:"ms", id:"id", zh:"zh-Hans"};
+  function show(l){
+    if (langs.indexOf(l) < 0) { l = "en"; }
+    for (var i = 0; i < langs.length; i++) {
+      var a = document.getElementById("lang-" + langs[i]);
+      if (a) { a.hidden = (langs[i] !== l); }
+      var b = document.getElementById("t-" + langs[i]);
+      if (b) { b.setAttribute("aria-pressed", langs[i] === l ? "true" : "false"); }
+    }
+    document.documentElement.lang = codes[l];
+    document.title = titles[l];
+    try { history.replaceState(null, "", "#" + l); } catch (e) {}
+  }
+  for (var j = 0; j < langs.length; j++) {
+    (function(l){ var b = document.getElementById("t-" + l); if (b) { b.addEventListener("click", function(){ show(l); window.scrollTo(0,0); }); } })(langs[j]);
+  }
+  window.addEventListener("hashchange", function(){ show(location.hash.replace("#","")); });
+  show(location.hash.replace("#","") || "en");
+})();
+</script>
+<script>
+(function(){
+  var MX={"shopee": 115, "lazada": 340, "tts": 565}, SXX={"ig": 72, "fb": 206, "yt": 340, "tt": 474, "ot": 608}, MN={"shopee": "Shopee", "lazada": "Lazada", "tts": "TikTok Shop"}, ORDER=["ig","fb","yt","tt","ot"];
+  var ST={native:{c:"#1b7f5a",w:3.2,d:""},plain:{c:"#3b82c4",w:2.4,d:"8 6"},bad:{c:"#b3261e",w:2.4,d:"3 7"},unk:{c:"#8a93a3",w:1.6,d:"4 5"}};
+  var BC={native:"#1b7f5a",plain:"#3b82c4",bad:"#b3261e",unk:"#8a93a3"};
+  var DATA={"en": {"hint": "Tap a platform to see only its links.", "conj": "and", "types": {"native": "Native tagging", "plain": "Plain link only", "bad": "Banned or risky", "unk": "Not confirmed"}, "nodes": {"ig": "Instagram", "fb": "Facebook", "yt": "YouTube", "tt": "TikTok", "ot": "Others"}, "edges": [["shopee", "ig", "native", "Native tagging in Reels and Feed since July 2026. Needs a professional or public account, 1,000+ followers and age 18+. Indonesia’s page says the rollout is gradual."], ["shopee", "fb", "native", "Native tagging since October 2025. Link a Facebook Page or professional profile, not a personal profile."], ["shopee", "yt", "native", "YouTube Shopping affiliate, launched with Shopee in Indonesia in 2024 and later in Malaysia and four other markets. Needs the YouTube Partner Programme. Paid 60 to 120 days after purchase."], ["shopee", "tt", "plain", "No native link. Use normal affiliate links, register the TikTok account in Shopee Affiliate, and keep them out of TikTok Shop content."], ["shopee", "ot", "plain", "Normal links on Threads, X, Pinterest, blogs or chat apps. Register the account with Shopee. Threads is not named in the official pages I read."], ["lazada", "fb", "native", "Lazada joined Meta’s Facebook affiliate programme on 8 July 2026 in six markets, including Malaysia and Indonesia. Needs Professional Mode."], ["lazada", "ig", "unk", "Reports say Instagram will follow. I found no confirmation that it is live."], ["lazada", "yt", "unk", "I found no Lazada tie-up with YouTube Shopping in Southeast Asia. Shopee is the reported partner."], ["lazada", "tt", "plain", "Normal affiliate links only. This comes from third-party guides, so treat it as low confidence."], ["lazada", "ot", "plain", "Normal links on any registered channel, through LazAffiliates or the Involve Asia network. Third-party guides, low confidence."], ["tts", "tt", "native", "TikTok Shop affiliate is built into TikTok. Press reports put it in six Southeast Asian markets, with Tokopedia in Indonesia. Payout follows the seller’s settlement period."], ["tts", "ig", "bad", "TikTok Shop’s Malaysia content policy bans content that sends viewers off-platform: links, social handles, QR codes."], ["tts", "fb", "bad", "Same TikTok Shop rule: no off-platform links or handles in TikTok Shop content."], ["tts", "yt", "bad", "Same TikTok Shop rule: no off-platform links or handles in TikTok Shop content."], ["tts", "ot", "bad", "Same TikTok Shop rule: no off-platform links or handles in TikTok Shop content."]]}, "bm": {"hint": "Ketik satu platform untuk lihat pautannya sahaja.", "conj": "dan", "types": {"native": "Penandaan asli", "plain": "Pautan biasa sahaja", "bad": "Dilarang atau berisiko", "unk": "Belum disahkan"}, "nodes": {"ig": "Instagram", "fb": "Facebook", "yt": "YouTube", "tt": "TikTok", "ot": "Lain-lain"}, "edges": [["shopee", "ig", "native", "Penandaan asli dalam Reels dan Feed sejak Julai 2026. Perlu akaun profesional atau awam, 1,000+ pengikut dan umur 18+. Halaman Indonesia kata pelancaran berperingkat."], ["shopee", "fb", "native", "Penandaan asli sejak Oktober 2025. Paut Page Facebook atau profil profesional, bukan profil peribadi."], ["shopee", "yt", "native", "Program affiliate YouTube Shopping, dilancarkan bersama Shopee di Indonesia pada 2024 dan kemudian di Malaysia serta empat pasaran lain. Perlu Program Rakan Kongsi YouTube. Dibayar 60 hingga 120 hari selepas pembelian."], ["shopee", "tt", "plain", "Tiada pautan asli. Guna pautan affiliate biasa, daftarkan akaun TikTok dalam Shopee Affiliate, dan jangan letak dalam kandungan TikTok Shop."], ["shopee", "ot", "plain", "Pautan biasa di Threads, X, Pinterest, blog atau aplikasi sembang. Daftarkan akaun itu dengan Shopee. Threads tidak disebut dalam halaman rasmi yang saya baca."], ["lazada", "fb", "native", "Lazada menyertai program affiliate Facebook Meta pada 8 Julai 2026 di enam pasaran, termasuk Malaysia dan Indonesia. Perlu Professional Mode."], ["lazada", "ig", "unk", "Laporan kata Instagram akan menyusul. Saya tidak jumpa pengesahan bahawa ia sudah aktif."], ["lazada", "yt", "unk", "Saya tidak jumpa kerjasama Lazada dengan YouTube Shopping di Asia Tenggara. Shopee ialah rakan kongsi yang dilaporkan."], ["lazada", "tt", "plain", "Pautan affiliate biasa sahaja. Ini daripada panduan pihak ketiga, jadi keyakinannya rendah."], ["lazada", "ot", "plain", "Pautan biasa pada mana-mana saluran berdaftar, melalui LazAffiliates atau rangkaian Involve Asia. Panduan pihak ketiga, keyakinan rendah."], ["tts", "tt", "native", "Affiliate TikTok Shop terbina dalam TikTok. Laporan akhbar meletakkannya di enam pasaran Asia Tenggara, dengan Tokopedia di Indonesia. Bayaran mengikut tempoh penyelesaian penjual."], ["tts", "ig", "bad", "Dasar kandungan TikTok Shop Malaysia melarang kandungan yang membawa penonton keluar dari platform: pautan, nama akaun sosial, kod QR."], ["tts", "fb", "bad", "Peraturan TikTok Shop yang sama: tiada pautan atau nama akaun luar platform dalam kandungan TikTok Shop."], ["tts", "yt", "bad", "Peraturan TikTok Shop yang sama: tiada pautan atau nama akaun luar platform dalam kandungan TikTok Shop."], ["tts", "ot", "bad", "Peraturan TikTok Shop yang sama: tiada pautan atau nama akaun luar platform dalam kandungan TikTok Shop."]]}, "id": {"hint": "Ketuk satu platform untuk melihat link-nya saja.", "conj": "dan", "types": {"native": "Penandaan asli", "plain": "Link biasa saja", "bad": "Dilarang atau berisiko", "unk": "Belum dikonfirmasi"}, "nodes": {"ig": "Instagram", "fb": "Facebook", "yt": "YouTube", "tt": "TikTok", "ot": "Lainnya"}, "edges": [["shopee", "ig", "native", "Penandaan asli di Reels dan Feed sejak Juli 2026. Perlu akun profesional atau publik, pengikut 1.000+ dan usia 18+. Halaman Indonesia bilang peluncurannya bertahap."], ["shopee", "fb", "native", "Penandaan asli sejak Oktober 2025. Tautkan Halaman Facebook atau profil profesional, bukan profil pribadi."], ["shopee", "yt", "native", "Program affiliate YouTube Shopping, diluncurkan bersama Shopee di Indonesia pada 2024 dan kemudian di Malaysia serta empat pasar lain. Perlu Program Mitra YouTube. Dibayar 60 sampai 120 hari setelah pembelian."], ["shopee", "tt", "plain", "Tidak ada tautan asli. Pakai link affiliate biasa, daftarkan akun TikTok di Shopee Affiliate, dan jangan taruh di konten TikTok Shop."], ["shopee", "ot", "plain", "Link biasa di Threads, X, Pinterest, blog, atau aplikasi chat. Daftarkan akunnya ke Shopee. Threads tidak disebut di halaman resmi yang saya baca."], ["lazada", "fb", "native", "Lazada bergabung dengan program affiliate Facebook Meta pada 8 Juli 2026 di enam pasar, termasuk Malaysia dan Indonesia. Perlu Professional Mode."], ["lazada", "ig", "unk", "Laporan bilang Instagram akan menyusul. Saya tidak menemukan konfirmasi bahwa itu sudah aktif."], ["lazada", "yt", "unk", "Saya tidak menemukan kerja sama Lazada dengan YouTube Shopping di Asia Tenggara. Shopee adalah mitra yang dilaporkan."], ["lazada", "tt", "plain", "Hanya link affiliate biasa. Ini dari panduan pihak ketiga, jadi keyakinannya rendah."], ["lazada", "ot", "plain", "Link biasa di kanal mana pun yang terdaftar, lewat LazAffiliates atau jaringan Involve Asia. Panduan pihak ketiga, keyakinan rendah."], ["tts", "tt", "native", "Affiliate TikTok Shop menyatu di TikTok. Laporan media menyebutnya ada di enam pasar Asia Tenggara, dengan Tokopedia di Indonesia. Pembayaran mengikuti periode penyelesaian penjual."], ["tts", "ig", "bad", "Kebijakan konten TikTok Shop Malaysia melarang konten yang mengarahkan penonton keluar platform: link, nama akun sosial, kode QR."], ["tts", "fb", "bad", "Aturan TikTok Shop yang sama: tidak ada link atau nama akun di luar platform dalam konten TikTok Shop."], ["tts", "yt", "bad", "Aturan TikTok Shop yang sama: tidak ada link atau nama akun di luar platform dalam konten TikTok Shop."], ["tts", "ot", "bad", "Aturan TikTok Shop yang sama: tidak ada link atau nama akun di luar platform dalam konten TikTok Shop."]]}, "zh": {"hint": "点一个平台，只看它的连接。", "conj": "与", "types": {"native": "原生标记", "plain": "仅普通链接", "bad": "被禁或有风险", "unk": "未确认"}, "nodes": {"ig": "Instagram", "fb": "Facebook", "yt": "YouTube", "tt": "TikTok", "ot": "其他"}, "edges": [["shopee", "ig", "native", "自 2026 年 7 月起可在 Reels 和 Feed 中原生标记。需要专业或公开账号、1,000+ 粉丝、年满 18 岁。印尼页面说推出是分批的。"], ["shopee", "fb", "native", "自 2025 年 10 月起可原生标记。连接 Facebook 主页或专业档案，不能用个人档案。"], ["shopee", "yt", "native", "YouTube Shopping 联盟计划，2024 年先与 Shopee 在印尼推出，之后到马来西亚和另外四个市场。需要 YouTube 合作伙伴计划。购买后 60 至 120 天才付款。"], ["shopee", "tt", "plain", "没有原生连接。用普通联盟链接，把 TikTok 账号登记到 Shopee 联盟，并且不要放进 TikTok Shop 的内容里。"], ["shopee", "ot", "plain", "在 Threads、X、Pinterest、博客或聊天应用里用普通链接。账号要向 Shopee 登记。我读到的官方页面没有提到 Threads。"], ["lazada", "fb", "native", "Lazada 在 2026 年 7 月 8 日加入 Meta 的 Facebook 联盟计划，涵盖六个市场，包括马来西亚和印尼。需要开启专业模式。"], ["lazada", "ig", "unk", "报道说 Instagram 之后会跟进。我没有找到它已上线的确认。"], ["lazada", "yt", "unk", "我没有找到 Lazada 与东南亚 YouTube Shopping 的合作。据报道 Shopee 是合作伙伴。"], ["lazada", "tt", "plain", "只有普通联盟链接。这来自第三方指南，可信度较低。"], ["lazada", "ot", "plain", "在任何已登记的渠道使用普通链接，通过 LazAffiliates 或 Involve Asia 网络。第三方指南，可信度较低。"], ["tts", "tt", "native", "TikTok Shop 联盟内置在 TikTok 里。报道称覆盖六个东南亚市场，印尼还有 Tokopedia。付款按卖家的结算周期。"], ["tts", "ig", "bad", "TikTok Shop 马来西亚的内容政策禁止把观众带出平台：链接、社交账号名、二维码。"], ["tts", "fb", "bad", "同一条 TikTok Shop 规则：TikTok Shop 内容里不能有平台外的链接或账号名。"], ["tts", "yt", "bad", "同一条 TikTok Shop 规则：TikTok Shop 内容里不能有平台外的链接或账号名。"], ["tts", "ot", "bad", "同一条 TikTok Shop 规则：TikTok Shop 内容里不能有平台外的链接或账号名。"]]}};
+  function init(c){
+    var D=DATA[c], svg=document.getElementById(c+"-svg"), g=document.getElementById(c+"-edges"), panel=document.getElementById(c+"-panel");
+    var NS="http://www.w3.org/2000/svg", cur=null, lines=[];
+    D.edges.forEach(function(e,i){
+      var ax=MX[e[0]]+(ORDER.indexOf(e[1])-2)*24, bx=SXX[e[1]], t=ST[e[2]];
+      var l=document.createElementNS(NS,"line");
+      l.setAttribute("x1",ax);l.setAttribute("y1",64);l.setAttribute("x2",bx);l.setAttribute("y2",288);
+      l.setAttribute("stroke",t.c);l.setAttribute("stroke-width",t.w);l.setAttribute("stroke-linecap","round");
+      if(t.d){l.setAttribute("stroke-dasharray",t.d);}
+      l.setAttribute("opacity","0.85");
+      g.appendChild(l);lines.push(l);
+    });
+    function reset(){
+      cur=null;
+      lines.forEach(function(l){l.setAttribute("opacity","0.85");});
+      svg.querySelectorAll(".nd").forEach(function(n){n.classList.remove("sel");});
+      panel.innerHTML="";
+      var p=document.createElement("p");p.className="hint";p.textContent=D.hint;panel.appendChild(p);
+    }
+    function pick(node){
+      var key=node.getAttribute("data-k");
+      if(cur===key){reset();return;}
+      cur=key;
+      svg.querySelectorAll(".nd").forEach(function(n){n.classList.remove("sel");});
+      node.classList.add("sel");
+      var kind=key.charAt(0), id=key.slice(2);
+      panel.innerHTML="";
+      var h=document.createElement("p");h.className="ttl";h.textContent=(kind==="m"?MN[id]:D.nodes[id]);panel.appendChild(h);
+      D.edges.forEach(function(e,i){
+        var hit=(kind==="m"&&e[0]===id)||(kind==="s"&&e[1]===id);
+        lines[i].setAttribute("opacity",hit?"1":"0.07");
+        if(hit){
+          var it=document.createElement("div");it.className="it";it.style.borderLeftColor=BC[e[2]];
+          var b=document.createElement("b");b.textContent=MN[e[0]]+" "+D.conj+" "+D.nodes[e[1]]+": "+D.types[e[2]];
+          var s=document.createElement("span");s.textContent=e[3];
+          it.appendChild(b);it.appendChild(s);panel.appendChild(it);
+        }
+      });
+    }
+    svg.querySelectorAll(".nd").forEach(function(n){
+      n.addEventListener("click",function(){pick(n);});
+      n.addEventListener("keydown",function(ev){if(ev.key==="Enter"||ev.key===" "){ev.preventDefault();pick(n);}});
+    });
+  }
+  ["en","bm","id","zh"].forEach(init);
+})();
+</script>
+</body>
+</html>
