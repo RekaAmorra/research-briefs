@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>22 ways to wash dirty money | Reka Amorra</title>
+<meta name="description" content="Money laundering in plain words: what the law in Malaysia and Indonesia says, with real cases from the news.">
+<meta property="og:title" content="22 ways to wash dirty money. Which ones can touch your online business?">
+<meta property="og:description" content="Money laundering in plain words, with real cases from Malaysia and Indonesia.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://rekaamorra.github.io/research-briefs/wash-dirty-money-22-ways/">
+<meta name="author" content="Reka Amorra">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1f2a37; --soft:#5b6776; --line:#e6e9ef; --bg:#ffffff;
+  --mint:#e8f7ef; --mint-d:#16794a;
+  --peach:#fff1e6; --peach-d:#b54708;
+  --lav:#f0ecff; --lav-d:#5b45c8;
+  --sky:#e6f2ff; --sky-d:#0b5cad;
+  --pink:#ffeaf0; --pink-d:#b42318;
+  --grey:#c9d1db;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,"Segoe UI",system-ui,-apple-system,"Noto Sans","PingFang SC","Microsoft YaHei",sans-serif;font-size:17px;line-height:1.65;-webkit-text-size-adjust:100%}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px}
+h1,h2,h3,.badge,.pill,.tag,.btn,.lbl{font-family:Poppins,Inter,"PingFang SC","Microsoft YaHei",sans-serif}
+a{color:var(--sky-d)}
+
+/* top bar */
+.top{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:10px;padding-bottom:10px;flex-wrap:wrap}
+.brand{font-family:Poppins,Inter,sans-serif;font-weight:700;font-size:15px;color:var(--ink);letter-spacing:.2px}
+.langs{display:flex;gap:4px;background:#f3f5f9;border-radius:999px;padding:3px}
+.langs button{border:0;background:transparent;font:600 12.5px Poppins,Inter,sans-serif;color:var(--soft);padding:6px 11px;border-radius:999px;cursor:pointer}
+.langs button.on{background:#fff;color:var(--ink);box-shadow:0 1px 4px rgba(20,30,50,.15)}
+
+/* masthead */
+.mast{padding:34px 0 8px}
+.kick{display:inline-block;font:600 12px Poppins,Inter,sans-serif;letter-spacing:1.4px;text-transform:uppercase;color:var(--lav-d);background:var(--lav);padding:5px 12px;border-radius:999px}
+h1{font-size:clamp(28px,6.4vw,42px);line-height:1.18;font-weight:800;margin:16px 0 12px;letter-spacing:-.4px}
+.sub{font-size:18.5px;color:var(--soft);margin:0 0 16px}
+.by{font-size:14px;color:var(--soft);display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+.by b{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:#0a66c2;color:#fff!important;text-decoration:none;font-weight:600;font-size:14px;padding:10px 18px;border-radius:999px}
+.btn:hover{background:#084e96}
+.rule{height:4px;border-radius:4px;background:linear-gradient(90deg,#8f7bf0,#5ab0f5,#6fd3a2);margin:18px 0 6px}
+
+/* blocks */
+.box{border-radius:20px;padding:20px 22px;margin:22px 0}
+.box .lbl{font-size:12px;letter-spacing:1.3px;text-transform:uppercase;font-weight:700;margin:0 0 8px}
+.tldr{background:var(--sky)} .tldr .lbl{color:var(--sky-d)}
+.tldr ul{margin:0;padding-left:20px} .tldr li{margin:6px 0}
+.wm{background:var(--peach)} .wm .lbl{color:var(--peach-d)}
+.take{background:var(--lav)} .take .lbl{color:var(--lav-d)}
+.dis{background:#f6f7fa;font-size:14px;color:var(--soft)}
+p{margin:0 0 14px}
+h2{font-size:24px;line-height:1.25;margin:0 0 10px;font-weight:700}
+.sec{margin:38px 0 0}
+.head{display:flex;gap:12px;align-items:flex-start;margin-bottom:6px}
+.badge{flex:0 0 auto;width:38px;height:38px;border-radius:50%;background:var(--lav-d);color:#fff;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.sec:nth-of-type(2n) .badge{background:var(--sky-d)}
+.sec:nth-of-type(3n) .badge{background:var(--mint-d)}
+
+/* stat tiles */
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:22px 0}
+.tile{border-radius:18px;padding:14px 10px;text-align:center}
+.tile .n{font:800 24px Poppins,Inter,sans-serif;line-height:1.1}
+.tile .l{font-size:12.5px;color:var(--soft);margin-top:6px;line-height:1.35}
+.t1{background:var(--lav)} .t2{background:var(--mint)} .t3{background:var(--sky)} .t4{background:var(--peach)}
+
+/* chart */
+.chart{border:1px solid var(--line);border-radius:20px;padding:18px 18px 14px;margin:18px 0}
+.chart h3{font-size:15px;margin:0 0 12px}
+.row{display:grid;grid-template-columns:minmax(0,1fr);gap:4px;margin-bottom:12px}
+.row .t{font-size:14px;color:var(--ink);line-height:1.35}
+.bar{height:26px;border-radius:8px;background:#f1f3f7;position:relative;overflow:hidden}
+.bar i{display:block;height:100%;border-radius:8px;background:var(--grey);min-width:34px;color:#1f2a37;font:700 13px/26px Poppins,Inter,sans-serif;padding-left:10px}
+.bar i.hot{background:var(--sky-d);color:#fff}
+.note{font-size:13px;color:var(--soft);margin:6px 0 0}
+
+/* flow */
+.flow{border:1px solid var(--line);border-radius:20px;padding:18px;margin:18px 0;display:flex;flex-direction:column;align-items:stretch;gap:8px}
+.flow h3{font-size:15px;margin:0 0 4px}
+.fq{background:var(--sky);border-radius:14px;padding:12px 14px;font-weight:500;text-align:center}
+.fr{display:flex;gap:10px;align-items:center}
+.fo{flex:1;background:var(--peach);border-radius:12px;padding:9px 12px;font-size:14.5px}
+.pill{font-size:12px;font-weight:700;padding:4px 12px;border-radius:999px;white-space:nowrap}
+.pill.no{background:#ffe0cc;color:var(--peach-d)}
+.pill.yes{background:#d3f0e0;color:var(--mint-d);align-self:center}
+.fres{background:var(--pink);border:2px solid var(--pink-d);border-radius:14px;padding:12px 14px;font-weight:600;text-align:center;color:var(--pink-d)}
+
+/* cards */
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:18px 0}
+.card{border-radius:20px;padding:16px 18px;border:1px solid var(--line);border-top-width:5px}
+.card.my{border-top-color:#6fb0f2;background:#fafcff}
+.card.id{border-top-color:#f08aa6;background:#fffafb}
+.tag{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.8px;padding:3px 10px;border-radius:999px;margin-bottom:8px}
+.card.my .tag{background:var(--sky);color:var(--sky-d)}
+.card.id .tag{background:var(--pink);color:var(--pink-d)}
+.card h3{font-size:16px;margin:0 0 6px;line-height:1.3}
+.card p{font-size:15.5px;margin:0;color:#33404f}
+.cmp{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:18px 0}
+.cmp .card ul{list-style:none;margin:8px 0 0;padding:0;font-size:15px}
+.cmp .card li{padding:7px 0;border-bottom:1px dashed var(--line);display:flex;justify-content:space-between;gap:10px}
+.cmp .card li:last-child{border-bottom:0}
+.cmp .card li span:first-child{color:var(--soft)}
+.cmp .card li span:last-child{font-weight:600;text-align:right}
+
+/* recommendations */
+.recs{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:14px 0}
+.rec{border-radius:20px;padding:16px 18px;position:relative}
+.rec:nth-child(1){background:var(--mint)} .rec:nth-child(2){background:var(--sky)} .rec:nth-child(3){background:var(--lav)}
+.rec:nth-child(4){background:var(--pink)} .rec:nth-child(5){background:var(--peach)} .rec:nth-child(6){background:#eef7c9}
+.rec .num{width:30px;height:30px;border-radius:50%;background:#fff;font:700 14px/30px Poppins,sans-serif;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.12);margin-bottom:8px}
+.rec h3{font-size:16px;margin:0 0 6px;line-height:1.3}
+.rec p{font-size:15.5px;margin:0 0 8px}
+.rec .src{font-size:11.5px;font-weight:700;letter-spacing:.7px;text-transform:uppercase;color:var(--soft)}
+.ownline{font-style:italic;color:var(--soft);font-size:15px;margin:6px 0 0}
+
+/* checklist */
+.check{background:#fff;border:2px dashed #8f7bf0;border-radius:20px;padding:18px 22px;margin:24px 0}
+.check h3{margin:0 0 2px;font-size:19px}
+.check .s{font-size:13.5px;color:var(--soft);margin:0 0 10px}
+.check label{display:flex;gap:10px;align-items:flex-start;padding:7px 0;font-size:16px;cursor:pointer}
+.check input{margin-top:5px;width:18px;height:18px;accent-color:#5b45c8;flex:0 0 auto}
+
+/* sources, bio, footer */
+details{border:1px solid var(--line);border-radius:16px;padding:12px 18px;margin:22px 0}
+summary{cursor:pointer;font:600 15px Poppins,Inter,sans-serif}
+details ol{margin:10px 0 0;padding-left:20px;font-size:14px;color:var(--soft)}
+details li{margin:6px 0;word-break:break-word}
+.bio{display:flex;gap:14px;align-items:center;margin:24px 0}
+.av{flex:0 0 auto;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#8f7bf0,#5ab0f5);color:#fff;font:700 18px/56px Poppins,sans-serif;text-align:center}
+.bio p{margin:0;font-size:15px;color:var(--soft)}
+.cta{text-align:center;margin:30px 0 10px}
+footer{border-top:1px solid var(--line);margin-top:30px;padding:20px 0 40px;font-size:13.5px;color:var(--soft);text-align:center}
+
+@media (max-width:640px){
+  body{font-size:16.5px}
+  .tiles{grid-template-columns:repeat(2,1fr)}
+  .cards,.cmp,.recs{grid-template-columns:1fr}
+  .fr{flex-direction:column;align-items:stretch}
+  .pill.no{align-self:flex-start}
+  .langs button{padding:6px 9px}
+}
+@media (prefers-color-scheme:dark){ /* page stays white by design */ }
+</style>
+</head>
+<body>
+
+<div class="top"><div class="wrap">
+  <div class="brand">Reka Amorra</div>
+  <div class="langs" id="langs">
+    <button data-lang="en">EN</button>
+    <button data-lang="bm">BM</button>
+    <button data-lang="id">ID</button>
+    <button data-lang="zh">中文</button>
+  </div>
+</div></div>
+
+<main class="wrap">
+
+<header class="mast">
+  <span class="kick" data-t="k"></span>
+  <h1 data-t="title"></h1>
+  <p class="sub" data-t="sub"></p>
+  <div class="by"><b>Reka Amorra</b><span data-t="by"></span></div>
+  <a class="btn js-comment" target="_blank" rel="noopener"><span data-t="comment"></span></a>
+  <div class="rule"></div>
+</header>
+
+<section class="box tldr">
+  <p class="lbl" data-t="tl_h"></p>
+  <ul>
+    <li data-t="tl1"></li><li data-t="tl2"></li><li data-t="tl3"></li><li data-t="tl4"></li><li data-t="tl5"></li>
+  </ul>
+</section>
+
+<p data-t="i1"></p>
+<p data-t="i2"></p>
+<p data-t="i3"></p>
+
+<!-- 01 -->
+<section class="sec">
+  <div class="head"><div class="badge">01</div><h2 data-t="s1_h"></h2></div>
+  <p data-t="s1_p"></p>
+  <div class="chart">
+    <h3 data-t="ch_t"></h3>
+    <div class="row"><div class="t" data-t="g1"></div><div class="bar"><i class="hot" style="width:100%">13</i></div></div>
+    <div class="row"><div class="t" data-t="g2"></div><div class="bar"><i style="width:38.5%">5</i></div></div>
+    <div class="row"><div class="t" data-t="g3"></div><div class="bar"><i style="width:15.4%">2</i></div></div>
+    <div class="row"><div class="t" data-t="g4"></div><div class="bar"><i style="width:7.7%">1</i></div></div>
+    <div class="row"><div class="t" data-t="g5"></div><div class="bar"><i style="width:7.7%">1</i></div></div>
+    <p class="note" data-t="ch_n"></p>
+  </div>
+</section>
+
+<!-- 02 -->
+<section class="sec">
+  <div class="head"><div class="badge">02</div><h2 data-t="s2_h"></h2></div>
+  <p data-t="s2_p"></p>
+  <div class="flow">
+    <h3 data-t="fl_t"></h3>
+    <div class="fq" data-t="f1"></div>
+    <div class="fr"><span class="pill no" data-t="no"></span><div class="fo" data-t="f1n"></div></div>
+    <span class="pill yes" data-t="yes"></span>
+    <div class="fq" data-t="f2"></div>
+    <div class="fr"><span class="pill no" data-t="no"></span><div class="fo" data-t="f2n"></div></div>
+    <span class="pill yes" data-t="yes"></span>
+    <div class="fres" data-t="f3"></div>
+  </div>
+  <div class="cards">
+    <div class="card id"><span class="tag">INDONESIA</span><h3 data-t="c1_t"></h3><p data-t="c1_p"></p></div>
+    <div class="card id"><span class="tag">INDONESIA</span><h3 data-t="c2_t"></h3><p data-t="c2_p"></p></div>
+  </div>
+</section>
+
+<!-- 03 -->
+<section class="sec">
+  <div class="head"><div class="badge">03</div><h2 data-t="s3_h"></h2></div>
+  <p data-t="s3_p"></p>
+  <div class="cards">
+    <div class="card my"><span class="tag">MALAYSIA</span><h3 data-t="c3_t"></h3><p data-t="c3_p"></p></div>
+    <div class="card my"><span class="tag">MALAYSIA</span><h3 data-t="c3b_t"></h3><p data-t="c3b_p"></p></div>
+  </div>
+</section>
+
+<!-- 04 -->
+<section class="sec">
+  <div class="head"><div class="badge">04</div><h2 data-t="s4_h"></h2></div>
+  <p data-t="s4_p"></p>
+  <div class="cards">
+    <div class="card my"><span class="tag">MALAYSIA</span><h3 data-t="c4_t"></h3><p data-t="c4_p"></p></div>
+    <div class="card id"><span class="tag">INDONESIA</span><h3 data-t="c5_t"></h3><p data-t="c5_p"></p></div>
+  </div>
+  <div class="card id" style="margin-top:0"><span class="tag">INDONESIA</span><h3 data-t="c5b_t"></h3><p data-t="c5b_p"></p></div>
+</section>
+
+<!-- 05 -->
+<section class="sec">
+  <div class="head"><div class="badge">05</div><h2 data-t="s5_h"></h2></div>
+  <p data-t="s5_p"></p>
+  <div class="tiles">
+    <div class="tile t1"><div class="n">22</div><div class="l" data-t="st1"></div></div>
+    <div class="tile t2"><div class="n">RM1.7m</div><div class="l" data-t="st2"></div></div>
+    <div class="tile t3"><div class="n">43.7m</div><div class="l" data-t="st3"></div></div>
+    <div class="tile t4"><div class="n">RM50k</div><div class="l" data-t="st4"></div></div>
+  </div>
+  <div class="box wm">
+    <p class="lbl" data-t="wm_h"></p>
+    <p style="margin:0" data-t="wm_p"></p>
+  </div>
+</section>
+
+<!-- 06 compare -->
+<section class="sec">
+  <div class="head"><div class="badge">06</div><h2 data-t="cm_h"></h2></div>
+  <div class="cmp">
+    <div class="card my"><span class="tag">MALAYSIA</span>
+      <ul>
+        <li><span data-t="r_law"></span><span>AMLA 2001 (Act 613)</span></li>
+        <li><span data-t="r_dog"></span><span>Bank Negara Malaysia</span></li>
+        <li><span data-t="r_brb"></span><span>MACC Act 2009</span></li>
+        <li><span data-t="r_jail"></span><span data-t="j_my"></span></li>
+        <li><span data-t="r_x"></span><span data-t="x_my"></span></li>
+      </ul></div>
+    <div class="card id"><span class="tag">INDONESIA</span>
+      <ul>
+        <li><span data-t="r_law"></span><span>UU TPPU No. 8/2010</span></li>
+        <li><span data-t="r_dog"></span><span>PPATK</span></li>
+        <li><span data-t="r_brb"></span><span>UU Tipikor</span></li>
+        <li><span data-t="r_jail"></span><span data-t="j_id"></span></li>
+        <li><span data-t="r_x"></span><span data-t="x_id"></span></li>
+      </ul></div>
+  </div>
+</section>
+
+<!-- 07 recs -->
+<section class="sec">
+  <div class="head"><div class="badge">07</div><h2 data-t="rec_h"></h2></div>
+  <p class="ownline" data-t="rec_n"></p>
+  <div class="recs">
+    <div class="rec"><div class="num">1</div><h3 data-t="r1_t"></h3><p data-t="r1_p"></p><span class="src" data-t="tag_mine"></span></div>
+    <div class="rec"><div class="num">2</div><h3 data-t="r2_t"></h3><p data-t="r2_p"></p><span class="src" data-t="tag_mine"></span></div>
+    <div class="rec"><div class="num">3</div><h3 data-t="r3_t"></h3><p data-t="r3_p"></p><span class="src" data-t="tag_mine"></span></div>
+    <div class="rec"><div class="num">4</div><h3 data-t="r4_t"></h3><p data-t="r4_p"></p><span class="src" data-t="tag_mine"></span></div>
+    <div class="rec"><div class="num">5</div><h3 data-t="r5_t"></h3><p data-t="r5_p"></p><span class="src" data-t="tag_case"></span></div>
+    <div class="rec"><div class="num">6</div><h3 data-t="r6_t"></h3><p data-t="r6_p"></p><span class="src" data-t="tag_mine"></span></div>
+  </div>
+</section>
+
+<div class="check">
+  <h3 data-t="ck_h"></h3>
+  <p class="s" data-t="ck_s"></p>
+  <label><input type="checkbox"><span data-t="ck1"></span></label>
+  <label><input type="checkbox"><span data-t="ck2"></span></label>
+  <label><input type="checkbox"><span data-t="ck3"></span></label>
+  <label><input type="checkbox"><span data-t="ck4"></span></label>
+  <label><input type="checkbox"><span data-t="ck5"></span></label>
+  <label><input type="checkbox"><span data-t="ck6"></span></label>
+</div>
+
+<section class="box take">
+  <p class="lbl" data-t="tk_h"></p>
+  <p style="margin:0" data-t="tk_p"></p>
+</section>
+
+<details>
+  <summary data-t="src_h"></summary>
+  <ol>
+    <li>The Vibes, “Luxury watch shop assistant manager faces 44 money laundering charges”, 24 Feb 2026. <a href="https://www.thevibes.com/articles/news/119933/luxury-watch-shop-assistant-manager-faces-44-money-laundering-charges" target="_blank" rel="noopener">link</a></li>
+    <li>Skrine, “Anti-Money Laundering: Businesswoman charged for Smurfing”, Jul 2021. <a href="https://www.skrine.com/insights/alerts/july-2021/anti-money-laundering-businesswoman-charged-for-sm" target="_blank" rel="noopener">link</a></li>
+    <li>Malay Mail, “Businesswoman first to be charged with transaction restructuring”, 30 Jun 2021. <a href="https://www.malaymail.com/news/malaysia/2021/06/30/businesswoman-first-to-be-charged-with-transaction-restructuring-in-malaysi/1986158" target="_blank" rel="noopener">link</a></li>
+    <li>Bernama, “Company Secretary Fined RM50,000 For AMLA Breaches, Submitting False Information”, 4 May 2026. <a href="https://www.bernama.com/en/news.php/?id=2552721" target="_blank" rel="noopener">link</a></li>
+    <li>The Vibes, “AGC: Nicky Liow’s AMLA charges withdrawal follows RM10m compound settlement”, 7 Aug 2026 (AMLA penalty as stated by the AGC). <a href="https://www.thevibes.com/articles/news/125938/agc-nicky-liows-amla-charges-withdrawal-follows-rm10-million-compound-settlement" target="_blank" rel="noopener">link</a></li>
+    <li>Anti-Money Laundering, Anti-Terrorism Financing and Proceeds of Unlawful Activities Act 2001 (Act 613), full text. <a href="https://www.labuanfsa.gov.my/clients/asset_120A5FB8-61B6-45E8-93F0-3F79F86455C8/contentms/img/documents/Legislation_and_Guidelines/Legislation/Subsidiary_Legislation/Anti-Money-Laundering-Act-2001-Act-613.pdf" target="_blank" rel="noopener">link</a></li>
+    <li>Okezone, “Vonis Syafei Diperberat Jadi 8 Tahun Penjara di Kasus CPO”, 22 Apr 2026. <a href="https://news.okezone.com/read/2026/04/22/337/3214064/vonis-syafei-diperberat-jadi-8-tahun-penjara-di-kasus-cpo" target="_blank" rel="noopener">link</a></li>
+    <li>JawaPos, “Nurhadi tetap divonis 5 tahun penjara dalam kasus penerimaan gratifikasi”, May 2026. <a href="https://www.jawapos.com/kasuistika/2605220146/nurhadi-tetap-divonis-5-tahun-penjara-dalam-kasus-penerimaan-gratifikasi-rp-137-m-kpk-beri-apresiasi" target="_blank" rel="noopener">link</a></li>
+    <li>Dandapala, “PN Muara Enim Vonis Perkara TPPU Hasil Tambang Ilegal, Ducati hingga Porsche Dirampas Negara”, 5 Nov 2026. <a href="https://dandapala.com/article/detail/pn-muara-enim-vonis-perkara-tppu-hasil-tambang-ilegal-ducati-hingga-porsche-dirampas-negara" target="_blank" rel="noopener">link</a></li>
+    <li>Republika, “PPATK: Perputaran Dana Emas Ilegal di Indonesia Nyaris Seribu Triliun Rupiah”, 29 Jan 2026 (also 43.72 million reports in 2025). <a href="https://news.republika.co.id/berita/t9m9g4393/ppatk-perputaran-dana-emas-ilegal-di-indonesia-nyaris-seribu-triliun-rupiah" target="_blank" rel="noopener">link</a></li>
+  </ol>
+</details>
+
+<div class="box dis" data-t="dis"></div>
+
+<div class="bio"><div class="av">RA</div><p data-t="bio"></p></div>
+
+<div class="cta"><a class="btn js-comment" target="_blank" rel="noopener"><span data-t="comment"></span></a></div>
+
+</main>
+
+<footer><div class="wrap">© 2026 Reka Amorra, Research brief</div></footer>
+
+<script>
+// Replace with the LinkedIn post link after posting
+var LINKEDIN_POST_URL = "https://www.linkedin.com/";
+
+var T = {
+en:{
+ title_plain:"22 ways to wash dirty money",
+ k:"Money laundering, plain version",
+ title:"22 ways to wash dirty money. Which ones can touch your online business?",
+ sub:"A viral list shows money laundering in everyday clothes: tips, gold, watches, invoices. Here is what the law in Malaysia and Indonesia says, with real cases from the news.",
+ by:"· 13 Nov 2026 · 6 min read",
+ comment:"Comment on LinkedIn",
+ tl_h:"The short version",
+ tl1:"Not all 22 tricks are money laundering. <b>13</b> are classic laundering, <b>5</b> are digital and entertainment fronts, <b>2</b> are plain bribery, <b>1</b> is a currency or tax issue and <b>1</b> is a joke.",
+ tl2:"Bribery becomes laundering only when the money is moved or hidden to look clean.",
+ tl3:"In Malaysia, splitting cash to dodge bank reporting is a crime by itself (AMLA s.4A).",
+ tl4:"Watches, gold and cars show up again and again in real cases in both countries.",
+ tl5:"Sellers and affiliates can get pulled in through refunds, odd tips and borrowed accounts. Checklist at the end.",
+ i1:"A list of 22 ways to wash dirty money has been going around. A few are about suitcases of cash. Many are about a livestream tip, a game top-up or a bag of apples.",
+ i2:"I went through all 22 and sorted them under the laws of Malaysia and Indonesia. Then I looked for real cases in the news. I assume the money comes from a crime first, because laundering needs that.",
+ i3:"Most of us will never launder money. But if you sell online, you can end up in the middle of someone else’s problem. That is why this matters.",
+ s1_h:"Sorting the 22",
+ s1_p:"Same list, five boxes. Most of it is the classic kind: fake invoices, shell companies, many small accounts, charity fronts, casino chips, gold and luxury resale.",
+ ch_t:"Where the 22 tricks fall (number of cases)",
+ g1:"Classic laundering (invoices, shells, casino, gold, charity, patents, tuition and more)",
+ g2:"Digital and entertainment (livestream tips, gaming, box office, dual contracts)",
+ g3:"Plain bribery (not laundering yet)",
+ g4:"Currency or tax rules (the antique art case)",
+ g5:"The washing machine (a joke)",
+ ch_n:"Grouping is my reading of the list under AMLA 2001 and UU TPPU. It is an illustration, not official data.",
+ s2_h:"Bribery is not laundering yet",
+ s2_p:"Taking a “bonus” to approve a loan is corruption. In Malaysia that falls under the MACC Act. In Indonesia it is the Tipikor law. It turns into laundering when the money is moved, hidden or spent to look clean.",
+ fl_t:"Quick test",
+ f1:"Did the money come from a crime?",
+ f1n:"May be another offence (tax, currency rules). Not laundering.",
+ f2:"Was it moved, hidden or spent to look clean?",
+ f2n:"The crime stays as bribery or fraud.",
+ f3:"Money laundering (AMLA s.4(1) in Malaysia, UU TPPU in Indonesia)",
+ yes:"Yes", no:"No",
+ c1_t:"CPO case: bribery proven, laundering not",
+ c1_p:"In April 2026 the Jakarta High Court raised Syafei’s sentence to 8 years. He was found guilty of bribery, but not of laundering. Two others in the same case, Marcella Santoso and Ariyanto, were found guilty of both.",
+ c2_t:"Nurhadi: gratification and laundering",
+ c2_p:"In 2026 the Jakarta High Court upheld a 5-year sentence for Nurhadi, the former Supreme Court secretary, in a gratification and TPPU case.",
+ s3_h:"Splitting cash is a crime by itself",
+ s3_p:"Section 4A of the Malaysian AMLA covers structuring. That means breaking a big cash amount into smaller ones to avoid the bank’s reporting rule. The maximum is 7 years in jail or a fine of five times the amount.",
+ c3_t:"The first smurfing charge",
+ c3_p:"In June 2021 a businesswoman became the first person charged under this section. The charge was about cash payments split up to stay under the reporting limit.",
+ c3b_t:"Why it matters",
+ c3b_p:"The prosecution does not need to prove where the money came from first. The splitting itself is the offence.",
+ s4_h:"Watches, gold and cars",
+ s4_p:"Things that hold value and can be resold are favourites. They are easy to buy with cash and easy to sell on. The cases below show it in both countries.",
+ c4_t:"Luxury watch shop, Kuala Lumpur",
+ c4_p:"In Feb 2026 an assistant manager of a luxury watch shop was charged with 44 counts over RM1.7 million. He pleaded not guilty. The case is still in court.",
+ c5_t:"Illegal mining, Muara Enim",
+ c5_p:"In Nov 2026 the Muara Enim court ruled on a laundering case from illegal mining. A Ducati and a Porsche were taken by the state.",
+ c5b_t:"Illegal gold, nationwide",
+ c5b_p:"PPATK said illegal gold mining and trade had the biggest money flow among the source crimes it traced in 2025, nearly Rp1,000 trillion.",
+ s5_h:"Looking the other way has a price",
+ s5_p:"Banks and some professions must report suspicious transactions. In May 2026 a Malaysian company secretary was fined RM50,000 for AMLA breaches, including not reporting two suspicious transactions. In Indonesia, PPATK received 43.72 million reports in 2025.",
+ st1:"tricks on the viral list", st2:"watch shop case, 44 counts", st3:"reports to PPATK in 2025", st4:"fine for not reporting",
+ wm_h:"And the washing machine?",
+ wm_p:"Cash in a coat pocket, one spin cycle. The notes come out soggy and that is all. It is the only one of the 22 with real washing, and no financial crime.",
+ cm_h:"Malaysia and Indonesia side by side",
+ r_law:"Main law", r_dog:"Watchdog", r_brb:"Bribery law", r_jail:"Maximum jail", r_x:"Good to know",
+ j_my:"15 years", j_id:"20 years",
+ x_my:"Splitting cash: s.4A", x_id:"43.72m reports, 2025",
+ rec_h:"What I would do as a seller",
+ rec_n:"The following are my own analysis, not findings from the sources.",
+ r1_t:"Refund to the same account only",
+ r1_p:"If a buyer overpays and asks for the difference to go to another account, say no. Refund to the account that paid, after the money has cleared.",
+ r2_t:"Keep three records for each order",
+ r2_p:"Order chat, payment proof and delivery proof. Simple, boring and very useful if anyone asks later.",
+ r3_t:"Pause on repeat big tips",
+ r3_p:"Big gifts or tips from new accounts, again and again, with no chat and no interest in your content, are worth a pause.",
+ r4_t:"Never lend your bank or e-wallet account",
+ r4_p:"Not to a friend, not “just this once”. You may have to explain every ringgit or rupiah that passed through it.",
+ r5_t:"If you handle money for others, report on time",
+ r5_p:"Admin, agent, bookkeeper, company secretary: reporting duties can apply to you. The RM50,000 fine is the reminder.",
+ r6_t:"Ask early",
+ r6_p:"If something feels off, stop and keep the records. Ask your bank or a lawyer before you reply to the buyer.",
+ tag_mine:"My analysis", tag_case:"From the case",
+ ck_h:"Save this: before you accept a payment",
+ ck_s:"Tick as you go.",
+ ck1:"Does the amount match the order?",
+ ck2:"Is the payer’s name the same as the buyer’s?",
+ ck3:"Has the money cleared in my own account?",
+ ck4:"Is any refund going back to the account that paid?",
+ ck5:"Do I have order, payment and delivery records?",
+ ck6:"Am I using only my own accounts?",
+ tk_h:"My take",
+ tk_p:"Most of the 22 tricks need a real crime behind the money. Online sellers are not the target. But a clean invoice or a happy buyer does not make dirty money clean. Keep records simple, use only your own accounts and report what looks wrong. That is enough for most of us.",
+ src_h:"Sources (all public)",
+ dis:"General information, not legal advice. People named in the news were charged or convicted as reported by the sources. Anyone charged is presumed innocent until proven guilty. Figures come from the public sources listed. Any errors are mine.",
+ bio:"Reka Amorra writes short research briefs on online business and affiliate marketing for readers in Malaysia and Indonesia."
+},
+bm:{
+ title_plain:"22 cara mencuci wang haram",
+ k:"Pengubahan wang haram, versi mudah",
+ title:"22 cara mencuci wang haram. Yang mana boleh terkena perniagaan dalam talian anda?",
+ sub:"Satu senarai yang tular menunjukkan pengubahan wang haram dalam rupa harian: tip, emas, jam tangan, invois. Ini apa kata undang-undang di Malaysia dan Indonesia, dengan kes sebenar daripada berita.",
+ by:"· 13 Nov 2026 · 6 minit baca",
+ comment:"Komen di LinkedIn",
+ tl_h:"Ringkasnya",
+ tl1:"Tidak semua 22 cara itu pengubahan wang haram. <b>13</b> ialah kaedah klasik, <b>5</b> melalui platform digital dan hiburan, <b>2</b> hanya rasuah, <b>1</b> isu kawalan mata wang atau cukai dan <b>1</b> sekadar gurauan.",
+ tl2:"Rasuah menjadi pengubahan wang haram hanya apabila wang itu dipindahkan atau disorok supaya nampak bersih.",
+ tl3:"Di Malaysia, memecahkan wang tunai untuk mengelak pelaporan bank ialah satu kesalahan tersendiri (AMLA s.4A).",
+ tl4:"Jam tangan, emas dan kereta muncul berulang kali dalam kes sebenar di kedua-dua negara.",
+ tl5:"Penjual dan affiliate boleh terheret melalui bayaran balik, tip yang pelik dan akaun yang dipinjam. Senarai semak ada di hujung artikel.",
+ i1:"Satu senarai 22 cara mencuci wang haram sedang tular. Ada yang melibatkan beg penuh wang tunai. Banyak lagi melibatkan tip siaran langsung, top-up permainan atau sebungkus epal.",
+ i2:"Saya semak kesemua 22 dan susun mengikut undang-undang Malaysia dan Indonesia. Kemudian saya cari kes sebenar dalam berita. Saya andaikan wang itu datang daripada jenayah dahulu, kerana pengubahan wang haram memerlukan itu.",
+ i3:"Kebanyakan kita tidak akan mengubah wang haram. Tetapi jika anda berniaga dalam talian, anda boleh tersangkut dalam masalah orang lain. Sebab itu perkara ini penting.",
+ s1_h:"Menyusun 22 cara itu",
+ s1_p:"Senarai yang sama, lima kotak. Kebanyakannya jenis klasik: invois palsu, syarikat proksi, banyak akaun kecil, badan amal palsu, cip kasino, emas dan jualan semula barang mewah.",
+ ch_t:"Di mana 22 cara itu jatuh (bilangan kes)",
+ g1:"Klasik (invois, syarikat proksi, kasino, emas, amal, paten, yuran pengajian dan lain-lain)",
+ g2:"Digital dan hiburan (tip siaran langsung, permainan, kutipan pawagam, kontrak berganda)",
+ g3:"Rasuah semata-mata (belum lagi pengubahan wang haram)",
+ g4:"Peraturan mata wang atau cukai (kes seni antik)",
+ g5:"Mesin basuh (gurauan)",
+ ch_n:"Pengelompokan ini ialah bacaan saya terhadap senarai itu di bawah AMLA 2001 dan UU TPPU. Ia ilustrasi, bukan data rasmi.",
+ s2_h:"Rasuah belum lagi pengubahan wang haram",
+ s2_p:"Menerima “bonus” kerana meluluskan pinjaman ialah rasuah. Di Malaysia ia di bawah Akta SPRM. Di Indonesia ia di bawah UU Tipikor. Ia menjadi pengubahan wang haram apabila wang itu dipindahkan, disorok atau dibelanjakan supaya nampak bersih.",
+ fl_t:"Ujian cepat",
+ f1:"Adakah wang itu datang daripada jenayah?",
+ f1n:"Mungkin kesalahan lain (cukai, kawalan mata wang). Bukan pengubahan wang haram.",
+ f2:"Adakah wang itu dipindahkan, disorok atau dibelanjakan supaya nampak bersih?",
+ f2n:"Jenayahnya kekal sebagai rasuah atau penipuan.",
+ f3:"Pengubahan wang haram (AMLA s.4(1) di Malaysia, UU TPPU di Indonesia)",
+ yes:"Ya", no:"Tidak",
+ c1_t:"Kes CPO: rasuah terbukti, pengubahan wang haram tidak",
+ c1_p:"Pada April 2026 Mahkamah Tinggi Jakarta menaikkan hukuman Syafei kepada 8 tahun. Beliau didapati bersalah atas rasuah, tetapi bukan pengubahan wang haram. Dua lagi dalam kes yang sama, Marcella Santoso dan Ariyanto, didapati bersalah atas kedua-duanya.",
+ c2_t:"Nurhadi: gratifikasi dan pengubahan wang haram",
+ c2_p:"Pada 2026 Mahkamah Tinggi Jakarta mengekalkan hukuman 5 tahun ke atas Nurhadi, bekas setiausaha Mahkamah Agung, dalam kes gratifikasi dan TPPU.",
+ s3_h:"Memecahkan wang tunai ialah jenayah tersendiri",
+ s3_p:"Seksyen 4A AMLA Malaysia meliputi “structuring”. Maksudnya memecahkan jumlah tunai yang besar kepada jumlah kecil untuk mengelak peraturan pelaporan bank. Hukuman maksimum ialah 7 tahun penjara atau denda lima kali ganda jumlah itu.",
+ c3_t:"Pertuduhan smurfing pertama",
+ c3_p:"Pada Jun 2021 seorang ahli perniagaan wanita menjadi orang pertama didakwa di bawah seksyen ini. Pertuduhan itu berkaitan bayaran tunai yang dipecahkan supaya kekal di bawah had pelaporan.",
+ c3b_t:"Kenapa ia penting",
+ c3b_p:"Pihak pendakwa tidak perlu membuktikan asal wang itu dahulu. Perbuatan memecahkan itu sendiri ialah kesalahan.",
+ s4_h:"Jam tangan, emas dan kereta",
+ s4_p:"Barang yang menyimpan nilai dan boleh dijual semula menjadi pilihan. Senang dibeli dengan tunai, senang dijual. Kes di bawah menunjukkannya di kedua-dua negara.",
+ c4_t:"Kedai jam tangan mewah, Kuala Lumpur",
+ c4_p:"Pada Feb 2026 penolong pengurus sebuah kedai jam tangan mewah didakwa dengan 44 pertuduhan berhubung RM1.7 juta. Beliau mengaku tidak bersalah. Kes masih di mahkamah.",
+ c5_t:"Perlombongan haram, Muara Enim",
+ c5_p:"Pada Nov 2026 Mahkamah Muara Enim memutuskan kes pengubahan wang haram hasil perlombongan haram. Sebuah Ducati dan sebuah Porsche dirampas negara.",
+ c5b_t:"Emas haram, seluruh negara",
+ c5b_p:"PPATK berkata perlombongan dan perdagangan emas haram mempunyai aliran wang terbesar antara jenayah asal yang dijejaki pada 2025, hampir Rp1,000 trilion.",
+ s5_h:"Buat-buat tidak nampak ada harganya",
+ s5_p:"Bank dan beberapa profesion wajib melaporkan transaksi mencurigakan. Pada Mei 2026 seorang setiausaha syarikat di Malaysia didenda RM50,000 kerana melanggar AMLA, termasuk tidak melaporkan dua transaksi mencurigakan. Di Indonesia, PPATK menerima 43.72 juta laporan pada 2025.",
+ st1:"cara dalam senarai tular", st2:"kes kedai jam, 44 pertuduhan", st3:"laporan kepada PPATK, 2025", st4:"denda kerana tidak melapor",
+ wm_h:"Bagaimana pula dengan mesin basuh?",
+ wm_p:"Wang tunai dalam poket kot, satu pusingan basuhan. Wang keluar lembik, itu sahaja. Ia satu-satunya daripada 22 yang betul-betul ada basuhan, dan bukan jenayah kewangan.",
+ cm_h:"Malaysia dan Indonesia bersebelahan",
+ r_law:"Undang-undang utama", r_dog:"Badan pemantau", r_brb:"Undang-undang rasuah", r_jail:"Penjara maksimum", r_x:"Perlu tahu",
+ j_my:"15 tahun", j_id:"20 tahun",
+ x_my:"Memecah tunai: s.4A", x_id:"43.72 juta laporan, 2025",
+ rec_h:"Apa yang saya akan buat sebagai penjual",
+ rec_n:"Yang berikut ialah analisis saya sendiri, bukan dapatan daripada sumber.",
+ r1_t:"Bayar balik ke akaun yang sama sahaja",
+ r1_p:"Jika pembeli terlebih bayar dan minta bakinya dihantar ke akaun lain, tolak. Bayar balik ke akaun yang membayar, selepas wang itu sah masuk.",
+ r2_t:"Simpan tiga rekod bagi setiap pesanan",
+ r2_p:"Sembang pesanan, bukti bayaran dan bukti penghantaran. Mudah, membosankan dan sangat berguna jika ada yang bertanya kemudian.",
+ r3_t:"Berhenti sekejap bila tip besar berulang",
+ r3_p:"Hadiah atau tip besar daripada akaun baharu, berulang kali, tanpa sembang dan tanpa minat pada kandungan anda, patut dipandang dua kali.",
+ r4_t:"Jangan pinjamkan akaun bank atau e-dompet",
+ r4_p:"Bukan kepada kawan, bukan “sekali ini sahaja”. Anda mungkin perlu menerangkan setiap ringgit yang melaluinya.",
+ r5_t:"Jika uruskan wang orang lain, lapor tepat pada masanya",
+ r5_p:"Pentadbir, ejen, akauntan, setiausaha syarikat: tugas pelaporan boleh terpakai kepada anda. Denda RM50,000 itu ialah peringatannya.",
+ r6_t:"Tanya awal",
+ r6_p:"Jika sesuatu terasa tidak kena, berhenti dan simpan rekod. Tanya bank atau peguam sebelum membalas pembeli.",
+ tag_mine:"Analisis saya", tag_case:"Daripada kes",
+ ck_h:"Simpan ini: sebelum terima bayaran",
+ ck_s:"Tanda semasa semak.",
+ ck1:"Adakah jumlahnya sepadan dengan pesanan?",
+ ck2:"Adakah nama pembayar sama dengan nama pembeli?",
+ ck3:"Adakah wang sudah sah masuk ke akaun saya sendiri?",
+ ck4:"Adakah bayaran balik pergi ke akaun yang membayar?",
+ ck5:"Adakah saya ada rekod pesanan, bayaran dan penghantaran?",
+ ck6:"Adakah saya hanya guna akaun saya sendiri?",
+ tk_h:"Pandangan saya",
+ tk_p:"Kebanyakan daripada 22 cara itu memerlukan jenayah sebenar di belakang wang tersebut. Penjual dalam talian bukan sasarannya. Tetapi invois yang kemas atau pembeli yang gembira tidak menjadikan wang haram bersih. Simpan rekod dengan mudah, guna akaun sendiri sahaja dan laporkan apa yang nampak tidak kena. Itu sudah cukup untuk kebanyakan kita.",
+ src_h:"Sumber (semuanya awam)",
+ dis:"Maklumat am, bukan nasihat undang-undang. Individu yang disebut dalam berita didakwa atau disabitkan seperti yang dilaporkan oleh sumber. Sesiapa yang didakwa dianggap tidak bersalah sehingga dibuktikan bersalah. Angka diambil daripada sumber awam yang disenaraikan. Sebarang kesilapan adalah milik saya.",
+ bio:"Reka Amorra menulis ringkasan kajian pendek tentang perniagaan dalam talian dan pemasaran affiliate untuk pembaca di Malaysia dan Indonesia."
+},
+id:{
+ title_plain:"22 cara mencuci uang haram",
+ k:"Pencucian uang, versi sederhana",
+ title:"22 cara mencuci uang haram. Mana yang bisa menyentuh bisnis online kamu?",
+ sub:"Satu daftar yang viral menunjukkan pencucian uang dalam rupa sehari-hari: tip, emas, jam tangan, invoice. Ini kata hukum di Malaysia dan Indonesia, lengkap dengan kasus nyata dari berita.",
+ by:"· 13 Nov 2026 · 6 menit baca",
+ comment:"Komentar di LinkedIn",
+ tl_h:"Singkatnya",
+ tl1:"Tidak semua dari 22 cara itu pencucian uang. <b>13</b> adalah cara klasik, <b>5</b> lewat platform digital dan hiburan, <b>2</b> murni suap, <b>1</b> soal aturan mata uang atau pajak dan <b>1</b> hanya lelucon.",
+ tl2:"Suap baru menjadi pencucian uang kalau uangnya dipindahkan atau disembunyikan supaya tampak bersih.",
+ tl3:"Di Malaysia, memecah uang tunai untuk menghindari pelaporan bank adalah kejahatan tersendiri (AMLA s.4A).",
+ tl4:"Jam tangan, emas, dan mobil muncul berulang kali dalam kasus nyata di kedua negara.",
+ tl5:"Penjual dan affiliate bisa terseret lewat refund, tip yang aneh, dan rekening pinjaman. Daftar periksa ada di akhir.",
+ i1:"Daftar 22 cara mencuci uang haram sedang beredar. Sebagian soal koper penuh uang tunai. Banyak yang soal tip live streaming, top-up game, atau sekantong apel.",
+ i2:"Saya baca semua 22 cara itu dan menyusunnya menurut hukum Malaysia dan Indonesia. Lalu saya cari kasus nyata di berita. Saya anggap uangnya berasal dari tindak pidana dulu, karena pencucian uang butuh itu.",
+ i3:"Kebanyakan dari kita tidak akan mencuci uang. Tapi kalau kamu jualan online, kamu bisa terjebak di tengah masalah orang lain. Karena itu hal ini penting.",
+ s1_h:"Menyusun 22 cara itu",
+ s1_p:"Daftar yang sama, lima kotak. Kebanyakan jenis klasik: invoice palsu, perusahaan cangkang, banyak rekening kecil, yayasan amal palsu, chip kasino, emas, dan jual ulang barang mewah.",
+ ch_t:"Ke mana 22 cara itu jatuh (jumlah kasus)",
+ g1:"Klasik (invoice, perusahaan cangkang, kasino, emas, amal, paten, uang kuliah dan lainnya)",
+ g2:"Digital dan hiburan (tip live, game, box office, kontrak ganda)",
+ g3:"Murni suap (belum pencucian uang)",
+ g4:"Aturan mata uang atau pajak (kasus seni antik)",
+ g5:"Mesin cuci (lelucon)",
+ ch_n:"Pengelompokan ini adalah pembacaan saya atas daftar itu menurut AMLA 2001 dan UU TPPU. Ini ilustrasi, bukan data resmi.",
+ s2_h:"Suap belum tentu pencucian uang",
+ s2_p:"Menerima “bonus” karena meloloskan pinjaman adalah korupsi. Di Malaysia itu di bawah Akta SPRM. Di Indonesia itu UU Tipikor. Baru menjadi pencucian uang kalau uangnya dipindahkan, disembunyikan, atau dibelanjakan supaya tampak bersih.",
+ fl_t:"Tes cepat",
+ f1:"Apakah uang itu berasal dari tindak pidana?",
+ f1n:"Mungkin pelanggaran lain (pajak, aturan mata uang). Bukan pencucian uang.",
+ f2:"Apakah uang itu dipindahkan, disembunyikan, atau dibelanjakan supaya tampak bersih?",
+ f2n:"Kejahatannya tetap suap atau penipuan.",
+ f3:"Pencucian uang (AMLA s.4(1) di Malaysia, UU TPPU di Indonesia)",
+ yes:"Ya", no:"Tidak",
+ c1_t:"Kasus CPO: suap terbukti, pencucian uang tidak",
+ c1_p:"Pada April 2026 Pengadilan Tinggi DKI Jakarta memperberat hukuman Syafei menjadi 8 tahun. Ia terbukti menyuap, tetapi tidak terbukti melakukan pencucian uang. Dua orang lain dalam perkara yang sama, Marcella Santoso dan Ariyanto, terbukti melakukan keduanya.",
+ c2_t:"Nurhadi: gratifikasi dan pencucian uang",
+ c2_p:"Pada 2026 Pengadilan Tinggi DKI Jakarta menguatkan vonis 5 tahun untuk Nurhadi, mantan Sekretaris Mahkamah Agung, dalam perkara gratifikasi dan TPPU.",
+ s3_h:"Memecah uang tunai adalah kejahatan tersendiri",
+ s3_p:"Pasal 4A AMLA Malaysia mengatur “structuring”. Artinya memecah uang tunai besar menjadi jumlah kecil untuk menghindari aturan pelaporan bank. Ancaman maksimumnya 7 tahun penjara atau denda lima kali jumlahnya.",
+ c3_t:"Tuntutan smurfing pertama",
+ c3_p:"Pada Juni 2021 seorang pengusaha perempuan menjadi orang pertama yang didakwa dengan pasal ini. Dakwaannya soal pembayaran tunai yang dipecah supaya tetap di bawah batas pelaporan.",
+ c3b_t:"Kenapa ini penting",
+ c3b_p:"Jaksa tidak perlu membuktikan asal uangnya lebih dulu. Perbuatan memecahnya itu sendiri adalah pelanggaran.",
+ s4_h:"Jam tangan, emas, dan mobil",
+ s4_p:"Barang yang menyimpan nilai dan bisa dijual lagi jadi favorit. Mudah dibeli tunai, mudah dijual. Kasus di bawah menunjukkannya di kedua negara.",
+ c4_t:"Toko jam tangan mewah, Kuala Lumpur",
+ c4_p:"Pada Feb 2026 seorang asisten manajer toko jam tangan mewah didakwa dengan 44 dakwaan terkait RM1,7 juta. Ia menyatakan tidak bersalah. Kasusnya masih berjalan di pengadilan.",
+ c5_t:"Tambang ilegal, Muara Enim",
+ c5_p:"Pada Nov 2026 PN Muara Enim memutus perkara TPPU hasil tambang ilegal. Sebuah Ducati dan sebuah Porsche dirampas negara.",
+ c5b_t:"Emas ilegal, tingkat nasional",
+ c5b_p:"PPATK menyebut penambangan dan perdagangan emas ilegal punya perputaran dana terbesar di antara tindak pidana asal yang ditelusuri pada 2025, nyaris Rp1.000 triliun.",
+ s5_h:"Pura-pura tidak tahu ada harganya",
+ s5_p:"Bank dan beberapa profesi wajib melaporkan transaksi mencurigakan. Pada Mei 2026 seorang company secretary di Malaysia didenda RM50.000 karena melanggar AMLA, termasuk tidak melaporkan dua transaksi mencurigakan. Di Indonesia, PPATK menerima 43,72 juta laporan pada 2025.",
+ st1:"cara dalam daftar viral", st2:"kasus toko jam, 44 dakwaan", st3:"laporan ke PPATK, 2025", st4:"denda karena tidak melapor",
+ wm_h:"Lalu mesin cucinya?",
+ wm_p:"Uang tunai di saku jas, satu putaran cuci. Uangnya keluar basah, itu saja. Satu-satunya dari 22 yang benar-benar ada cucinya, dan bukan kejahatan keuangan.",
+ cm_h:"Malaysia dan Indonesia berdampingan",
+ r_law:"Undang-undang utama", r_dog:"Pengawas", r_brb:"Hukum suap", r_jail:"Penjara maksimum", r_x:"Perlu tahu",
+ j_my:"15 tahun", j_id:"20 tahun",
+ x_my:"Pecah tunai: s.4A", x_id:"43,72 juta laporan, 2025",
+ rec_h:"Yang akan saya lakukan sebagai penjual",
+ rec_n:"Berikut ini adalah analisis saya sendiri, bukan temuan dari sumber.",
+ r1_t:"Refund hanya ke rekening yang sama",
+ r1_p:"Kalau pembeli kelebihan bayar dan minta selisihnya dikirim ke rekening lain, tolak. Refund ke rekening yang membayar, setelah uangnya benar-benar masuk.",
+ r2_t:"Simpan tiga catatan untuk setiap pesanan",
+ r2_p:"Chat pesanan, bukti pembayaran, dan bukti pengiriman. Sederhana, membosankan, dan sangat berguna kalau ada yang bertanya nanti.",
+ r3_t:"Berhenti sejenak kalau tip besar berulang",
+ r3_p:"Hadiah atau tip besar dari akun baru, berulang kali, tanpa chat dan tanpa minat pada kontenmu, layak dicurigai.",
+ r4_t:"Jangan pinjamkan rekening bank atau e-wallet",
+ r4_p:"Bukan ke teman, bukan “cuma sekali ini”. Kamu mungkin harus menjelaskan setiap rupiah yang lewat di sana.",
+ r5_t:"Kalau mengurus uang orang lain, lapor tepat waktu",
+ r5_p:"Admin, agen, pembukuan, company secretary: kewajiban pelaporan bisa berlaku untukmu. Denda RM50.000 itu pengingatnya.",
+ r6_t:"Tanya lebih awal",
+ r6_p:"Kalau ada yang terasa janggal, berhenti dan simpan catatan. Tanya bank atau pengacara sebelum membalas pembeli.",
+ tag_mine:"Analisis saya", tag_case:"Dari kasus",
+ ck_h:"Simpan ini: sebelum terima pembayaran",
+ ck_s:"Centang sambil memeriksa.",
+ ck1:"Apakah jumlahnya sesuai dengan pesanan?",
+ ck2:"Apakah nama pengirim sama dengan nama pembeli?",
+ ck3:"Apakah uang sudah benar-benar masuk ke rekening saya sendiri?",
+ ck4:"Apakah refund kembali ke rekening yang membayar?",
+ ck5:"Apakah saya punya catatan pesanan, pembayaran, dan pengiriman?",
+ ck6:"Apakah saya hanya memakai rekening saya sendiri?",
+ tk_h:"Pendapat saya",
+ tk_p:"Kebanyakan dari 22 cara itu butuh tindak pidana nyata di balik uangnya. Penjual online bukan sasarannya. Tapi invoice yang rapi atau pembeli yang senang tidak membuat uang haram jadi bersih. Simpan catatan dengan sederhana, pakai rekening sendiri saja, dan laporkan yang terlihat janggal. Itu sudah cukup untuk kebanyakan kita.",
+ src_h:"Sumber (semuanya publik)",
+ dis:"Informasi umum, bukan nasihat hukum. Orang yang disebut dalam berita didakwa atau divonis sebagaimana dilaporkan sumber. Siapa pun yang didakwa dianggap tidak bersalah sampai terbukti bersalah. Angka diambil dari sumber publik yang tercantum. Kesalahan apa pun adalah milik saya.",
+ bio:"Reka Amorra menulis ringkasan riset pendek tentang bisnis online dan affiliate marketing untuk pembaca di Malaysia dan Indonesia."
+},
+zh:{
+ title_plain:"洗黑钱的22种方法",
+ k:"洗钱,简单说",
+ title:"洗黑钱的22种方法:哪些会碰到你的网络生意?",
+ sub:"一份爆红的清单,把洗钱说成了日常小事:打赏、黄金、名表、发票。这里说明马来西亚和印尼的法律怎么看,并附上新闻里的真实案例。",
+ by:"· 2026年11月13日 · 阅读约6分钟",
+ comment:"到LinkedIn留言",
+ tl_h:"简单说",
+ tl1:"22种方法不全是洗钱。<b>13</b>种是典型洗钱,<b>5</b>种借数码和娱乐平台,<b>2</b>种只是贿赂,<b>1</b>种属外汇或税务问题,<b>1</b>种是玩笑。",
+ tl2:"贿赂要等到钱被转移或隐藏、看起来变干净,才算洗钱。",
+ tl3:"在马来西亚,把现金拆小来躲避银行申报,本身就是罪行(AMLA第4A条)。",
+ tl4:"名表、黄金和豪车,一再出现在两国的真实案件里。",
+ tl5:"卖家和联盟营销者可能因退款、怪异的打赏和借出的账户而被牵连。文末有检查清单。",
+ i1:"一份“22种洗黑钱方法”的清单正在流传。有些是一箱箱现金,更多是直播打赏、游戏充值,或是一袋苹果。",
+ i2:"我把22种逐一看过,按马来西亚和印尼的法律分类,再去新闻里找真实案例。我先假设钱来自某项犯罪,因为洗钱需要这个前提。",
+ i3:"我们大多数人不会去洗钱。但如果你在网上做生意,可能会被卷进别人的麻烦。这就是为什么值得了解。",
+ s1_h:"把22种分类",
+ s1_p:"同一份清单,分五个格子。大部分是典型手法:假发票、空壳公司、很多小账户、假慈善、赌场筹码、黄金和奢侈品转卖。",
+ ch_t:"22种方法的分布(案例数)",
+ g1:"典型洗钱(发票、空壳公司、赌场、黄金、慈善、专利、学费等)",
+ g2:"数码和娱乐(直播打赏、游戏、票房、阴阳合同)",
+ g3:"纯贿赂(还不算洗钱)",
+ g4:"外汇或税务规定(古董字画那一例)",
+ g5:"洗衣机(玩笑)",
+ ch_n:"分类是我依据AMLA 2001和印尼TPPU法对清单的解读,仅作说明,不是官方数据。",
+ s2_h:"贿赂还不算洗钱",
+ s2_p:"为了批准贷款收一笔“奖金”,是贪污。在马来西亚归反贪会法令,在印尼归Tipikor法。等到钱被转移、隐藏或花掉、看起来变干净,才变成洗钱。",
+ fl_t:"快速判断",
+ f1:"这笔钱是否来自犯罪?",
+ f1n:"可能是别的罪行(税务、外汇规定),不是洗钱。",
+ f2:"钱是否被转移、隐藏或花掉,让它看起来干净?",
+ f2n:"罪行仍是贿赂或欺诈。",
+ f3:"洗钱(马来西亚AMLA第4(1)条,印尼TPPU法)",
+ yes:"是", no:"否",
+ c1_t:"棕榈油案:贿赂成立,洗钱不成立",
+ c1_p:"2026年4月,雅加达高等法院把Syafei的刑期加到8年。他被裁定贿赂罪成,但洗钱罪不成立。同案的另外两人,Marcella Santoso和Ariyanto,两项罪名都成立。",
+ c2_t:"Nurhadi:收受酬金与洗钱",
+ c2_p:"2026年,雅加达高等法院维持前最高法院秘书Nurhadi的5年刑期,案件涉及收受酬金和洗钱。",
+ s3_h:"拆分现金本身就是罪行",
+ s3_p:"马来西亚AMLA第4A条规管“拆分交易”,也就是把一大笔现金拆成小额,以躲避银行的申报规定。最高可判7年监禁,或罚款金额的五倍。",
+ c3_t:"首宗拆分现金案",
+ c3_p:"2021年6月,一名女商人成为首位依此条被控的人。控状涉及把现金付款拆开,使每笔都低于申报门槛。",
+ c3b_t:"为什么重要",
+ c3b_p:"检方不必先证明钱的来源。拆分这个动作本身就是罪行。",
+ s4_h:"名表、黄金和豪车",
+ s4_p:"能保值又好转卖的东西最受欢迎。用现金好买,也好卖。下面的案例显示两国都有。",
+ c4_t:"吉隆坡一家名表店",
+ c4_p:"2026年2月,一家名表店的助理经理被控44项罪名,涉及170万令吉。他不认罪。案件仍在审理中。",
+ c5_t:"非法采矿,Muara Enim",
+ c5_p:"2026年11月,Muara Enim法院对一宗非法采矿所得的洗钱案作出判决。一辆Ducati和一辆Porsche被国家没收。",
+ c5b_t:"非法黄金,全国范围",
+ c5b_p:"印尼金融情报中心PPATK表示,2025年追查的上游犯罪中,非法黄金开采和交易的资金流动最大,接近1,000万亿印尼盾。",
+ s5_h:"装作没看见是有代价的",
+ s5_p:"银行和部分专业人士必须申报可疑交易。2026年5月,马来西亚一名公司秘书因违反AMLA被罚5万令吉,其中包括没有申报两宗可疑交易。印尼的PPATK在2025年收到4,372万份报告。",
+ st1:"爆红清单上的方法", st2:"名表店案,44项罪名", st3:"2025年向PPATK的报告", st4:"未申报被罚款",
+ wm_h:"那洗衣机呢?",
+ wm_p:"现金留在外套口袋里,洗衣机转一圈。钞票出来湿透了,仅此而已。22种里只有它真的在“洗”,也不是金融犯罪。",
+ cm_h:"马来西亚和印尼对照",
+ r_law:"主要法律", r_dog:"监管机构", r_brb:"贿赂法律", r_jail:"最高刑期", r_x:"值得知道",
+ j_my:"15年", j_id:"20年",
+ x_my:"拆分现金:第4A条", x_id:"2025年4,372万份报告",
+ rec_h:"如果我是卖家,我会这样做",
+ rec_n:"以下是我自己的分析,不是资料来源里的结论。",
+ r1_t:"退款只退回原付款账户",
+ r1_p:"如果买家多付了钱,要求把差额转到另一个账户,请拒绝。等款项确实入账后,退回给原来付款的账户。",
+ r2_t:"每张订单留三份记录",
+ r2_p:"订单聊天记录、付款凭证、送货凭证。简单、无聊,但之后有人问起时非常有用。",
+ r3_t:"重复的大额打赏先停一停",
+ r3_p:"新账户一再送大额礼物或打赏,又不聊天、对你的内容也没兴趣,值得多看一眼。",
+ r4_t:"不要出借银行或电子钱包账户",
+ r4_p:"朋友也不行,“就这一次”也不行。经过那个账户的每一笔钱,你都可能要解释清楚。",
+ r5_t:"替别人管钱,要按时申报",
+ r5_p:"行政人员、代理、记账员、公司秘书:申报责任可能落在你身上。那宗5万令吉罚款就是提醒。",
+ r6_t:"早点问",
+ r6_p:"觉得不对劲,就先停下来,保留记录。回复买家之前,先问银行或律师。",
+ tag_mine:"我的分析", tag_case:"来自案例",
+ ck_h:"收藏这个:收款之前",
+ ck_s:"边看边勾选。",
+ ck1:"金额和订单相符吗?",
+ ck2:"付款人姓名和买家一样吗?",
+ ck3:"钱已经确实进了我自己的账户吗?",
+ ck4:"退款是退回原付款账户吗?",
+ ck5:"我有订单、付款和送货的记录吗?",
+ ck6:"我只用自己的账户吗?",
+ tk_h:"我的看法",
+ tk_p:"22种方法大多要有真实的犯罪在钱的背后。网络卖家不是目标。但整齐的发票或满意的买家,并不能让黑钱变干净。记录保持简单,只用自己的账户,看到不对劲就申报。对大多数人来说,这样就够了。",
+ src_h:"资料来源(全部公开)",
+ dis:"以下为一般资讯,不是法律意见。新闻中提到的人士,按来源报道被控或被定罪。任何被控者在被证明有罪之前,均视为无罪。数字来自所列的公开资料。如有错误,责任在我。",
+ bio:"Reka Amorra为马来西亚和印尼的读者撰写关于网络生意和联盟营销的简短研究简报。"
+}
+};
+
+function apply(l){
+  if(!T[l]) l='en';
+  var d=T[l];
+  document.documentElement.lang = (l==='bm'?'ms':(l==='zh'?'zh-Hans':l));
+  document.querySelectorAll('[data-t]').forEach(function(el){
+    var k=el.getAttribute('data-t'); if(d[k]!==undefined) el.innerHTML=d[k];
+  });
+  document.title = d.title_plain + ' | Reka Amorra';
+  document.querySelectorAll('#langs button').forEach(function(b){ b.classList.toggle('on', b.getAttribute('data-lang')===l); });
+  try{ history.replaceState(null,'','#'+l); }catch(e){}
+}
+document.querySelectorAll('.js-comment').forEach(function(a){ a.href = LINKEDIN_POST_URL; });
+document.querySelectorAll('#langs button').forEach(function(b){
+  b.addEventListener('click',function(){ apply(b.getAttribute('data-lang')); });
+});
+window.addEventListener('hashchange',function(){ apply(location.hash.replace('#','')); });
+var start = location.hash.replace('#','');
+apply(T[start]?start:'en');
+</script>
+</body>
+</html>
