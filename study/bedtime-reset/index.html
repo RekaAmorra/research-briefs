@@ -3,30 +3,33 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>9-Minute Bedtime Reset Module</title>
+<title>The 9-Minute Bedtime Reset</title>
+<meta name="description" content="A study module on the 9-minute bedtime reset, in English, Bahasa Malaysia, Bahasa Indonesia and Chinese.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Nunito+Sans:wght@400;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-/* Layout idea: single white column of rounded pastel cards, numbered step badges, one save-this checklist at the end. */
+/* Layout idea: single white column of rounded pastel cards, numbered step badges, one save-this checklist, language bar on top. */
 :root{
-  --bg:#ffffff;
-  --ink:#1f2937;
-  --muted:#5b6472;
-  --line:#e6e9ef;
+  --bg:#ffffff; --ink:#1f2937; --muted:#5b6472; --line:#e6e9ef;
   --mint:#e3f6ec; --mint-d:#1f7a52;
   --sky:#e4f0fd; --sky-d:#2a62a8;
   --peach:#fdebdd; --peach-d:#b4561b;
   --lilac:#efe9fb; --lilac-d:#6a4bb5;
   --rose:#fde8ee; --rose-d:#b03a5b;
-  --display:"Bricolage Grotesque","Trebuchet MS",sans-serif;
-  --body:"Nunito Sans","Segoe UI",Arial,sans-serif;
+  --display:"Bricolage Grotesque","Noto Sans SC","Trebuchet MS",sans-serif;
+  --body:"Nunito Sans","Noto Sans SC","Segoe UI",Arial,sans-serif;
   color-scheme: light;
 }
 *{box-sizing:border-box}
 html{background:var(--bg)}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6}
-.wrap{max-width:760px;margin:0 auto;padding:24px 18px 72px}
-h1,h2,h3{font-family:var(--display);line-height:1.2;text-wrap:balance;margin:0}
+.wrap{max-width:760px;margin:0 auto;padding:18px 18px 72px}
+.langbar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.langbar button{background:#fff;color:var(--lilac-d);border:1px solid var(--lilac-d);padding:7px 14px;font-size:.92rem}
+.langbar button[aria-pressed="true"]{background:var(--lilac-d);color:#fff}
+.lang{display:none}
+.lang.on{display:block}
+h1,h2,h3{font-family:var(--display);line-height:1.25;text-wrap:balance;margin:0}
 h1{font-size:2.1rem;font-weight:800}
 h2{font-size:1.45rem;font-weight:700;margin-bottom:12px}
 h3{font-size:1.1rem;font-weight:700;margin-bottom:6px}
@@ -43,7 +46,7 @@ section{margin-top:34px}
 .goal b{display:block;font-family:var(--display);color:var(--sky-d);margin-bottom:4px}
 .badge{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;font-family:var(--display);font-weight:800;color:#fff;margin-right:10px;flex:none}
 .phase{margin-top:16px}
-.phase header{display:flex;align-items:center;margin-bottom:10px}
+.phase header{display:flex;align-items:center;margin-bottom:10px;gap:4px;flex-wrap:wrap}
 .phase header h3{margin:0}
 .time{margin-left:auto;font-weight:700;font-size:.85rem;border-radius:999px;padding:3px 12px;background:#fff}
 .p1{background:var(--peach);border-color:#f5d6bd}.p1 .badge{background:var(--peach-d)}.p1 .time{color:var(--peach-d)}
@@ -58,20 +61,23 @@ li{margin-bottom:6px}
 .good{background:#fff;border:1px solid #cfe9dc} .good b{color:var(--mint-d)}
 .note{background:var(--peach);border-radius:16px;padding:14px 16px;margin:14px 0;font-size:.97rem}
 .note b{color:var(--peach-d)}
+.small{font-size:.93rem;color:var(--muted)}
 svg{max-width:100%;height:auto;display:block}
-.paper{background:#fffdf5;border:1px dashed #d9d2b8;border-radius:14px;padding:14px 18px;font-family:"Segoe Print","Comic Sans MS",cursive;font-size:.95rem;line-height:1.7;color:#3b3b3b}
+.paper{background:#fffdf5;border:1px dashed #d9d2b8;border-radius:14px;padding:14px 18px;font-size:.97rem;line-height:1.7;color:#3b3b3b}
 .paper h4{margin:10px 0 4px;font-family:var(--body);font-size:.8rem;letter-spacing:.05em;text-transform:uppercase;color:#8a8466}
 .tablewrap{overflow-x:auto}
 table{border-collapse:collapse;width:100%;min-width:520px;font-size:.95rem}
 th,td{border-bottom:1px solid var(--line);padding:8px 6px;text-align:center}
 th:first-child,td:first-child{text-align:left}
 th{font-family:var(--display);font-size:.85rem;color:var(--muted)}
+.phase table th{color:var(--ink)}
+.phase td,.phase th{text-align:left}
 input[type=checkbox]{width:22px;height:22px;accent-color:var(--mint-d)}
 select,button,textarea{font:inherit}
 select{border:1px solid var(--line);border-radius:10px;padding:4px 6px;background:#fff}
 button{cursor:pointer;border:0;border-radius:999px;padding:9px 18px;font-weight:700;background:var(--lilac-d);color:#fff}
 button.ghost{background:#fff;color:var(--lilac-d);border:1px solid var(--lilac-d)}
-button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid #f2b705;outline-offset:2px}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #2a62a8;outline-offset:2px}
 .q{margin-bottom:18px}
 .q p{font-weight:700;margin-bottom:8px}
 .opt{display:block;width:100%;text-align:left;margin-bottom:8px;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:14px;padding:10px 14px;font-weight:600}
@@ -80,29 +86,31 @@ button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-vis
 .fb{font-size:.94rem;color:var(--muted);margin-top:4px}
 .score{font-family:var(--display);font-size:1.15rem;font-weight:700;color:var(--lilac-d)}
 dl{margin:0}dt{font-weight:700;font-family:var(--display);margin-top:10px}dd{margin:2px 0 0;color:var(--muted)}
-details{border:1px solid var(--line);border-radius:14px;padding:10px 14px;margin-bottom:10px}
-summary{cursor:pointer;font-weight:700}
 .check{background:var(--mint);border-color:#c6ebd8}
 .check label{display:flex;gap:10px;align-items:flex-start;margin-bottom:8px}
 .check input{margin-top:3px;flex:none}
 textarea{width:100%;min-height:70px;border:1px solid var(--line);border-radius:12px;padding:10px;background:#fff;resize:vertical}
-footer{margin-top:40px;font-size:.88rem;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
+.caveats{background:#f7f8fa;border-radius:16px;padding:16px 18px;margin-top:22px}
+.caveats h3{margin-bottom:8px}
+.caveats ul{padding-left:20px;margin:0}
+.caveats li{font-size:.92rem;color:var(--muted);margin-bottom:8px}
+footer{margin-top:28px;font-size:.88rem;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
+footer ul{padding-left:20px}
 @media (prefers-reduced-motion:no-preference){.opt{transition:background .15s}}
 </style>
 </head>
 <body>
 <div class="wrap">
+<div class="langbar" role="group" aria-label="Language"><button type="button" data-l="en" aria-pressed="false">English</button><button type="button" data-l="bm" aria-pressed="false">Bahasa Malaysia</button><button type="button" data-l="id" aria-pressed="false">Bahasa Indonesia</button><button type="button" data-l="zh" aria-pressed="false">中文</button></div>
 
+<div class="lang" id="L-en" lang="en" data-code="en">
 <header>
   <div class="eyebrow">Study module · Self management</div>
   <h1>The 9-Minute Bedtime Reset</h1>
-  <div class="byline">Prepared for Reka Amorra · About 40 minutes to read, plus a 7-day practice</div>
+  <div class="byline">By Reka Amorra · About 40 minutes to read, plus a 7-day practice</div>
 </header>
 
-<div class="card tldr">
-  <strong class="label">TL;DR</strong>
-  <p>Before bed, spend 9 minutes with pen and paper. Minutes 1 to 3: write everything on your mind. Minutes 4 to 6: write the first small action for each item. Minutes 7 to 9: pick the day's heaviest decision and write what you did not know at the time, in 15 words or fewer. Then stop and sleep. Review the list tomorrow, not tonight.</p>
-</div>
+<div class="card tldr"><strong class="label">TL;DR</strong><p>Before bed, spend 9 minutes with pen and paper. Minutes 1 to 3: write everything on your mind. Minutes 4 to 6: write the first small action for each item. Minutes 7 to 9: pick the day's heaviest decision and write what you did not know at the time, in 15 words or fewer. Then stop and sleep. Review the list tomorrow, not tonight.</p></div>
 
 <section>
   <h2>What you will learn</h2>
@@ -117,35 +125,31 @@ footer{margin-top:40px;font-size:.88rem;color:var(--muted);border-top:1px solid 
 <section>
   <h2>Part 1. Why the mind will not switch off</h2>
   <p>Bluma Zeigarnik, a psychologist, noticed in the 1920s that people remember unfinished tasks better than finished ones. The idea became known as the Zeigarnik effect. In daily life it feels like this: you lie down, and your head starts reading out your open items. The link you forgot to change. The message you did not answer. The post you have not planned.</p>
-  <p>Here is the useful part. In 2011, E. J. Masicampo and Roy Baumeister ran studies on this. They found that unfinished goals kept popping into people's thoughts and hurt their focus. But making a specific plan for the goal reduced that effect, even though the goal was still not done.</p>
+  <p>Here is the useful part. In 2011, E. J. Masicampo and Roy Baumeister ran studies on this. They found that unfinished goals kept popping into people's thoughts and hurt their focus. But making a specific plan for the goal removed that effect, even though the goal was still not done.</p>
   <div class="note"><b>So the target is not "finish everything".</b> The target is "know exactly where I start". A clear first step lets the mind stop checking in.</div>
   <h3>Why pen and paper</h3>
-  <ul>
-    <li>A phone brings new open loops: messages, emails, news. You want to close loops, not open more.</li>
-    <li>Writing it down takes the job of remembering away from your head.</li>
-    <li>Phone light and scrolling make it easier to stay awake.</li>
-  </ul>
-  <p style="font-size:.93rem;color:var(--muted)">Honest note: the research above supports plan-making. The claims about paper versus screen come from the method itself and are common sense, not something proven in those studies. Treat them as a sensible setup, and test it on yourself in the 7-day log.</p>
+  <ul><li>A phone brings new open loops: messages, emails, news. You want to close loops, not open more.</li><li>Writing it down takes the job of remembering away from your head.</li><li>Phone light and scrolling make it easier to stay awake.</li></ul>
+  <p class="small">Honest note: the research above supports plan-making. The claims about paper versus screen come from the method itself and are common sense, not something proven in those studies. Treat them as a sensible setup, and test it on yourself in the 7-day log.</p>
 </section>
 
 <section>
   <h2>Part 2. The flow at a glance</h2>
-  <svg viewBox="0 0 700 150" role="img" aria-label="Three boxes in a row: Clear for minutes 1 to 3, First action for minutes 4 to 6, Close today's loop for minutes 7 to 9, then pen down and sleep.">
-    <defs><marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#5b6472"/></marker></defs>
+  <svg viewBox="0 0 700 150" role="img" aria-label="Three boxes in a row: Clear, First action, Close the loop, then pen down and sleep.">
+    <defs><marker id="ar-en" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#5b6472"/></marker></defs>
     <rect x="6" y="20" width="190" height="100" rx="18" fill="#fdebdd" stroke="#f5d6bd"/>
-    <text x="101" y="52" text-anchor="middle" font-family="Trebuchet MS,sans-serif" font-weight="700" font-size="18" fill="#b4561b">1. Clear</text>
+    <text x="101" y="52" text-anchor="middle" font-family="Trebuchet MS,Noto Sans SC,sans-serif" font-weight="700" font-size="18" fill="#b4561b">1. Clear</text>
     <text x="101" y="78" text-anchor="middle" font-size="14" fill="#1f2937">Write everything</text>
     <text x="101" y="100" text-anchor="middle" font-size="13" fill="#5b6472">Minutes 1 to 3</text>
     <rect x="256" y="20" width="190" height="100" rx="18" fill="#e4f0fd" stroke="#c9def5"/>
-    <text x="351" y="52" text-anchor="middle" font-family="Trebuchet MS,sans-serif" font-weight="700" font-size="18" fill="#2a62a8">2. First action</text>
+    <text x="351" y="52" text-anchor="middle" font-family="Trebuchet MS,Noto Sans SC,sans-serif" font-weight="700" font-size="18" fill="#2a62a8">2. First action</text>
     <text x="351" y="78" text-anchor="middle" font-size="14" fill="#1f2937">Smallest next step</text>
     <text x="351" y="100" text-anchor="middle" font-size="13" fill="#5b6472">Minutes 4 to 6</text>
     <rect x="506" y="20" width="188" height="100" rx="18" fill="#efe9fb" stroke="#dccff5"/>
-    <text x="600" y="52" text-anchor="middle" font-family="Trebuchet MS,sans-serif" font-weight="700" font-size="18" fill="#6a4bb5">3. Close the loop</text>
+    <text x="600" y="52" text-anchor="middle" font-family="Trebuchet MS,Noto Sans SC,sans-serif" font-weight="700" font-size="18" fill="#6a4bb5">3. Close the loop</text>
     <text x="600" y="78" text-anchor="middle" font-size="14" fill="#1f2937">One decision, 15 words</text>
     <text x="600" y="100" text-anchor="middle" font-size="13" fill="#5b6472">Minutes 7 to 9</text>
-    <line x1="198" y1="70" x2="252" y2="70" stroke="#5b6472" stroke-width="2" marker-end="url(#ar)"/>
-    <line x1="448" y1="70" x2="502" y2="70" stroke="#5b6472" stroke-width="2" marker-end="url(#ar)"/>
+    <line x1="198" y1="70" x2="252" y2="70" stroke="#5b6472" stroke-width="2" marker-end="url(#ar-en)"/>
+    <line x1="448" y1="70" x2="502" y2="70" stroke="#5b6472" stroke-width="2" marker-end="url(#ar-en)"/>
   </svg>
   <p style="text-align:center;color:var(--muted);margin:6px auto 0">Then: pen down, light off. Do not read the list until morning.</p>
 </section>
@@ -156,11 +160,7 @@ footer{margin-top:40px;font-size:.88rem;color:var(--muted);border-top:1px solid 
   <div class="card phase p1">
     <header><span class="badge">1</span><h3>Clear</h3><span class="time">Minutes 1 to 3</span></header>
     <p class="why">Goal: get everything out of your head and onto paper.</p>
-    <ul>
-      <li>Write all of it. Big decisions, small errands, messages you owe, vague worries.</li>
-      <li>Do not sort. Do not rank. Do not make a neat checklist. Sorting slows you down and keeps the loops in your head.</li>
-      <li>Stop when you reach a quiet pause and nothing new comes.</li>
-    </ul>
+    <ul><li>Write all of it. Big decisions, small errands, messages you owe, vague worries.</li><li>Do not sort. Do not rank. Do not make a neat checklist. Sorting slows you down and keeps the loops in your head.</li><li>Stop when you reach a quiet pause and nothing new comes.</li></ul>
     <div class="grid two">
       <div class="bad"><b>Common mistake</b><br>Stopping to decide which item matters most. That is for tomorrow.</div>
       <div class="good"><b>Good sign</b><br>The last few lines are small, odd items. It means the big ones are already out.</div>
@@ -170,35 +170,21 @@ footer{margin-top:40px;font-size:.88rem;color:var(--muted);border-top:1px solid 
   <div class="card phase p2">
     <header><span class="badge">2</span><h3>First action</h3><span class="time">Minutes 4 to 6</span></header>
     <p class="why">Goal: turn each vague worry into a physical step you can start in under two minutes.</p>
-    <ul>
-      <li>Next to each item, write the smallest first move. Use a verb you can picture: open, copy, send, find, write.</li>
-      <li>You are not solving it. You are only deciding where to begin.</li>
-      <li>If an item has no clear first step, the first step is "decide what the first step is", and write who or what you need to ask.</li>
-    </ul>
-    <div class="tablewrap">
-    <table>
+    <ul><li>Next to each item, write the smallest first move. Use a verb you can picture: open, copy, send, find, write.</li><li>You are not solving it. You are only deciding where to begin.</li><li>If an item has no clear first step, the first step is "find out what the first step is", and write who or what you need to ask.</li></ul>
+    <div class="tablewrap"><table>
       <tr><th>Vague (keeps you awake)</th><th>First action (lets you rest)</th></tr>
-      <tr><td>Fix my affiliate links</td><td>Open Shopee app, copy the link of product 1</td></tr>
-      <tr><td>Plan next week's content</td><td>Open notes, write 3 topic titles</td></tr>
-      <tr><td>Deal with car insurance</td><td>Find the policy PDF in Gmail</td></tr>
-      <tr><td>Prepare the presentation</td><td>Make a blank deck, type 3 section titles</td></tr>
-      <tr><td>Reply to that customer</td><td>Open the chat, type the first line only</td></tr>
-    </table>
-    </div>
+      <tr><td>Fix my affiliate links</td><td>Open Shopee app, copy the link of product 1</td></tr><tr><td>Plan next week's content</td><td>Open notes, write 3 topic titles</td></tr><tr><td>Deal with car insurance</td><td>Find the policy PDF in Gmail</td></tr><tr><td>Prepare the presentation</td><td>Make a blank deck, type 3 section titles</td></tr><tr><td>Reply to that customer</td><td>Open the chat, type the first line only</td></tr>
+    </table></div>
   </div>
 
   <div class="card phase p3">
     <header><span class="badge">3</span><h3>Close today's loop</h3><span class="time">Minutes 7 to 9</span></header>
     <p class="why">Goal: stop replaying a decision you already made.</p>
-    <ul>
-      <li>Pick the one decision from today that bothers you most. "Did I handle that right?" "Should I have bought that?"</li>
-      <li>Write the answer to one question: <b>What did I not know at the time?</b></li>
-      <li>Use 15 words or fewer. A short answer stops this from turning into a long worry session.</li>
-    </ul>
+    <ul><li>Pick the one decision from today that bothers you most. "Did I handle that right?" "Should I have bought that?"</li><li>Write the answer to one question: <b>What did I not know at the time?</b></li><li>Use 15 words or fewer. A short answer stops this from turning into a long worry session.</li></ul>
     <p>The question moves the decision from feeling to information. You judged with what you had then. Today you have more. That gap is data, not a fault.</p>
     <div class="grid two">
       <div class="bad"><b>Too long and too hard</b><br>"I should have known better, I always rush, I never check the details before posting."</div>
-      <div class="good"><b>Right size (11 words)</b><br>"I did not know the product link had expired before I posted."</div>
+      <div class="good"><b>Right size</b><br>"I did not know the product link had expired before I posted."</div>
     </div>
   </div>
 </section>
@@ -207,194 +193,622 @@ footer{margin-top:40px;font-size:.88rem;color:var(--muted);border-top:1px solid 
   <h2>Part 4. A sample page, start to finish</h2>
   <p>This is one made-up night, to show what the paper can look like. Yours can be messier.</p>
   <div class="paper">
-    <h4>Phase 1 · Clear</h4>
-    Links for tomorrow's post. Reply to Mira. Caption feels flat. Buy cooking oil. Pay phone bill. Video idea for Friday. Is the new content plan too much?
-    <h4>Phase 2 · First action</h4>
-    Links: open Shopee, copy link of product 1.<br>
-    Mira: open chat, type "Hi, I will send it tonight".<br>
-    Caption: read it out loud once in the morning.<br>
-    Oil and phone bill: add both to the shopping note.<br>
-    Friday video: write 1 title.<br>
-    Content plan: cut it to 3 posts, write the 3 days.
-    <h4>Phase 3 · Close the loop</h4>
-    Decision: I posted late today.<br>
-    I did not know the traffic was lower after 9 pm.
+    <h4>Phase 1 · Clear</h4>Links for tomorrow's post. Reply to Mira. Caption feels flat. Buy cooking oil. Pay phone bill. Video idea for Friday. Is the new content plan too much?
+    <h4>Phase 2 · First action</h4>Links: open Shopee, copy link of product 1.<br>Mira: open chat, type "Hi, I will send it tonight".<br>Caption: read it out loud once in the morning.<br>Oil and phone bill: add both to the shopping note.<br>Friday video: write 1 title.<br>Content plan: cut it to 3 posts, write the 3 days.
+    <h4>Phase 3 · Close the loop</h4>Decision: I posted late today.<br>I did not know the traffic was lower after 9 pm.
   </div>
   <p style="margin-top:10px">Pen down. Light off. The list stays on the table until morning.</p>
 </section>
 
 <section>
   <h2>Part 5. Make it stick</h2>
-  <div class="grid two">
-    <div class="card"><h3>Set up</h3><ul>
-      <li>Keep one notebook and one pen on the bedside table.</li>
-      <li>Use one page per night. Date it.</li>
-      <li>Phone in another place, or face down and silent.</li></ul></div>
-    <div class="card"><h3>Timer</h3><ul>
-      <li>Use a soft timer, or three chimes of 3 minutes.</li>
-      <li>When it ends, stop, even if you are mid-line.</li>
-      <li>This is a shutdown ritual, not a planning session.</li></ul></div>
-    <div class="card"><h3>Morning</h3><ul>
-      <li>Read the page once, with coffee or tea.</li>
-      <li>Move the real tasks to your normal list or calendar.</li>
-      <li>Do the first action of the top item.</li></ul></div>
-    <div class="card"><h3>When it does not work</h3><ul>
-      <li>If you are still awake after 20 minutes, get up and sit somewhere dim, then return when sleepy.</li>
-      <li>If you often cannot sleep for weeks, speak to a doctor. This routine is a habit tool, not medical advice.</li></ul></div>
-  </div>
+  <div class="grid two"><div class="card"><h3>Set up</h3><ul><li>Keep one notebook and one pen on the bedside table.</li><li>Use one page per night. Date it.</li><li>Phone in another place, or face down and silent.</li></ul></div><div class="card"><h3>Timer</h3><ul><li>Use a soft timer, or three chimes of 3 minutes.</li><li>When it ends, stop, even if you are mid-line.</li><li>This is a shutdown ritual, not a planning session.</li></ul></div><div class="card"><h3>Morning</h3><ul><li>Read the page once, with coffee or tea.</li><li>Move the real tasks to your normal list or calendar.</li><li>Do the first action of the top item.</li></ul></div><div class="card"><h3>When it does not work</h3><ul><li>If you are still awake after 20 minutes, get up and sit somewhere dim, then return when sleepy.</li><li>If you often cannot sleep for weeks, speak to a doctor. This routine is a habit tool, not medical advice.</li></ul></div></div>
 </section>
 
 <section>
   <h2>Part 6. 7-day practice log</h2>
   <p>Tick what you did each night. Rate how fast you fell asleep from 1 (slow) to 5 (fast). It saves on this device only.</p>
-  <div class="tablewrap">
-  <table id="log">
-    <thead><tr><th>Night</th><th>Clear</th><th>First action</th><th>Close loop</th><th>Sleep speed</th></tr></thead>
-    <tbody></tbody>
-  </table>
-  </div>
-  <p style="margin-top:12px"><button class="ghost" id="resetLog" type="button">Clear the log</button></p>
-  <p id="logSummary" class="score" aria-live="polite"></p>
+  <div class="tablewrap logbox" data-code="en"></div>
+  <p style="margin-top:12px"><button class="ghost resetLog" type="button">Clear the log</button></p>
+  <p class="score logSummary" aria-live="polite"></p>
 </section>
 
 <section>
   <h2>Part 7. Self-check quiz</h2>
-  <div id="quiz"></div>
-  <p class="score" id="quizScore" aria-live="polite"></p>
-  <button type="button" id="quizReset" class="ghost">Try again</button>
+  <div class="quizbox" data-code="en"></div>
+  <p class="score quizScore" aria-live="polite"></p>
+  <button type="button" class="ghost quizReset">Try again</button>
 </section>
 
 <section>
   <h2>Part 8. After 7 days, reflect</h2>
   <p>Write short answers. Three lines each is enough.</p>
-  <label for="r1"><b>1. Which phase helped most, and why?</b></label>
-  <textarea id="r1"></textarea>
-  <label for="r2" style="display:block;margin-top:12px"><b>2. What kept coming back every night?</b></label>
-  <textarea id="r2"></textarea>
-  <label for="r3" style="display:block;margin-top:12px"><b>3. What will I change in my work routine because of it?</b></label>
-  <textarea id="r3"></textarea>
+  <label for="r0-en" style="display:block;margin-top:0px"><b>1. Which phase helped most, and why?</b></label><textarea id="r0-en" class="rf" data-k="r0"></textarea><label for="r1-en" style="display:block;margin-top:12px"><b>2. What kept coming back every night?</b></label><textarea id="r1-en" class="rf" data-k="r1"></textarea><label for="r2-en" style="display:block;margin-top:12px"><b>3. What will I change in my work routine because of it?</b></label><textarea id="r2-en" class="rf" data-k="r2"></textarea>
 </section>
 
 <section>
   <h2>Glossary</h2>
-  <dl>
-    <dt>Open loop</dt><dd>Any task or decision your mind is still holding.</dd>
-    <dt>Zeigarnik effect</dt><dd>The tendency to keep unfinished tasks active in the mind.</dd>
-    <dt>First action</dt><dd>The smallest physical step that starts a task, doable in under two minutes.</dd>
-    <dt>Rumination</dt><dd>Replaying the same thought or past decision again and again.</dd>
-    <dt>Hindsight</dt><dd>Judging a past choice with information you only have now.</dd>
-  </dl>
+  <dl><dt>Open loop</dt><dd>Any task or decision your mind is still holding.</dd><dt>Zeigarnik effect</dt><dd>The tendency to keep unfinished tasks active in the mind.</dd><dt>First action</dt><dd>The smallest physical step that starts a task, doable in under two minutes.</dd><dt>Rumination</dt><dd>Replaying the same thought or past decision again and again.</dd><dt>Hindsight</dt><dd>Judging a past choice with information you only have now.</dd></dl>
 </section>
 
 <section>
   <div class="card check">
     <h2>Save this: nightly checklist</h2>
-    <label><input type="checkbox" class="ck"> Notebook, pen and timer are on the bedside table</label>
-    <label><input type="checkbox" class="ck"> Phone is away</label>
-    <label><input type="checkbox" class="ck"> Phase 1: wrote everything, no sorting</label>
-    <label><input type="checkbox" class="ck"> Phase 2: every item has a first action I can start in 2 minutes</label>
-    <label><input type="checkbox" class="ck"> Phase 3: one decision, answer in 15 words or fewer</label>
-    <label><input type="checkbox" class="ck"> Pen down, light off, list stays closed until morning</label>
+    <label><input type="checkbox" class="ck" data-i="0"> Notebook, pen and timer are on the bedside table</label><label><input type="checkbox" class="ck" data-i="1"> Phone is away</label><label><input type="checkbox" class="ck" data-i="2"> Phase 1: wrote everything, no sorting</label><label><input type="checkbox" class="ck" data-i="3"> Phase 2: every item has a first action I can start in 2 minutes</label><label><input type="checkbox" class="ck" data-i="4"> Phase 3: one decision, answer in 15 words or fewer</label><label><input type="checkbox" class="ck" data-i="5"> Pen down, light off, list stays closed until morning</label>
   </div>
 </section>
 
+<div class="caveats">
+  <h3>Please note</h3>
+  <ul><li><b>Not medical advice.</b> This module is for study and personal habit-building. If you cannot sleep for weeks, or you feel very low or anxious, please see a doctor or a qualified professional.</li><li><b>Simplified summaries.</b> Study results come from groups of people and may not fit everyone. Read the original paper for the full detail.</li><li><b>Own views.</b> The views here are the author's own and do not represent any organisation.</li><li><b>Privacy.</b> Your log, quiz answers, checklist and reflections stay in your own browser on this device. Nothing is sent to the author or to anyone else. Clearing your browser data removes them, and on a shared device please clear the log after use. Do not write passwords or other people's private details in the reflection boxes. The page loads fonts from Google Fonts. This follows the spirit of Malaysia's Personal Data Protection Act 2010 (PDPA) and Indonesia's Personal Data Protection Law (UU PDP, Law No. 27 of 2022).</li></ul>
+</div>
+
 <footer>
   <b>Sources and credit</b>
-  <ul>
-    <li>The 9-minute bedtime method was shared as a written routine. The original author is not named in the material, so none is credited here. If you find the author, add the name.</li>
-    <li>Masicampo, E. J., and Baumeister, R. F. (2011). "Consider it done! Plan making can eliminate the cognitive effects of unfulfilled goals." Journal of Personality and Social Psychology, 101(4), 667-683. doi:10.1037/a0024192</li>
-    <li>Zeigarnik, B. (1927). Original work on memory for unfinished tasks. Later studies of this memory effect have had mixed results, so this module relies on the plan-making findings above.</li>
-  </ul>
-  <p>For study and personal habit-building only. Not medical advice.</p>
+  <ul><li>The 9-minute bedtime method was shared as a written routine. The original author is not named in the material, so none is credited here.</li><li>Masicampo, E. J., and Baumeister, R. F. (2011). "Consider it done! Plan making can eliminate the cognitive effects of unfulfilled goals." Journal of Personality and Social Psychology, 101(4), 667-683. doi:10.1037/a0024192</li><li>Zeigarnik, B. (1927). Original work on memory for unfinished tasks. Later studies of this memory effect have had mixed results, so this module relies on the plan-making findings above.</li></ul>
+  <p>© 2026 Reka Amorra, Study module</p>
 </footer>
 </div>
 
+
+<div class="lang" id="L-bm" lang="ms" data-code="bm">
+<header>
+  <div class="eyebrow">Modul belajar · Pengurusan diri</div>
+  <h1>Reset 9 Minit Sebelum Tidur</h1>
+  <div class="byline">Oleh Reka Amorra · Lebih kurang 40 minit untuk baca, tambah latihan 7 hari</div>
+</header>
+
+<div class="card tldr"><strong class="label">Ringkasnya</strong><p>Sebelum tidur, ambil 9 minit dengan pen dan kertas. Minit 1 hingga 3: tulis semua yang bermain dalam kepala. Minit 4 hingga 6: tulis langkah pertama yang kecil untuk setiap perkara. Minit 7 hingga 9: pilih satu keputusan hari ini yang paling membebankan, kemudian tulis apa yang kita tak tahu masa itu, dalam 15 patah perkataan atau kurang. Lepas itu berhenti dan tidur. Baca senarai itu esok pagi, bukan malam ini.</p></div>
+
+<section>
+  <h2>Apa yang anda akan belajar</h2>
+  <div class="grid goals">
+    <div class="goal"><b>1. Idea asasnya</b>Kenapa kerja yang belum siap buat kita susah nak lena.</div>
+    <div class="goal"><b>2. Kaedahnya</b>Tiga fasa dan peraturan dalam setiap fasa.</div>
+    <div class="goal"><b>3. Versi anda</b>Cara guna untuk kerja kandungan, affiliate dan urusan rumah.</div>
+    <div class="goal"><b>4. Jadikan tabiat</b>Log 7 hari, kuiz semak diri dan senarai semak untuk disimpan.</div>
+  </div>
+</section>
+
+<section>
+  <h2>Bahagian 1. Kenapa kepala tak nak senyap</h2>
+  <p>Pada tahun 1920-an, ahli psikologi Bluma Zeigarnik perasan yang orang lebih ingat kerja yang belum siap berbanding kerja yang sudah siap. Ini dipanggil kesan Zeigarnik. Dalam hidup harian, rasanya begini: baru baring, kepala dah mula bacakan senarai kerja tertunggak. Link yang lupa nak tukar. Mesej yang belum berbalas. Posting yang belum dirancang.</p>
+  <p>Yang berguna di sini ialah ini. Pada 2011, E. J. Masicampo dan Roy Baumeister menjalankan kajian tentang perkara ini. Mereka dapati matlamat yang belum siap sentiasa menyelit dalam fikiran dan mengganggu tumpuan. Tetapi bila orang buat pelan yang jelas untuk matlamat itu, gangguan tersebut hilang, walaupun kerja itu masih belum siap.</p>
+  <div class="note"><b>Jadi sasarannya bukan "siapkan semua".</b> Sasarannya ialah "tahu dengan jelas di mana nak mula". Bila langkah pertama dah terang, otak berhenti bertanya-tanya.</div>
+  <h3>Kenapa pen dan kertas</h3>
+  <ul><li>Telefon bawa lagi benda baru: mesej, e-mel, berita. Kita nak tutup urusan, bukan buka lebih banyak.</li><li>Bila dah ditulis, kepala tak perlu lagi tanggung kerja mengingat.</li><li>Cahaya telefon dan scroll buat kita lebih lambat mengantuk.</li></ul>
+  <p class="small">Nota jujur: kajian di atas menyokong kebaikan membuat pelan. Dakwaan tentang kertas berbanding skrin datang daripada kaedah ini sendiri. Ia masuk akal, tetapi bukan sesuatu yang dibuktikan dalam kajian itu. Anggap ia susunan yang sesuai, dan uji pada diri sendiri dalam log 7 hari.</p>
+</section>
+
+<section>
+  <h2>Bahagian 2. Aliran ringkas</h2>
+  <svg viewBox="0 0 700 150" role="img" aria-label="Tiga kotak berderet: Kosongkan, Langkah pertama, Tutup urusan, kemudian letak pen dan tidur.">
+    <defs><marker id="ar-bm" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#5b6472"/></marker></defs>
+    <rect x="6" y="20" width="190" height="100" rx="18" fill="#fdebdd" stroke="#f5d6bd"/>
+    <text x="101" y="52" text-anchor="middle" font-family="Trebuchet MS,Noto Sans SC,sans-serif" font-weight="700" font-size="18" fill="#b4561b">1. Kosongkan</text>
+    <text x="101" y="78" text-anchor="middle" font-size="14" fill="#1f2937">Tulis semuanya</text>
+    <text x="101" y="100" text-anchor="middle" font-size="13" fill="#5b6472">Minit 1 hingga 3</text>
+    <rect x="256" y="20" width="190" height="100" rx="18" fill="#e4f0fd" stroke="#c9def5"/>
+    <text x="351" y="52" text-anchor="middle" font-family="Trebuchet MS,Noto Sans SC,sans-serif" font-weight="700" font-size="18" fill="#2a62a8">2. Langkah pertama</text>
+    <text x="351" y="78" text-anchor="middle" font-size="14" fill="#1f2937">Langkah kecil seterusnya</text>
+    <text x="351" y="100" text-anchor="middle" font-size="13" fill="#5b6472">Minit 4 hingga 6</text>
+    <rect x="506" y="20" width="188" height="100" rx="18" fill="#efe9fb" stroke="#dccff5"/>
+    <text x="600" y="52" text-anchor="middle" font-family="Trebuchet MS,Noto Sans SC,sans-serif" font-weight="700" font-size="18" fill="#6a4bb5">3. Tutup urusan</text>
+    <text x="600" y="78" text-anchor="middle" font-size="14" fill="#1f2937">Satu keputusan, 15 patah</text>
+    <text x="600" y="100" text-anchor="middle" font-size="13" fill="#5b6472">Minit 7 hingga 9</text>
+    <line x1="198" y1="70" x2="252" y2="70" stroke="#5b6472" stroke-width="2" marker-end="url(#ar-bm)"/>
+    <line x1="448" y1="70" x2="502" y2="70" stroke="#5b6472" stroke-width="2" marker-end="url(#ar-bm)"/>
+  </svg>
+  <p style="text-align:center;color:var(--muted);margin:6px auto 0">Lepas itu: letak pen, tutup lampu. Jangan baca senarai sampai pagi.</p>
+</section>
+
+<section>
+  <h2>Bahagian 3. Tiga fasa</h2>
+
+  <div class="card phase p1">
+    <header><span class="badge">1</span><h3>Kosongkan</h3><span class="time">Minit 1 hingga 3</span></header>
+    <p class="why">Tujuan: keluarkan semua dari kepala ke atas kertas.</p>
+    <ul><li>Tulis semuanya. Keputusan besar, kerja kecil, mesej yang belum dibalas, risau yang tak jelas.</li><li>Jangan susun. Jangan pilih mana penting. Jangan buat senarai semak yang cantik. Menyusun akan melambatkan kita dan urusan itu terus bermain dalam kepala.</li><li>Berhenti bila rasa senyap sekejap dan tak ada benda baru yang muncul.</li></ul>
+    <div class="grid two">
+      <div class="bad"><b>Kesilapan biasa</b><br>Berhenti untuk fikir mana yang paling penting. Itu kerja esok.</div>
+      <div class="good"><b>Tanda yang baik</b><br>Beberapa baris terakhir ialah benda kecil dan pelik. Maknanya yang besar-besar dah keluar.</div>
+    </div>
+  </div>
+
+  <div class="card phase p2">
+    <header><span class="badge">2</span><h3>Langkah pertama</h3><span class="time">Minit 4 hingga 6</span></header>
+    <p class="why">Tujuan: tukar setiap kerisauan yang kabur kepada satu tindakan nyata yang boleh dimulakan dalam masa kurang dua minit.</p>
+    <ul><li>Di sebelah setiap perkara, tulis gerakan pertama yang paling kecil. Guna kata kerja yang boleh dibayangkan: buka, salin, hantar, cari, tulis.</li><li>Kita tak perlu selesaikannya malam ini. Kita hanya tentukan di mana nak mula.</li><li>Kalau tak nampak langkah pertama, maka langkah pertamanya ialah "cari tahu apa langkah pertama", dan tulis siapa atau apa yang kita perlu tanya.</li></ul>
+    <div class="tablewrap"><table>
+      <tr><th>Kabur (buat kita tak lena)</th><th>Langkah pertama (buat kita boleh rehat)</th></tr>
+      <tr><td>Betulkan link affiliate</td><td>Buka app Shopee, salin link produk 1</td></tr><tr><td>Rancang kandungan minggu depan</td><td>Buka nota, tulis 3 tajuk</td></tr><tr><td>Uruskan insurans kereta</td><td>Cari PDF polisi dalam Gmail</td></tr><tr><td>Sediakan pembentangan</td><td>Buka slaid kosong, taip 3 tajuk bahagian</td></tr><tr><td>Balas pelanggan itu</td><td>Buka chat, taip ayat pertama sahaja</td></tr>
+    </table></div>
+  </div>
+
+  <div class="card phase p3">
+    <header><span class="badge">3</span><h3>Tutup urusan hari ini</h3><span class="time">Minit 7 hingga 9</span></header>
+    <p class="why">Tujuan: berhenti mengulang-ulang keputusan yang sudah dibuat.</p>
+    <ul><li>Pilih satu keputusan hari ini yang paling mengganggu. "Betul ke aku buat tadi?" "Patut ke aku beli?"</li><li>Tulis jawapan kepada satu soalan: <b>Apa yang aku tak tahu masa itu?</b></li><li>Guna 15 patah perkataan atau kurang. Jawapan pendek menghalang ia jadi sesi risau yang panjang.</li></ul>
+    <p>Soalan ini mengalihkan keputusan daripada perasaan kepada maklumat. Masa itu kita memutuskan dengan apa yang ada. Hari ini maklumat kita lebih banyak. Jurang itu ialah data, bukan salah kita.</p>
+    <div class="grid two">
+      <div class="bad"><b>Terlalu panjang dan terlalu keras</b><br>"Patutnya aku dah tahu, aku memang selalu gelojoh, aku tak pernah semak betul-betul sebelum post."</div>
+      <div class="good"><b>Panjang yang sesuai</b><br>"Aku tak tahu link produk itu dah tamat tempoh sebelum aku post."</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Bahagian 4. Contoh satu halaman, dari mula sampai habis</h2>
+  <p>Ini satu malam rekaan, sekadar tunjuk rupa kertas itu. Kertas anda boleh jadi lagi bersepah.</p>
+  <div class="paper">
+    <h4>Fasa 1 · Kosongkan</h4>Link untuk posting esok. Balas Mira. Kapsyen rasa hambar. Beli minyak masak. Bayar bil telefon. Idea video hari Jumaat. Pelan kandungan baru ni terlalu banyak ke?
+    <h4>Fasa 2 · Langkah pertama</h4>Link: buka Shopee, salin link produk 1.<br>Mira: buka chat, taip "Hai, malam ni saya hantar".<br>Kapsyen: baca kuat-kuat sekali esok pagi.<br>Minyak dan bil telefon: masukkan dalam nota beli-belah.<br>Video Jumaat: tulis 1 tajuk.<br>Pelan kandungan: kurangkan kepada 3 posting, tulis 3 harinya.
+    <h4>Fasa 3 · Tutup urusan</h4>Keputusan: tadi saya post lambat.<br>Saya tak tahu trafik lebih rendah lepas pukul 9 malam.
+  </div>
+  <p style="margin-top:10px">Letak pen. Tutup lampu. Senarai itu tinggal atas meja sampai pagi.</p>
+</section>
+
+<section>
+  <h2>Bahagian 5. Cara supaya jadi tabiat</h2>
+  <div class="grid two"><div class="card"><h3>Persediaan</h3><ul><li>Letak satu buku nota dan satu pen di tepi katil.</li><li>Guna satu muka surat setiap malam. Tulis tarikh.</li><li>Telefon letak di tempat lain, atau telangkup dan senyap.</li></ul></div><div class="card"><h3>Pemasa</h3><ul><li>Guna pemasa yang bunyinya lembut, atau tiga loceng setiap 3 minit.</li><li>Bila habis masa, berhenti, walaupun ayat belum siap.</li><li>Ini rutin menutup hari, bukan sesi merancang.</li></ul></div><div class="card"><h3>Pagi esok</h3><ul><li>Baca muka surat itu sekali, sambil minum kopi atau teh.</li><li>Pindahkan kerja sebenar ke senarai atau kalendar biasa.</li><li>Buat langkah pertama untuk perkara teratas.</li></ul></div><div class="card"><h3>Kalau tak menjadi</h3><ul><li>Kalau masih berjaga selepas 20 minit, bangun dan duduk di tempat yang malap, kemudian kembali bila mengantuk.</li><li>Kalau berminggu-minggu tak boleh tidur, jumpa doktor. Rutin ini alat untuk tabiat, bukan nasihat perubatan.</li></ul></div></div>
+</section>
+
+<section>
+  <h2>Bahagian 6. Log latihan 7 hari</h2>
+  <p>Tanda apa yang anda buat setiap malam. Nilai betapa cepat anda tidur, 1 (lambat) hingga 5 (cepat). Ia disimpan pada peranti ini sahaja.</p>
+  <div class="tablewrap logbox" data-code="bm"></div>
+  <p style="margin-top:12px"><button class="ghost resetLog" type="button">Kosongkan log</button></p>
+  <p class="score logSummary" aria-live="polite"></p>
+</section>
+
+<section>
+  <h2>Bahagian 7. Kuiz semak diri</h2>
+  <div class="quizbox" data-code="bm"></div>
+  <p class="score quizScore" aria-live="polite"></p>
+  <button type="button" class="ghost quizReset">Cuba lagi</button>
+</section>
+
+<section>
+  <h2>Bahagian 8. Selepas 7 hari, renungkan</h2>
+  <p>Tulis jawapan pendek. Tiga baris setiap satu pun dah cukup.</p>
+  <label for="r0-bm" style="display:block;margin-top:0px"><b>1. Fasa mana yang paling membantu, dan kenapa?</b></label><textarea id="r0-bm" class="rf" data-k="r0"></textarea><label for="r1-bm" style="display:block;margin-top:12px"><b>2. Apa yang asyik datang balik setiap malam?</b></label><textarea id="r1-bm" class="rf" data-k="r1"></textarea><label for="r2-bm" style="display:block;margin-top:12px"><b>3. Apa yang saya akan ubah dalam rutin kerja kerana ini?</b></label><textarea id="r2-bm" class="rf" data-k="r2"></textarea>
+</section>
+
+<section>
+  <h2>Glosari</h2>
+  <dl><dt>Urusan tertunggak (open loop)</dt><dd>Apa-apa kerja atau keputusan yang masih dipegang oleh fikiran.</dd><dt>Kesan Zeigarnik</dt><dd>Kecenderungan kerja yang belum siap kekal aktif dalam fikiran.</dd><dt>Langkah pertama</dt><dd>Tindakan nyata paling kecil yang memulakan sesuatu kerja, boleh dibuat dalam masa kurang dua minit.</dd><dt>Memikir berulang-ulang (rumination)</dt><dd>Mengulang fikiran atau keputusan lama yang sama berkali-kali.</dd><dt>Wawasan terkemudian (hindsight)</dt><dd>Menilai pilihan lalu dengan maklumat yang baru ada sekarang.</dd></dl>
+</section>
+
+<section>
+  <div class="card check">
+    <h2>Simpan ini: senarai semak malam</h2>
+    <label><input type="checkbox" class="ck" data-i="0"> Buku nota, pen dan pemasa ada di tepi katil</label><label><input type="checkbox" class="ck" data-i="1"> Telefon diletak jauh</label><label><input type="checkbox" class="ck" data-i="2"> Fasa 1: tulis semuanya, tak menyusun</label><label><input type="checkbox" class="ck" data-i="3"> Fasa 2: setiap perkara ada langkah pertama yang boleh dimulakan dalam 2 minit</label><label><input type="checkbox" class="ck" data-i="4"> Fasa 3: satu keputusan, jawapan 15 patah perkataan atau kurang</label><label><input type="checkbox" class="ck" data-i="5"> Letak pen, tutup lampu, senarai ditutup sampai pagi</label>
+  </div>
+</section>
+
+<div class="caveats">
+  <h3>Sila ambil perhatian</h3>
+  <ul><li><b>Bukan nasihat perubatan.</b> Modul ini untuk belajar dan membina tabiat peribadi. Kalau berminggu-minggu tak boleh tidur, atau rasa sangat murung atau cemas, sila jumpa doktor atau pakar yang bertauliah.</li><li><b>Ringkasan dipermudah.</b> Keputusan kajian datang daripada sekumpulan orang dan mungkin tak sesuai untuk semua. Baca kertas kajian asal untuk butiran penuh.</li><li><b>Pandangan sendiri.</b> Pandangan di sini ialah pandangan penulis sendiri dan tidak mewakili mana-mana organisasi.</li><li><b>Privasi.</b> Log, jawapan kuiz, senarai semak dan renungan anda disimpan dalam pelayar anda sendiri pada peranti ini. Tiada apa yang dihantar kepada penulis atau sesiapa. Bila data pelayar dipadam, semuanya hilang. Kalau peranti dikongsi, sila kosongkan log selepas guna. Jangan tulis kata laluan atau maklumat peribadi orang lain dalam kotak renungan. Halaman ini memuatkan fon daripada Google Fonts. Ini selari dengan semangat Akta Perlindungan Data Peribadi 2010 (PDPA) Malaysia dan Undang-Undang Perlindungan Data Pribadi Indonesia (UU PDP, UU No. 27 Tahun 2022).</li></ul>
+</div>
+
+<footer>
+  <b>Sumber dan penghargaan</b>
+  <ul><li>Kaedah tidur 9 minit ini dikongsi sebagai satu rutin bertulis. Penciptanya tidak dinamakan dalam bahan itu, jadi tiada nama dikreditkan di sini.</li><li>Masicampo, E. J., dan Baumeister, R. F. (2011). "Consider it done! Plan making can eliminate the cognitive effects of unfulfilled goals." Journal of Personality and Social Psychology, 101(4), 667-683. doi:10.1037/a0024192</li><li>Zeigarnik, B. (1927). Kajian asal tentang ingatan terhadap kerja yang belum siap. Kajian kemudian tentang kesan ingatan ini memberi keputusan yang bercampur, jadi modul ini bergantung pada dapatan tentang membuat pelan di atas.</li></ul>
+  <p>© 2026 Reka Amorra, Modul belajar</p>
+</footer>
+</div>
+
+
+<div class="lang" id="L-id" lang="id" data-code="id">
+<header>
+  <div class="eyebrow">Modul belajar · Manajemen diri</div>
+  <h1>Reset 9 Menit Sebelum Tidur</h1>
+  <div class="byline">Oleh Reka Amorra · Sekitar 40 menit untuk membaca, ditambah latihan 7 hari</div>
+</header>
+
+<div class="card tldr"><strong class="label">Singkatnya</strong><p>Sebelum tidur, luangkan 9 menit dengan pena dan kertas. Menit 1 sampai 3: tulis semua yang ada di kepala. Menit 4 sampai 6: tulis langkah pertama yang kecil untuk tiap hal. Menit 7 sampai 9: pilih satu keputusan hari ini yang paling bikin kepikiran, lalu tulis apa yang belum kamu tahu waktu itu, maksimal 15 kata. Setelah itu berhenti dan tidur. Baca daftarnya besok pagi, bukan malam ini.</p></div>
+
+<section>
+  <h2>Yang akan kamu pelajari</h2>
+  <div class="grid goals">
+    <div class="goal"><b>1. Idenya</b>Kenapa pekerjaan yang belum selesai bikin susah tidur.</div>
+    <div class="goal"><b>2. Caranya</b>Tiga tahap dan aturan di tiap tahap.</div>
+    <div class="goal"><b>3. Versimu</b>Cara memakainya untuk konten, kerja afiliasi, dan urusan rumah.</div>
+    <div class="goal"><b>4. Jadi kebiasaan</b>Catatan 7 hari, kuis cek diri, dan daftar periksa untuk disimpan.</div>
+  </div>
+</section>
+
+<section>
+  <h2>Bagian 1. Kenapa kepala susah diam</h2>
+  <p>Di tahun 1920-an, psikolog Bluma Zeigarnik menyadari bahwa orang lebih ingat tugas yang belum selesai daripada yang sudah selesai. Ini dikenal sebagai efek Zeigarnik. Dalam sehari-hari rasanya begini: baru berbaring, kepala sudah membacakan daftar urusan yang menggantung. Link yang lupa diganti. Pesan yang belum dibalas. Postingan yang belum direncanakan.</p>
+  <p>Bagian yang berguna ada di sini. Tahun 2011, E. J. Masicampo dan Roy Baumeister meneliti hal ini. Mereka menemukan bahwa tujuan yang belum selesai terus muncul di pikiran dan mengganggu fokus. Tapi kalau orang membuat rencana yang jelas untuk tujuan itu, gangguannya hilang, meskipun tugasnya belum selesai.</p>
+  <div class="note"><b>Jadi targetnya bukan "selesaikan semuanya".</b> Targetnya adalah "tahu persis harus mulai dari mana". Kalau langkah pertama sudah jelas, pikiran berhenti menagih.</div>
+  <h3>Kenapa pena dan kertas</h3>
+  <ul><li>Ponsel membawa urusan baru: pesan, email, berita. Kita mau menutup urusan, bukan membuka yang baru.</li><li>Kalau sudah ditulis, kepala tidak perlu lagi menanggung tugas mengingat.</li><li>Cahaya ponsel dan scrolling bikin kita makin susah ngantuk.</li></ul>
+  <p class="small">Catatan jujur: penelitian di atas mendukung manfaat membuat rencana. Klaim soal kertas versus layar datang dari metodenya sendiri. Masuk akal, tapi bukan hal yang dibuktikan dalam penelitian itu. Anggap saja ini pengaturan yang wajar, lalu uji sendiri lewat catatan 7 hari.</p>
+</section>
+
+<section>
+  <h2>Bagian 2. Alurnya sekilas</h2>
+  <svg viewBox="0 0 700 150" role="img" aria-label="Tiga kotak berderet: Kosongkan, Langkah pertama, Tutup urusan, lalu taruh pena dan tidur.">
+    <defs><marker id="ar-id" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#5b6472"/></marker></defs>
+    <rect x="6" y="20" width="190" height="100" rx="18" fill="#fdebdd" stroke="#f5d6bd"/>
+    <text x="101" y="52" text-anchor="middle" font-family="Trebuchet MS,Noto Sans SC,sans-serif" font-weight="700" font-size="18" fill="#b4561b">1. Kosongkan</text>
+    <text x="101" y="78" text-anchor="middle" font-size="14" fill="#1f2937">Tulis semuanya</text>
+    <text x="101" y="100" text-anchor="middle" font-size="13" fill="#5b6472">Menit 1 sampai 3</text>
+    <rect x="256" y="20" width="190" height="100" rx="18" fill="#e4f0fd" stroke="#c9def5"/>
+    <text x="351" y="52" text-anchor="middle" font-family="Trebuchet MS,Noto Sans SC,sans-serif" font-weight="700" font-size="18" fill="#2a62a8">2. Langkah pertama</text>
+    <text x="351" y="78" text-anchor="middle" font-size="14" fill="#1f2937">Langkah kecil berikutnya</text>
+    <text x="351" y="100" text-anchor="middle" font-size="13" fill="#5b6472">Menit 4 sampai 6</text>
+    <rect x="506" y="20" width="188" height="100" rx="18" fill="#efe9fb" stroke="#dccff5"/>
+    <text x="600" y="52" text-anchor="middle" font-family="Trebuchet MS,Noto Sans SC,sans-serif" font-weight="700" font-size="18" fill="#6a4bb5">3. Tutup urusan</text>
+    <text x="600" y="78" text-anchor="middle" font-size="14" fill="#1f2937">Satu keputusan, 15 kata</text>
+    <text x="600" y="100" text-anchor="middle" font-size="13" fill="#5b6472">Menit 7 sampai 9</text>
+    <line x1="198" y1="70" x2="252" y2="70" stroke="#5b6472" stroke-width="2" marker-end="url(#ar-id)"/>
+    <line x1="448" y1="70" x2="502" y2="70" stroke="#5b6472" stroke-width="2" marker-end="url(#ar-id)"/>
+  </svg>
+  <p style="text-align:center;color:var(--muted);margin:6px auto 0">Setelah itu: taruh pena, matikan lampu. Jangan baca daftarnya sampai pagi.</p>
+</section>
+
+<section>
+  <h2>Bagian 3. Tiga tahap</h2>
+
+  <div class="card phase p1">
+    <header><span class="badge">1</span><h3>Kosongkan</h3><span class="time">Menit 1 sampai 3</span></header>
+    <p class="why">Tujuan: keluarkan semuanya dari kepala ke atas kertas.</p>
+    <ul><li>Tulis semuanya. Keputusan besar, urusan kecil, pesan yang belum dibalas, kekhawatiran yang samar.</li><li>Jangan disortir. Jangan diurutkan. Jangan bikin daftar yang rapi. Menyortir bikin lambat dan urusannya tetap berputar di kepala.</li><li>Berhenti saat terasa hening sebentar dan tidak ada hal baru yang muncul.</li></ul>
+    <div class="grid two">
+      <div class="bad"><b>Kesalahan yang umum</b><br>Berhenti untuk memikirkan mana yang paling penting. Itu urusan besok.</div>
+      <div class="good"><b>Tanda yang bagus</b><br>Beberapa baris terakhir isinya hal kecil dan aneh. Artinya yang besar-besar sudah keluar.</div>
+    </div>
+  </div>
+
+  <div class="card phase p2">
+    <header><span class="badge">2</span><h3>Langkah pertama</h3><span class="time">Menit 4 sampai 6</span></header>
+    <p class="why">Tujuan: ubah tiap kekhawatiran yang samar jadi satu langkah nyata yang bisa dimulai dalam waktu kurang dari dua menit.</p>
+    <ul><li>Di samping tiap hal, tulis gerakan pertama yang paling kecil. Pakai kata kerja yang bisa dibayangkan: buka, salin, kirim, cari, tulis.</li><li>Kamu tidak sedang menyelesaikannya. Kamu hanya menentukan mulai dari mana.</li><li>Kalau belum kelihatan langkah pertamanya, maka langkah pertamanya adalah "cari tahu apa langkah pertamanya", dan tulis siapa atau apa yang perlu ditanya.</li></ul>
+    <div class="tablewrap"><table>
+      <tr><th>Samar (bikin susah tidur)</th><th>Langkah pertama (bikin bisa istirahat)</th></tr>
+      <tr><td>Benahi link afiliasi</td><td>Buka aplikasi Shopee, salin link produk 1</td></tr><tr><td>Rencanakan konten minggu depan</td><td>Buka catatan, tulis 3 judul</td></tr><tr><td>Urus asuransi mobil</td><td>Cari PDF polis di Gmail</td></tr><tr><td>Siapkan presentasi</td><td>Buat slide kosong, ketik 3 judul bagian</td></tr><tr><td>Balas pelanggan itu</td><td>Buka chat, ketik kalimat pertama saja</td></tr>
+    </table></div>
+  </div>
+
+  <div class="card phase p3">
+    <header><span class="badge">3</span><h3>Tutup urusan hari ini</h3><span class="time">Menit 7 sampai 9</span></header>
+    <p class="why">Tujuan: berhenti memutar ulang keputusan yang sudah diambil.</p>
+    <ul><li>Pilih satu keputusan hari ini yang paling mengganggu. "Tadi sudah benar belum ya?" "Harusnya tadi nggak usah beli?"</li><li>Tulis jawaban untuk satu pertanyaan: <b>Apa yang belum aku tahu waktu itu?</b></li><li>Pakai maksimal 15 kata. Jawaban singkat mencegahnya berubah jadi sesi cemas yang panjang.</li></ul>
+    <p>Pertanyaan ini memindahkan keputusan dari perasaan ke informasi. Waktu itu kamu memutuskan dengan apa yang ada. Hari ini informasimu lebih banyak. Selisih itu adalah data, bukan kesalahan.</p>
+    <div class="grid two">
+      <div class="bad"><b>Terlalu panjang dan terlalu keras</b><br>"Harusnya aku sudah tahu, aku memang selalu buru-buru, aku nggak pernah cek detail sebelum posting."</div>
+      <div class="good"><b>Panjang yang pas</b><br>"Aku belum tahu link produknya sudah kedaluwarsa waktu aku posting."</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Bagian 4. Contoh satu halaman dari awal sampai akhir</h2>
+  <p>Ini satu malam rekaan, sekadar menunjukkan seperti apa kertasnya. Punyamu boleh lebih berantakan.</p>
+  <div class="paper">
+    <h4>Tahap 1 · Kosongkan</h4>Link untuk postingan besok. Balas Mira. Caption terasa hambar. Beli minyak goreng. Bayar tagihan ponsel. Ide video hari Jumat. Rencana konten baru ini kebanyakan nggak ya?
+    <h4>Tahap 2 · Langkah pertama</h4>Link: buka Shopee, salin link produk 1.<br>Mira: buka chat, ketik "Hai, malam ini aku kirim".<br>Caption: baca keras-keras sekali besok pagi.<br>Minyak dan tagihan ponsel: masukkan ke catatan belanja.<br>Video Jumat: tulis 1 judul.<br>Rencana konten: pangkas jadi 3 postingan, tulis 3 harinya.
+    <h4>Tahap 3 · Tutup urusan</h4>Keputusan: tadi aku posting terlambat.<br>Aku belum tahu kalau trafik lebih sepi setelah jam 9 malam.
+  </div>
+  <p style="margin-top:10px">Taruh pena. Matikan lampu. Daftarnya tetap di meja sampai pagi.</p>
+</section>
+
+<section>
+  <h2>Bagian 5. Supaya jadi kebiasaan</h2>
+  <div class="grid two"><div class="card"><h3>Persiapan</h3><ul><li>Taruh satu buku catatan dan satu pena di samping tempat tidur.</li><li>Pakai satu halaman tiap malam. Tulis tanggalnya.</li><li>Ponsel taruh di tempat lain, atau tengkurap dan senyap.</li></ul></div><div class="card"><h3>Pengatur waktu</h3><ul><li>Pakai timer dengan bunyi lembut, atau tiga bunyi lonceng tiap 3 menit.</li><li>Begitu waktu habis, berhenti, walaupun kalimatnya belum selesai.</li><li>Ini ritual menutup hari, bukan sesi merencanakan.</li></ul></div><div class="card"><h3>Pagi harinya</h3><ul><li>Baca halaman itu sekali, sambil minum kopi atau teh.</li><li>Pindahkan tugas yang nyata ke daftar atau kalender biasa.</li><li>Kerjakan langkah pertama dari hal paling atas.</li></ul></div><div class="card"><h3>Kalau belum berhasil</h3><ul><li>Kalau masih terjaga setelah 20 menit, bangun dan duduk di tempat yang redup, lalu kembali saat mengantuk.</li><li>Kalau berminggu-minggu sulit tidur, temui dokter. Rutinitas ini alat untuk kebiasaan, bukan saran medis.</li></ul></div></div>
+</section>
+
+<section>
+  <h2>Bagian 6. Catatan latihan 7 hari</h2>
+  <p>Centang yang kamu lakukan tiap malam. Nilai seberapa cepat kamu tertidur, 1 (lambat) sampai 5 (cepat). Disimpan di perangkat ini saja.</p>
+  <div class="tablewrap logbox" data-code="id"></div>
+  <p style="margin-top:12px"><button class="ghost resetLog" type="button">Hapus catatan</button></p>
+  <p class="score logSummary" aria-live="polite"></p>
+</section>
+
+<section>
+  <h2>Bagian 7. Kuis cek diri</h2>
+  <div class="quizbox" data-code="id"></div>
+  <p class="score quizScore" aria-live="polite"></p>
+  <button type="button" class="ghost quizReset">Coba lagi</button>
+</section>
+
+<section>
+  <h2>Bagian 8. Setelah 7 hari, renungkan</h2>
+  <p>Tulis jawaban singkat. Tiga baris untuk tiap pertanyaan sudah cukup.</p>
+  <label for="r0-id" style="display:block;margin-top:0px"><b>1. Tahap mana yang paling membantu, dan kenapa?</b></label><textarea id="r0-id" class="rf" data-k="r0"></textarea><label for="r1-id" style="display:block;margin-top:12px"><b>2. Apa yang terus muncul tiap malam?</b></label><textarea id="r1-id" class="rf" data-k="r1"></textarea><label for="r2-id" style="display:block;margin-top:12px"><b>3. Apa yang akan aku ubah di rutinitas kerjaku karena ini?</b></label><textarea id="r2-id" class="rf" data-k="r2"></textarea>
+</section>
+
+<section>
+  <h2>Glosarium</h2>
+  <dl><dt>Urusan menggantung (open loop)</dt><dd>Tugas atau keputusan apa pun yang masih dipegang pikiran.</dd><dt>Efek Zeigarnik</dt><dd>Kecenderungan tugas yang belum selesai tetap aktif di pikiran.</dd><dt>Langkah pertama</dt><dd>Langkah nyata paling kecil yang memulai sebuah tugas, bisa dilakukan dalam waktu kurang dari dua menit.</dd><dt>Memikirkan berulang-ulang (rumination)</dt><dd>Memutar ulang pikiran atau keputusan lama yang sama berkali-kali.</dd><dt>Penilaian belakangan (hindsight)</dt><dd>Menilai pilihan lampau dengan informasi yang baru kita punya sekarang.</dd></dl>
+</section>
+
+<section>
+  <div class="card check">
+    <h2>Simpan ini: daftar periksa malam</h2>
+    <label><input type="checkbox" class="ck" data-i="0"> Buku catatan, pena, dan timer ada di samping tempat tidur</label><label><input type="checkbox" class="ck" data-i="1"> Ponsel disingkirkan</label><label><input type="checkbox" class="ck" data-i="2"> Tahap 1: menulis semuanya, tanpa menyortir</label><label><input type="checkbox" class="ck" data-i="3"> Tahap 2: tiap hal punya langkah pertama yang bisa dimulai dalam 2 menit</label><label><input type="checkbox" class="ck" data-i="4"> Tahap 3: satu keputusan, jawaban maksimal 15 kata</label><label><input type="checkbox" class="ck" data-i="5"> Taruh pena, matikan lampu, daftar ditutup sampai pagi</label>
+  </div>
+</section>
+
+<div class="caveats">
+  <h3>Mohon diperhatikan</h3>
+  <ul><li><b>Bukan saran medis.</b> Modul ini untuk belajar dan membangun kebiasaan pribadi. Kalau berminggu-minggu sulit tidur, atau merasa sangat murung atau cemas, silakan temui dokter atau tenaga profesional yang berwenang.</li><li><b>Ringkasan disederhanakan.</b> Hasil penelitian berasal dari kelompok orang dan belum tentu cocok untuk semua. Baca makalah aslinya untuk detail lengkap.</li><li><b>Pendapat pribadi.</b> Pandangan di sini adalah pandangan penulis sendiri dan tidak mewakili organisasi mana pun.</li><li><b>Privasi.</b> Catatan, jawaban kuis, daftar periksa, dan renunganmu disimpan di browser milikmu sendiri pada perangkat ini. Tidak ada yang dikirim ke penulis atau pihak mana pun. Kalau data browser dihapus, semuanya ikut hilang. Di perangkat bersama, mohon hapus catatan setelah dipakai. Jangan menulis kata sandi atau data pribadi orang lain di kotak renungan. Halaman ini memuat font dari Google Fonts. Ini sejalan dengan semangat Undang-Undang Pelindungan Data Pribadi Indonesia (UU PDP, UU No. 27 Tahun 2022) dan Personal Data Protection Act 2010 (PDPA) Malaysia.</li></ul>
+</div>
+
+<footer>
+  <b>Sumber dan penghargaan</b>
+  <ul><li>Metode tidur 9 menit ini dibagikan sebagai rutinitas tertulis. Penciptanya tidak disebut dalam materinya, jadi tidak ada nama yang dikreditkan di sini.</li><li>Masicampo, E. J., dan Baumeister, R. F. (2011). "Consider it done! Plan making can eliminate the cognitive effects of unfulfilled goals." Journal of Personality and Social Psychology, 101(4), 667-683. doi:10.1037/a0024192</li><li>Zeigarnik, B. (1927). Penelitian awal tentang ingatan terhadap tugas yang belum selesai. Penelitian lanjutan tentang efek ingatan ini hasilnya beragam, jadi modul ini bertumpu pada temuan tentang membuat rencana di atas.</li></ul>
+  <p>© 2026 Reka Amorra, Modul belajar</p>
+</footer>
+</div>
+
+
+<div class="lang" id="L-zh" lang="zh-Hans" data-code="zh">
+<header>
+  <div class="eyebrow">学习模块 · 自我管理</div>
+  <h1>睡前 9 分钟清空法</h1>
+  <div class="byline">作者：Reka Amorra · 阅读约 40 分钟，另加 7 天练习</div>
+</header>
+
+<div class="card tldr"><strong class="label">一句话版</strong><p>睡前用 9 分钟，拿笔和纸。第 1 到 3 分钟：把脑子里的事全部写下来。第 4 到 6 分钟：给每件事写下第一个小动作。第 7 到 9 分钟：选今天最让你放不下的一个决定，写下“当时我不知道什么”，不超过 15 个词。然后停笔，睡觉。清单明天再看，今晚不看。</p></div>
+
+<section>
+  <h2>你会学到什么</h2>
+  <div class="grid goals">
+    <div class="goal"><b>1. 原理</b>为什么没做完的事会让你晚上睡不着。</div>
+    <div class="goal"><b>2. 方法</b>三个步骤，以及每一步的规则。</div>
+    <div class="goal"><b>3. 你的用法</b>怎么用在内容创作、联盟营销和家里的事上。</div>
+    <div class="goal"><b>4. 变成习惯</b>7 天记录表、自测小测验和可以保存的清单。</div>
+  </div>
+</section>
+
+<section>
+  <h2>第 1 部分　为什么脑子停不下来</h2>
+  <p>上世纪 20 年代，心理学家布鲁玛·蔡加尼克（Bluma Zeigarnik）发现，人对没做完的事，比做完的事记得更牢。这叫蔡加尼克效应。日常里的感觉是这样的：刚躺下，脑子就开始念待办事项。忘了换的链接。没回的消息。还没想好的帖子。</p>
+  <p>有用的部分在这里。2011 年，E. J. Masicampo 和 Roy Baumeister 做了相关研究。他们发现，没完成的目标会不断冒出来，干扰注意力。但只要为这个目标做一个具体的计划，这种干扰就消失了，即使事情还没做完。</p>
+  <div class="note"><b>所以目标不是“全部做完”。</b>目标是“清楚知道从哪里开始”。第一步清楚了，脑子就不会一直来催。</div>
+  <h3>为什么用笔和纸</h3>
+  <ul><li>手机会带来新的事：消息、邮件、新闻。我们是要把事情收尾，不是再开新的。</li><li>写下来以后，记住这件事的工作就不用脑子来扛了。</li><li>手机的光和不停地滑，会让人更难犯困。</li></ul>
+  <p class="small">坦白说明：上面的研究支持“做计划”有用。至于纸比屏幕好，这是方法本身的说法，合情合理，但并不是那些研究证明的。把它当作一个合理的做法，然后用 7 天记录表在自己身上试试看。</p>
+</section>
+
+<section>
+  <h2>第 2 部分　流程一览</h2>
+  <svg viewBox="0 0 700 150" role="img" aria-label="三个方框：清空、第一步、收尾，然后放下笔去睡觉。">
+    <defs><marker id="ar-zh" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#5b6472"/></marker></defs>
+    <rect x="6" y="20" width="190" height="100" rx="18" fill="#fdebdd" stroke="#f5d6bd"/>
+    <text x="101" y="52" text-anchor="middle" font-family="Trebuchet MS,Noto Sans SC,sans-serif" font-weight="700" font-size="18" fill="#b4561b">1. 清空</text>
+    <text x="101" y="78" text-anchor="middle" font-size="14" fill="#1f2937">全部写下来</text>
+    <text x="101" y="100" text-anchor="middle" font-size="13" fill="#5b6472">第 1 到 3 分钟</text>
+    <rect x="256" y="20" width="190" height="100" rx="18" fill="#e4f0fd" stroke="#c9def5"/>
+    <text x="351" y="52" text-anchor="middle" font-family="Trebuchet MS,Noto Sans SC,sans-serif" font-weight="700" font-size="18" fill="#2a62a8">2. 第一步</text>
+    <text x="351" y="78" text-anchor="middle" font-size="14" fill="#1f2937">最小的下一步</text>
+    <text x="351" y="100" text-anchor="middle" font-size="13" fill="#5b6472">第 4 到 6 分钟</text>
+    <rect x="506" y="20" width="188" height="100" rx="18" fill="#efe9fb" stroke="#dccff5"/>
+    <text x="600" y="52" text-anchor="middle" font-family="Trebuchet MS,Noto Sans SC,sans-serif" font-weight="700" font-size="18" fill="#6a4bb5">3. 收尾</text>
+    <text x="600" y="78" text-anchor="middle" font-size="14" fill="#1f2937">一个决定，15 个词</text>
+    <text x="600" y="100" text-anchor="middle" font-size="13" fill="#5b6472">第 7 到 9 分钟</text>
+    <line x1="198" y1="70" x2="252" y2="70" stroke="#5b6472" stroke-width="2" marker-end="url(#ar-zh)"/>
+    <line x1="448" y1="70" x2="502" y2="70" stroke="#5b6472" stroke-width="2" marker-end="url(#ar-zh)"/>
+  </svg>
+  <p style="text-align:center;color:var(--muted);margin:6px auto 0">然后：放下笔，关灯。清单到早上再看。</p>
+</section>
+
+<section>
+  <h2>第 3 部分　三个步骤</h2>
+
+  <div class="card phase p1">
+    <header><span class="badge">1</span><h3>清空</h3><span class="time">第 1 到 3 分钟</span></header>
+    <p class="why">目的：把脑子里的东西全部倒到纸上。</p>
+    <ul><li>全部写下来。大决定、小杂事、该回的消息、说不清的担心。</li><li>不要分类，不要排序，不要做漂亮的清单。一分类就慢了，事情还是留在脑子里。</li><li>等到有一小段安静、再也想不出新的东西，就停。</li></ul>
+    <div class="grid two">
+      <div class="bad"><b>常见错误</b><br>停下来想哪件最重要。那是明天的事。</div>
+      <div class="good"><b>好的迹象</b><br>最后几行都是些小而怪的事。说明大的已经写出来了。</div>
+    </div>
+  </div>
+
+  <div class="card phase p2">
+    <header><span class="badge">2</span><h3>第一步</h3><span class="time">第 4 到 6 分钟</span></header>
+    <p class="why">目的：把每个模糊的担心，变成两分钟内就能开始的具体动作。</p>
+    <ul><li>在每件事旁边，写下最小的第一个动作。用看得见画面的动词：打开、复制、发送、找、写。</li><li>你不是要在今晚解决它，只是决定从哪里开始。</li><li>如果实在想不出第一步，那第一步就是“弄清楚第一步是什么”，并写下要问谁或问什么。</li></ul>
+    <div class="tablewrap"><table>
+      <tr><th>模糊的（让你睡不着）</th><th>第一步（让你能休息）</th></tr>
+      <tr><td>整理联盟营销链接</td><td>打开 Shopee，复制产品 1 的链接</td></tr><tr><td>规划下周的内容</td><td>打开备忘录，写 3 个标题</td></tr><tr><td>处理车险</td><td>在 Gmail 里找保单 PDF</td></tr><tr><td>准备演示文稿</td><td>新建空白幻灯片，打 3 个章节标题</td></tr><tr><td>回复那位客户</td><td>打开聊天，只打第一句</td></tr>
+    </table></div>
+  </div>
+
+  <div class="card phase p3">
+    <header><span class="badge">3</span><h3>给今天收尾</h3><span class="time">第 7 到 9 分钟</span></header>
+    <p class="why">目的：不再反复回放一个已经做过的决定。</p>
+    <ul><li>选今天最让你放不下的一个决定。“我刚才做得对吗？”“那个东西是不是不该买？”</li><li>只回答一个问题：<b>当时我不知道什么？</b></li><li>不超过 15 个词。答案短，就不会变成一场长长的担心。</li></ul>
+    <p>这个问题把决定从“感觉”变成“信息”。当时你是用手上有的东西做决定。今天你知道得更多。这中间的差距是数据，不是过错。</p>
+    <div class="grid two">
+      <div class="bad"><b>太长也太苛刻</b><br>“我早该知道的，我总是太急，发帖前从来不检查细节。”</div>
+      <div class="good"><b>长度刚好</b><br>“发帖时我不知道产品链接已经过期了。”</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>第 4 部分　一页纸的示范，从头到尾</h2>
+  <p>这是编出来的一个晚上，只是让你看看纸上大概长什么样。你的可以更乱。</p>
+  <div class="paper">
+    <h4>步骤 1 · 清空</h4>明天帖子的链接。回复 Mira。文案感觉很平。买食用油。交手机费。周五的视频点子。新的内容计划是不是太多了？
+    <h4>步骤 2 · 第一步</h4>链接：打开 Shopee，复制产品 1 的链接。<br>Mira：打开聊天，打“嗨，我今晚发给你”。<br>文案：明早大声读一遍。<br>食用油和手机费：都写进购物备忘录。<br>周五视频：写 1 个标题。<br>内容计划：砍到 3 个帖子，写下 3 天的日期。
+    <h4>步骤 3 · 收尾</h4>决定：今天发帖发晚了。<br>我不知道晚上 9 点以后流量会低。
+  </div>
+  <p style="margin-top:10px">放下笔，关灯。清单留在桌上，到早上再看。</p>
+</section>
+
+<section>
+  <h2>第 5 部分　怎样坚持下去</h2>
+  <div class="grid two"><div class="card"><h3>准备</h3><ul><li>床头放一本笔记本和一支笔。</li><li>每晚一页，写上日期。</li><li>手机放到别处，或者屏幕朝下并静音。</li></ul></div><div class="card"><h3>计时</h3><ul><li>用声音轻柔的计时器，或每 3 分钟响一次，共三次。</li><li>时间到就停，哪怕一句话没写完。</li><li>这是关机仪式，不是计划会议。</li></ul></div><div class="card"><h3>第二天早上</h3><ul><li>喝咖啡或茶的时候，把那一页读一遍。</li><li>把真正要做的事转到平时的清单或日历。</li><li>去做排第一那件事的第一步。</li></ul></div><div class="card"><h3>不管用的时候</h3><ul><li>如果 20 分钟后还醒着，起来坐到光线暗的地方，困了再回去。</li><li>如果连续几个星期睡不着，请看医生。这个方法是帮你养成习惯的工具，不是医疗建议。</li></ul></div></div>
+</section>
+
+<section>
+  <h2>第 6 部分　7 天练习记录</h2>
+  <p>每晚勾选你做了什么。给入睡速度打分，从 1（慢）到 5（快）。记录只保存在这台设备上。</p>
+  <div class="tablewrap logbox" data-code="zh"></div>
+  <p style="margin-top:12px"><button class="ghost resetLog" type="button">清空记录</button></p>
+  <p class="score logSummary" aria-live="polite"></p>
+</section>
+
+<section>
+  <h2>第 7 部分　自测小测验</h2>
+  <div class="quizbox" data-code="zh"></div>
+  <p class="score quizScore" aria-live="polite"></p>
+  <button type="button" class="ghost quizReset">再试一次</button>
+</section>
+
+<section>
+  <h2>第 8 部分　7 天后，回头想想</h2>
+  <p>写几句简短的回答。每题三行就够了。</p>
+  <label for="r0-zh" style="display:block;margin-top:0px"><b>1. 哪一步帮助最大？为什么？</b></label><textarea id="r0-zh" class="rf" data-k="r0"></textarea><label for="r1-zh" style="display:block;margin-top:12px"><b>2. 什么事每晚都会冒出来？</b></label><textarea id="r1-zh" class="rf" data-k="r1"></textarea><label for="r2-zh" style="display:block;margin-top:12px"><b>3. 因为这个方法，我要改变工作上的哪个习惯？</b></label><textarea id="r2-zh" class="rf" data-k="r2"></textarea>
+</section>
+
+<section>
+  <h2>词汇表</h2>
+  <dl><dt>未完成事项（open loop）</dt><dd>脑子里还抓着的任何任务或决定。</dd><dt>蔡加尼克效应</dt><dd>没完成的事会一直留在脑子里的倾向。</dd><dt>第一步</dt><dd>能开始一件事的最小具体动作，两分钟内可做到。</dd><dt>反复思虑（rumination）</dt><dd>一遍又一遍重复同一个想法或过去的决定。</dd><dt>事后诸葛（hindsight）</dt><dd>用现在才有的信息去评判过去的选择。</dd></dl>
+</section>
+
+<section>
+  <div class="card check">
+    <h2>保存这份：每晚清单</h2>
+    <label><input type="checkbox" class="ck" data-i="0"> 笔记本、笔和计时器放在床头</label><label><input type="checkbox" class="ck" data-i="1"> 手机放远</label><label><input type="checkbox" class="ck" data-i="2"> 步骤 1：全部写下，不分类</label><label><input type="checkbox" class="ck" data-i="3"> 步骤 2：每件事都有两分钟内能开始的第一步</label><label><input type="checkbox" class="ck" data-i="4"> 步骤 3：一个决定，答案不超过 15 个词</label><label><input type="checkbox" class="ck" data-i="5"> 放下笔，关灯，清单到早上才打开</label>
+  </div>
+</section>
+
+<div class="caveats">
+  <h3>请注意</h3>
+  <ul><li><b>不是医疗建议。</b>本模块用于学习和培养个人习惯。如果连续几个星期睡不着，或者感到很低落、很焦虑，请去看医生或找有资质的专业人士。</li><li><b>内容已简化。</b>研究结果来自一群人，不一定适合每个人。完整细节请阅读原始论文。</li><li><b>个人观点。</b>这里的观点仅代表作者本人，不代表任何机构。</li><li><b>隐私。</b>你的记录、测验答案、清单和心得，都只保存在这台设备的浏览器里，不会发送给作者或任何人。清除浏览器数据后它们就会消失。如果是共用设备，用完请清空记录。请不要在心得框里写密码或别人的私人信息。本页会从 Google Fonts 加载字体。这符合马来西亚《2010 年个人数据保护法》（PDPA）和印度尼西亚《个人数据保护法》（UU PDP，2022 年第 27 号法律）的精神。</li></ul>
+</div>
+
+<footer>
+  <b>来源与致谢</b>
+  <ul><li>这个 9 分钟睡前方法是以一份书面流程的形式分享的。原材料没有署名作者，所以这里无法标注出处。</li><li>Masicampo, E. J., and Baumeister, R. F. (2011). "Consider it done! Plan making can eliminate the cognitive effects of unfulfilled goals." Journal of Personality and Social Psychology, 101(4), 667-683. doi:10.1037/a0024192</li><li>Zeigarnik, B. (1927). 关于未完成任务记忆的最初研究。后来对这一记忆效应的研究结果并不一致，所以本模块主要依据上面关于“做计划”的发现。</li></ul>
+  <p>© 2026 Reka Amorra，学习模块</p>
+</footer>
+</div>
+
+</div>
 <script>
 (function(){
-  var KEY="bedtime-module-v1";
+  var DATA = {"en": {"night": "Night", "cols": ["Night", "Clear", "First action", "Close loop", "Sleep speed"], "sum": "{n} of 7 nights fully done", "avg": " · average sleep speed {a} of 5", "score": "Score: {s} of {t}", "answered": " (answered {d})", "quiz": [{"q": "What did Masicampo and Baumeister find about unfinished goals?", "o": ["Only finishing the task removes the mental pull", "A specific plan can reduce the mental pull even before the task is done", "Writing on a phone works better than paper", "Sleeping longer removes the effect"], "a": 1, "f": "A specific plan for where and how to start removed the effect, even though the goal was not finished."}, {"q": "In Phase 1 (Clear), what should you NOT do?", "o": ["Write small errands", "Write vague worries", "Sort and rank the items", "Stop when nothing new comes"], "a": 2, "f": "Sorting slows you down and keeps loops in your head. Sorting happens tomorrow."}, {"q": "Which one is a good first action?", "o": ["Fix the budget", "Be more organised", "Deal with car insurance", "Find the policy PDF in Gmail"], "a": 3, "f": "A first action is a physical step you can start in under two minutes."}, {"q": "What question is used in Phase 3?", "o": ["Why did I fail today?", "What was I missing at the time?", "Who caused this?", "How can I do it perfectly next time?"], "a": 1, "f": "The answer is in 15 words or fewer, so it stays as information and does not become self-criticism."}, {"q": "When the 9 minutes are up, what do you do?", "o": ["Review and organise the list", "Reply to messages", "Pen down, light off, review tomorrow", "Add more items to the list"], "a": 2, "f": "The list stays closed until morning."}], "htmllang": "en", "title": "The 9-Minute Bedtime Reset"}, "bm": {"night": "Malam", "cols": ["Malam", "Kosongkan", "Langkah pertama", "Tutup urusan", "Laju tidur"], "sum": "{n} daripada 7 malam siap sepenuhnya", "avg": " · purata kelajuan tidur {a} daripada 5", "score": "Skor: {s} daripada {t}", "answered": " (dijawab {d})", "quiz": [{"q": "Apa yang Masicampo dan Baumeister dapati tentang matlamat yang belum siap?", "o": ["Hanya menyiapkan kerja itu yang boleh hilangkan rasa tertarik dalam fikiran", "Pelan yang jelas boleh kurangkan gangguan itu, walaupun kerja belum siap", "Menulis dalam telefon lebih berkesan daripada kertas", "Tidur lebih lama menghilangkan kesan itu"], "a": 1, "f": "Pelan yang jelas tentang di mana dan bagaimana nak mula menghilangkan kesan itu, walaupun matlamat belum siap."}, {"q": "Dalam Fasa 1 (Kosongkan), apa yang TIDAK patut dibuat?", "o": ["Tulis kerja kecil", "Tulis kerisauan yang kabur", "Susun dan pilih mana yang penting", "Berhenti bila tak ada benda baru"], "a": 2, "f": "Menyusun melambatkan kita dan urusan terus bermain dalam kepala. Menyusun dibuat esok."}, {"q": "Yang mana satu langkah pertama yang baik?", "o": ["Betulkan bajet", "Jadi lebih teratur", "Uruskan insurans kereta", "Cari PDF polisi dalam Gmail"], "a": 3, "f": "Langkah pertama ialah tindakan nyata yang boleh dimulakan dalam masa kurang dua minit."}, {"q": "Soalan apa yang digunakan dalam Fasa 3?", "o": ["Kenapa aku gagal hari ini?", "Apa yang aku tak tahu masa itu?", "Siapa yang punya pasal?", "Macam mana nak buat dengan sempurna lain kali?"], "a": 1, "f": "Jawapan dalam 15 patah perkataan atau kurang, supaya ia kekal sebagai maklumat dan tak jadi menyalahkan diri."}, {"q": "Bila 9 minit sudah habis, apa yang dibuat?", "o": ["Semak dan susun senarai", "Balas mesej", "Letak pen, tutup lampu, semak esok", "Tambah lagi perkara dalam senarai"], "a": 2, "f": "Senarai itu ditutup sampai pagi."}], "htmllang": "ms", "title": "Reset 9 Minit Sebelum Tidur"}, "id": {"night": "Malam", "cols": ["Malam", "Kosongkan", "Langkah pertama", "Tutup urusan", "Cepat tidur"], "sum": "{n} dari 7 malam selesai penuh", "avg": " · rata-rata kecepatan tidur {a} dari 5", "score": "Skor: {s} dari {t}", "answered": " (terjawab {d})", "quiz": [{"q": "Apa yang ditemukan Masicampo dan Baumeister tentang tujuan yang belum selesai?", "o": ["Hanya menyelesaikan tugas yang bisa menghilangkan tarikan di pikiran", "Rencana yang jelas bisa mengurangi tarikan itu, bahkan sebelum tugasnya selesai", "Menulis di ponsel lebih efektif daripada di kertas", "Tidur lebih lama menghilangkan efeknya"], "a": 1, "f": "Rencana yang jelas tentang di mana dan bagaimana mulai menghilangkan efeknya, meskipun tujuannya belum selesai."}, {"q": "Di Tahap 1 (Kosongkan), apa yang TIDAK boleh dilakukan?", "o": ["Menulis urusan kecil", "Menulis kekhawatiran yang samar", "Menyortir dan mengurutkan", "Berhenti saat tidak ada hal baru"], "a": 2, "f": "Menyortir bikin lambat dan urusannya tetap berputar di kepala. Menyortir dilakukan besok."}, {"q": "Mana yang merupakan langkah pertama yang baik?", "o": ["Benahi anggaran", "Jadi lebih teratur", "Urus asuransi mobil", "Cari PDF polis di Gmail"], "a": 3, "f": "Langkah pertama adalah tindakan nyata yang bisa dimulai dalam waktu kurang dari dua menit."}, {"q": "Pertanyaan apa yang dipakai di Tahap 3?", "o": ["Kenapa aku gagal hari ini?", "Apa yang belum aku tahu waktu itu?", "Siapa yang salah?", "Bagaimana caranya biar sempurna lain kali?"], "a": 1, "f": "Jawabannya maksimal 15 kata, supaya tetap jadi informasi dan tidak berubah jadi menyalahkan diri."}, {"q": "Setelah 9 menit habis, apa yang dilakukan?", "o": ["Memeriksa dan merapikan daftar", "Membalas pesan", "Taruh pena, matikan lampu, cek besok", "Menambah hal baru ke daftar"], "a": 2, "f": "Daftarnya ditutup sampai pagi."}], "htmllang": "id", "title": "Reset 9 Menit Sebelum Tidur"}, "zh": {"night": "第", "cols": ["晚上", "清空", "第一步", "收尾", "入睡速度"], "sum": "7 晚中完整做完 {n} 晚", "avg": "，入睡速度平均 {a}（满分 5）", "score": "得分：{s} / {t}", "answered": "（已答 {d} 题）", "quiz": [{"q": "Masicampo 和 Baumeister 对“没完成的目标”发现了什么？", "o": ["只有把事做完，才能消除脑子里的牵挂", "具体的计划就能减轻这种牵挂，即使事情还没做完", "在手机上写比在纸上写更有效", "睡得更久就能消除这种影响"], "a": 1, "f": "针对“在哪里、怎么开始”做出具体计划，就能消除这种影响，即使目标还没完成。"}, {"q": "在步骤 1（清空）里，不应该做什么？", "o": ["写小杂事", "写模糊的担心", "分类和排序", "没有新东西时就停"], "a": 2, "f": "分类会让你变慢，事情还留在脑子里。分类留到明天。"}, {"q": "下面哪一个是好的“第一步”？", "o": ["搞定预算", "变得更有条理", "处理车险", "在 Gmail 里找保单 PDF"], "a": 3, "f": "第一步是两分钟内就能开始的具体动作。"}, {"q": "步骤 3 用的是哪个问题？", "o": ["我今天为什么失败了？", "当时我不知道什么？", "这是谁的错？", "下次怎样才能做得完美？"], "a": 1, "f": "答案不超过 15 个词，所以它只是信息，不会变成自责。"}, {"q": "9 分钟到了以后，要做什么？", "o": ["检查并整理清单", "回复消息", "放下笔，关灯，明天再看", "往清单里再加东西"], "a": 2, "f": "清单到早上才打开。"}], "htmllang": "zh-Hans", "title": "睡前 9 分钟清空法"}};
+  var KEY="bedtime-module-v2";
   var state={log:{},ck:{},r:{},quiz:{}};
-  try{var s=localStorage.getItem(KEY); if(s){state=Object.assign(state,JSON.parse(s));}}catch(e){}
+  try{var s=localStorage.getItem(KEY); if(s){var o=JSON.parse(s); state=Object.assign(state,o);}}catch(e){}
   function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}}
+  var CODES=["en","bm","id","zh"];
+  var cur="en";
 
-  // Log
-  var tb=document.querySelector("#log tbody");
-  for(var d=1; d<=7; d++){
-    var tr=document.createElement("tr");
-    var h='<td>Night '+d+'</td>';
-    ["c","f","l"].forEach(function(k,i){
-      var names=["Clear","First action","Close loop"];
-      h+='<td><input type="checkbox" data-d="'+d+'" data-k="'+k+'" id="l'+d+k+'" aria-label="Night '+d+' '+names[i]+'"></td>';
-    });
-    h+='<td><select data-d="'+d+'" data-k="s" id="l'+d+'s" aria-label="Night '+d+' sleep speed"><option value="">-</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td>';
-    tr.innerHTML=h; tb.appendChild(tr);
-  }
+  function nightLabel(code,d){ return code==="zh" ? "第 "+d+" 晚" : DATA[code].night+" "+d; }
+
   function renderLog(){
-    document.querySelectorAll("#log [data-d]").forEach(function(el){
-      var v=(state.log[el.dataset.d]||{})[el.dataset.k];
-      if(el.type==="checkbox"){el.checked=!!v;} else {el.value=v||"";}
-    });
-    var full=0, sum=0, n=0;
-    for(var d=1; d<=7; d++){var x=state.log[d]||{}; if(x.c&&x.f&&x.l) full++; if(x.s){sum+=+x.s;n++;}}
-    var t=full+" of 7 nights fully done";
-    if(n) t+=" · average sleep speed "+(sum/n).toFixed(1)+" of 5";
-    document.getElementById("logSummary").textContent=t;
-  }
-  document.querySelector("#log").addEventListener("change",function(e){
-    var el=e.target; if(!el.dataset.d) return;
-    state.log[el.dataset.d]=state.log[el.dataset.d]||{};
-    state.log[el.dataset.d][el.dataset.k]= el.type==="checkbox"? el.checked : el.value;
-    save(); renderLog();
-  });
-  document.getElementById("resetLog").addEventListener("click",function(){state.log={};save();renderLog();});
-  renderLog();
-
-  // Checklist
-  document.querySelectorAll(".ck").forEach(function(c,i){
-    c.checked=!!state.ck[i];
-    c.addEventListener("change",function(){state.ck[i]=c.checked;save();});
-  });
-
-  // Reflection
-  ["r1","r2","r3"].forEach(function(id){
-    var t=document.getElementById(id); t.value=state.r[id]||"";
-    t.addEventListener("input",function(){state.r[id]=t.value;save();});
-  });
-
-  // Quiz
-  var Q=[
-    {q:"What did Masicampo and Baumeister find about unfinished goals?",o:["Only finishing the task removes the mental pull","A specific plan can reduce the mental pull even before the task is done","Writing on a phone works better than paper","Sleeping longer removes the effect"],a:1,f:"A specific plan for where and how to start reduced the effect, even though the goal was not finished."},
-    {q:"In Phase 1 (Clear), what should you NOT do?",o:["Write small errands","Write vague worries","Sort and rank the items","Stop when nothing new comes"],a:2,f:"Sorting slows you down and keeps loops in your head. Sorting happens tomorrow."},
-    {q:"Which one is a good first action?",o:["Fix the budget","Be more organised","Deal with car insurance","Find the policy PDF in Gmail"],a:3,f:"A first action is a physical step you can start in under two minutes."},
-    {q:"What question is used in Phase 3?",o:["Why did I fail today?","What was I missing at the time?","Who caused this?","How can I do it perfectly next time?"],a:1,f:"The answer is in 15 words or fewer, so it stays as information and does not become self-criticism."},
-    {q:"When the 9 minutes are up, what do you do?",o:["Review and organise the list","Reply to messages","Pen down, light off, review tomorrow","Add more items to the list"],a:2,f:"The list stays closed until morning."}
-  ];
-  var qa=document.getElementById("quiz"), qs=document.getElementById("quizScore");
-  function renderQuiz(){
-    qa.innerHTML=""; var score=0, done=0;
-    Q.forEach(function(item,i){
-      var div=document.createElement("div"); div.className="q";
-      var p=document.createElement("p"); p.textContent=(i+1)+". "+item.q; div.appendChild(p);
-      var picked=state.quiz[i];
-      item.o.forEach(function(txt,j){
-        var b=document.createElement("button"); b.type="button"; b.className="opt"; b.textContent=txt;
-        if(picked!==undefined){
-          if(j===item.a) b.className+=" right"; else if(j===picked) b.className+=" wrong";
-          b.disabled=true;
-        }
-        b.addEventListener("click",function(){state.quiz[i]=j;save();renderQuiz();});
-        div.appendChild(b);
-      });
-      if(picked!==undefined){
-        done++; if(picked===item.a) score++;
-        var f=document.createElement("div"); f.className="fb"; f.textContent=item.f; div.appendChild(f);
+    document.querySelectorAll(".logbox").forEach(function(box){
+      var code=box.dataset.code, cols=DATA[code].cols;
+      var h='<table><thead><tr>'+cols.map(function(c){return '<th>'+c+'</th>';}).join('')+'</tr></thead><tbody>';
+      for(var d=1; d<=7; d++){
+        var x=state.log[d]||{};
+        h+='<tr><td>'+nightLabel(code,d)+'</td>';
+        [["c",cols[1]],["f",cols[2]],["l",cols[3]]].forEach(function(k){
+          h+='<td><input type="checkbox" data-d="'+d+'" data-k="'+k[0]+'" aria-label="'+nightLabel(code,d)+' '+k[1]+'"'+(x[k[0]]?' checked':'')+'></td>';
+        });
+        h+='<td><select data-d="'+d+'" data-k="s" aria-label="'+nightLabel(code,d)+' '+cols[4]+'"><option value="">-</option>';
+        for(var i=1;i<=5;i++){h+='<option'+(String(x.s)===String(i)?' selected':'')+'>'+i+'</option>';}
+        h+='</select></td></tr>';
       }
-      qa.appendChild(div);
+      h+='</tbody></table>';
+      box.innerHTML=h;
     });
-    qs.textContent= done? ("Score: "+score+" of "+Q.length+(done<Q.length?" (answered "+done+")":"")) : "";
+    var full=0,sum=0,n=0;
+    for(var d=1; d<=7; d++){var x=state.log[d]||{}; if(x.c&&x.f&&x.l) full++; if(x.s){sum+=+x.s;n++;}}
+    document.querySelectorAll(".lang").forEach(function(L){
+      var code=L.dataset.code;
+      var t=DATA[code].sum.replace("{n}",full);
+      if(n) t+=DATA[code].avg.replace("{a}",(sum/n).toFixed(1));
+      L.querySelector(".logSummary").textContent=t;
+    });
   }
-  document.getElementById("quizReset").addEventListener("click",function(){state.quiz={};save();renderQuiz();});
-  renderQuiz();
+  document.addEventListener("change",function(e){
+    var el=e.target;
+    if(el.closest && el.closest(".logbox") && el.dataset.d){
+      state.log[el.dataset.d]=state.log[el.dataset.d]||{};
+      state.log[el.dataset.d][el.dataset.k]= el.type==="checkbox"? el.checked : el.value;
+      save(); renderLog();
+    }
+    if(el.classList && el.classList.contains("ck")){
+      state.ck[el.dataset.i]=el.checked; save(); syncCk();
+    }
+  });
+  document.querySelectorAll(".resetLog").forEach(function(b){b.addEventListener("click",function(){state.log={};save();renderLog();});});
+
+  function syncCk(){
+    document.querySelectorAll(".ck").forEach(function(c){c.checked=!!state.ck[c.dataset.i];});
+  }
+  syncCk();
+
+  function syncR(){
+    document.querySelectorAll(".rf").forEach(function(t){ if(document.activeElement!==t) t.value=state.r[t.dataset.k]||""; });
+  }
+  document.addEventListener("input",function(e){
+    var t=e.target;
+    if(t.classList && t.classList.contains("rf")){state.r[t.dataset.k]=t.value;save();syncR();}
+  });
+  syncR();
+
+  function renderQuiz(){
+    document.querySelectorAll(".quizbox").forEach(function(box){
+      var code=box.dataset.code, Q=DATA[code].quiz;
+      box.innerHTML="";
+      var score=0, done=0;
+      Q.forEach(function(item,i){
+        var div=document.createElement("div"); div.className="q";
+        var p=document.createElement("p"); p.textContent=(i+1)+". "+item.q; div.appendChild(p);
+        var picked=state.quiz[i];
+        item.o.forEach(function(txt,j){
+          var b=document.createElement("button"); b.type="button"; b.className="opt"; b.textContent=txt;
+          if(picked!==undefined){
+            if(j===item.a) b.className+=" right"; else if(j===picked) b.className+=" wrong";
+            b.disabled=true;
+          }
+          b.addEventListener("click",function(){state.quiz[i]=j;save();renderQuiz();});
+          div.appendChild(b);
+        });
+        if(picked!==undefined){
+          done++; if(picked===item.a) score++;
+          var f=document.createElement("div"); f.className="fb"; f.textContent=item.f; div.appendChild(f);
+        }
+        box.appendChild(div);
+      });
+      var L=box.closest(".lang");
+      var t=done? DATA[code].score.replace("{s}",score).replace("{t}",Q.length)+(done<Q.length?DATA[code].answered.replace("{d}",done):"") : "";
+      L.querySelector(".quizScore").textContent=t;
+    });
+  }
+  document.querySelectorAll(".quizReset").forEach(function(b){b.addEventListener("click",function(){state.quiz={};save();renderQuiz();});});
+
+  function setLang(code,fromHash){
+    if(CODES.indexOf(code)<0) code="en";
+    cur=code;
+    document.querySelectorAll(".lang").forEach(function(L){L.classList.toggle("on",L.dataset.code===code);});
+    document.querySelectorAll(".langbar button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.l===code?"true":"false");});
+    document.documentElement.lang=DATA[code].htmllang;
+    document.title=DATA[code].title;
+    state.lang=code; save();
+    if(!fromHash){try{history.replaceState(null,"","#"+code);}catch(e){try{location.hash=code;}catch(e2){}}}
+  }
+  document.querySelectorAll(".langbar button").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.l,false);window.scrollTo(0,0);});});
+  window.addEventListener("hashchange",function(){var h=location.hash.replace("#",""); if(CODES.indexOf(h)>=0) setLang(h,true);});
+
+  renderLog(); renderQuiz();
+  var h=(location.hash||"").replace("#","");
+  setLang(CODES.indexOf(h)>=0? h : (state.lang||"en"), true);
 })();
 </script>
 </body>
 </html>
+
