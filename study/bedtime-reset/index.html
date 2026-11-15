@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>9-Minute Bedtime Reset Module</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* Layout idea: single white column of rounded pastel cards, numbered step badges, one save-this checklist at the end. */
+:root{
+  --bg:#ffffff;
+  --ink:#1f2937;
+  --muted:#5b6472;
+  --line:#e6e9ef;
+  --mint:#e3f6ec; --mint-d:#1f7a52;
+  --sky:#e4f0fd; --sky-d:#2a62a8;
+  --peach:#fdebdd; --peach-d:#b4561b;
+  --lilac:#efe9fb; --lilac-d:#6a4bb5;
+  --rose:#fde8ee; --rose-d:#b03a5b;
+  --display:"Bricolage Grotesque","Trebuchet MS",sans-serif;
+  --body:"Nunito Sans","Segoe UI",Arial,sans-serif;
+  color-scheme: light;
+}
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6}
+.wrap{max-width:760px;margin:0 auto;padding:24px 18px 72px}
+h1,h2,h3{font-family:var(--display);line-height:1.2;text-wrap:balance;margin:0}
+h1{font-size:2.1rem;font-weight:800}
+h2{font-size:1.45rem;font-weight:700;margin-bottom:12px}
+h3{font-size:1.1rem;font-weight:700;margin-bottom:6px}
+p{margin:0 0 12px;max-width:65ch}
+.eyebrow{font-weight:700;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;color:var(--lilac-d)}
+.byline{color:var(--muted);font-size:.95rem;margin-top:8px}
+section{margin-top:34px}
+.card{border-radius:20px;padding:20px 20px 14px;border:1px solid var(--line);background:#fff}
+.tldr{background:var(--mint);border-color:#c6ebd8;margin-top:22px}
+.tldr strong.label{display:inline-block;background:var(--mint-d);color:#fff;border-radius:999px;padding:2px 12px;font-size:.8rem;margin-bottom:8px}
+.grid{display:grid;gap:14px}
+.goals{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.goal{border-radius:18px;padding:16px;background:var(--sky)}
+.goal b{display:block;font-family:var(--display);color:var(--sky-d);margin-bottom:4px}
+.badge{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;font-family:var(--display);font-weight:800;color:#fff;margin-right:10px;flex:none}
+.phase{margin-top:16px}
+.phase header{display:flex;align-items:center;margin-bottom:10px}
+.phase header h3{margin:0}
+.time{margin-left:auto;font-weight:700;font-size:.85rem;border-radius:999px;padding:3px 12px;background:#fff}
+.p1{background:var(--peach);border-color:#f5d6bd}.p1 .badge{background:var(--peach-d)}.p1 .time{color:var(--peach-d)}
+.p2{background:var(--sky);border-color:#c9def5}.p2 .badge{background:var(--sky-d)}.p2 .time{color:var(--sky-d)}
+.p3{background:var(--lilac);border-color:#dccff5}.p3 .badge{background:var(--lilac-d)}.p3 .time{color:var(--lilac-d)}
+.phase .why{font-style:italic;color:var(--muted)}
+ul{margin:0 0 12px;padding-left:22px}
+li{margin-bottom:6px}
+.two{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.bad,.good{border-radius:14px;padding:12px 14px;font-size:.96rem}
+.bad{background:var(--rose)} .bad b{color:var(--rose-d)}
+.good{background:#fff;border:1px solid #cfe9dc} .good b{color:var(--mint-d)}
+.note{background:var(--peach);border-radius:16px;padding:14px 16px;margin:14px 0;font-size:.97rem}
+.note b{color:var(--peach-d)}
+svg{max-width:100%;height:auto;display:block}
+.paper{background:#fffdf5;border:1px dashed #d9d2b8;border-radius:14px;padding:14px 18px;font-family:"Segoe Print","Comic Sans MS",cursive;font-size:.95rem;line-height:1.7;color:#3b3b3b}
+.paper h4{margin:10px 0 4px;font-family:var(--body);font-size:.8rem;letter-spacing:.05em;text-transform:uppercase;color:#8a8466}
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:.95rem}
+th,td{border-bottom:1px solid var(--line);padding:8px 6px;text-align:center}
+th:first-child,td:first-child{text-align:left}
+th{font-family:var(--display);font-size:.85rem;color:var(--muted)}
+input[type=checkbox]{width:22px;height:22px;accent-color:var(--mint-d)}
+select,button,textarea{font:inherit}
+select{border:1px solid var(--line);border-radius:10px;padding:4px 6px;background:#fff}
+button{cursor:pointer;border:0;border-radius:999px;padding:9px 18px;font-weight:700;background:var(--lilac-d);color:#fff}
+button.ghost{background:#fff;color:var(--lilac-d);border:1px solid var(--lilac-d)}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid #f2b705;outline-offset:2px}
+.q{margin-bottom:18px}
+.q p{font-weight:700;margin-bottom:8px}
+.opt{display:block;width:100%;text-align:left;margin-bottom:8px;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:14px;padding:10px 14px;font-weight:600}
+.opt.right{background:var(--mint);border-color:var(--mint-d)}
+.opt.wrong{background:var(--rose);border-color:var(--rose-d)}
+.fb{font-size:.94rem;color:var(--muted);margin-top:4px}
+.score{font-family:var(--display);font-size:1.15rem;font-weight:700;color:var(--lilac-d)}
+dl{margin:0}dt{font-weight:700;font-family:var(--display);margin-top:10px}dd{margin:2px 0 0;color:var(--muted)}
+details{border:1px solid var(--line);border-radius:14px;padding:10px 14px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:700}
+.check{background:var(--mint);border-color:#c6ebd8}
+.check label{display:flex;gap:10px;align-items:flex-start;margin-bottom:8px}
+.check input{margin-top:3px;flex:none}
+textarea{width:100%;min-height:70px;border:1px solid var(--line);border-radius:12px;padding:10px;background:#fff;resize:vertical}
+footer{margin-top:40px;font-size:.88rem;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
+@media (prefers-reduced-motion:no-preference){.opt{transition:background .15s}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Study module · Self management</div>
+  <h1>The 9-Minute Bedtime Reset</h1>
+  <div class="byline">Prepared for Reka Amorra · About 40 minutes to read, plus a 7-day practice</div>
+</header>
+
+<div class="card tldr">
+  <strong class="label">TL;DR</strong>
+  <p>Before bed, spend 9 minutes with pen and paper. Minutes 1 to 3: write everything on your mind. Minutes 4 to 6: write the first small action for each item. Minutes 7 to 9: pick the day's heaviest decision and write what you did not know at the time, in 15 words or fewer. Then stop and sleep. Review the list tomorrow, not tonight.</p>
+</div>
+
+<section>
+  <h2>What you will learn</h2>
+  <div class="grid goals">
+    <div class="goal"><b>1. The idea</b>Why unfinished tasks keep your mind awake at night.</div>
+    <div class="goal"><b>2. The method</b>The three phases and the rules inside each one.</div>
+    <div class="goal"><b>3. Your version</b>How to use it for content, affiliate work and home life.</div>
+    <div class="goal"><b>4. The habit</b>A 7-day log, a self-check quiz and a checklist to keep.</div>
+  </div>
+</section>
+
+<section>
+  <h2>Part 1. Why the mind will not switch off</h2>
+  <p>Bluma Zeigarnik, a psychologist, noticed in the 1920s that people remember unfinished tasks better than finished ones. The idea became known as the Zeigarnik effect. In daily life it feels like this: you lie down, and your head starts reading out your open items. The link you forgot to change. The message you did not answer. The post you have not planned.</p>
+  <p>Here is the useful part. In 2011, E. J. Masicampo and Roy Baumeister ran studies on this. They found that unfinished goals kept popping into people's thoughts and hurt their focus. But making a specific plan for the goal reduced that effect, even though the goal was still not done.</p>
+  <div class="note"><b>So the target is not "finish everything".</b> The target is "know exactly where I start". A clear first step lets the mind stop checking in.</div>
+  <h3>Why pen and paper</h3>
+  <ul>
+    <li>A phone brings new open loops: messages, emails, news. You want to close loops, not open more.</li>
+    <li>Writing it down takes the job of remembering away from your head.</li>
+    <li>Phone light and scrolling make it easier to stay awake.</li>
+  </ul>
+  <p style="font-size:.93rem;color:var(--muted)">Honest note: the research above supports plan-making. The claims about paper versus screen come from the method itself and are common sense, not something proven in those studies. Treat them as a sensible setup, and test it on yourself in the 7-day log.</p>
+</section>
+
+<section>
+  <h2>Part 2. The flow at a glance</h2>
+  <svg viewBox="0 0 700 150" role="img" aria-label="Three boxes in a row: Clear for minutes 1 to 3, First action for minutes 4 to 6, Close today's loop for minutes 7 to 9, then pen down and sleep.">
+    <defs><marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#5b6472"/></marker></defs>
+    <rect x="6" y="20" width="190" height="100" rx="18" fill="#fdebdd" stroke="#f5d6bd"/>
+    <text x="101" y="52" text-anchor="middle" font-family="Trebuchet MS,sans-serif" font-weight="700" font-size="18" fill="#b4561b">1. Clear</text>
+    <text x="101" y="78" text-anchor="middle" font-size="14" fill="#1f2937">Write everything</text>
+    <text x="101" y="100" text-anchor="middle" font-size="13" fill="#5b6472">Minutes 1 to 3</text>
+    <rect x="256" y="20" width="190" height="100" rx="18" fill="#e4f0fd" stroke="#c9def5"/>
+    <text x="351" y="52" text-anchor="middle" font-family="Trebuchet MS,sans-serif" font-weight="700" font-size="18" fill="#2a62a8">2. First action</text>
+    <text x="351" y="78" text-anchor="middle" font-size="14" fill="#1f2937">Smallest next step</text>
+    <text x="351" y="100" text-anchor="middle" font-size="13" fill="#5b6472">Minutes 4 to 6</text>
+    <rect x="506" y="20" width="188" height="100" rx="18" fill="#efe9fb" stroke="#dccff5"/>
+    <text x="600" y="52" text-anchor="middle" font-family="Trebuchet MS,sans-serif" font-weight="700" font-size="18" fill="#6a4bb5">3. Close the loop</text>
+    <text x="600" y="78" text-anchor="middle" font-size="14" fill="#1f2937">One decision, 15 words</text>
+    <text x="600" y="100" text-anchor="middle" font-size="13" fill="#5b6472">Minutes 7 to 9</text>
+    <line x1="198" y1="70" x2="252" y2="70" stroke="#5b6472" stroke-width="2" marker-end="url(#ar)"/>
+    <line x1="448" y1="70" x2="502" y2="70" stroke="#5b6472" stroke-width="2" marker-end="url(#ar)"/>
+  </svg>
+  <p style="text-align:center;color:var(--muted);margin:6px auto 0">Then: pen down, light off. Do not read the list until morning.</p>
+</section>
+
+<section>
+  <h2>Part 3. The three phases</h2>
+
+  <div class="card phase p1">
+    <header><span class="badge">1</span><h3>Clear</h3><span class="time">Minutes 1 to 3</span></header>
+    <p class="why">Goal: get everything out of your head and onto paper.</p>
+    <ul>
+      <li>Write all of it. Big decisions, small errands, messages you owe, vague worries.</li>
+      <li>Do not sort. Do not rank. Do not make a neat checklist. Sorting slows you down and keeps the loops in your head.</li>
+      <li>Stop when you reach a quiet pause and nothing new comes.</li>
+    </ul>
+    <div class="grid two">
+      <div class="bad"><b>Common mistake</b><br>Stopping to decide which item matters most. That is for tomorrow.</div>
+      <div class="good"><b>Good sign</b><br>The last few lines are small, odd items. It means the big ones are already out.</div>
+    </div>
+  </div>
+
+  <div class="card phase p2">
+    <header><span class="badge">2</span><h3>First action</h3><span class="time">Minutes 4 to 6</span></header>
+    <p class="why">Goal: turn each vague worry into a physical step you can start in under two minutes.</p>
+    <ul>
+      <li>Next to each item, write the smallest first move. Use a verb you can picture: open, copy, send, find, write.</li>
+      <li>You are not solving it. You are only deciding where to begin.</li>
+      <li>If an item has no clear first step, the first step is "decide what the first step is", and write who or what you need to ask.</li>
+    </ul>
+    <div class="tablewrap">
+    <table>
+      <tr><th>Vague (keeps you awake)</th><th>First action (lets you rest)</th></tr>
+      <tr><td>Fix my affiliate links</td><td>Open Shopee app, copy the link of product 1</td></tr>
+      <tr><td>Plan next week's content</td><td>Open notes, write 3 topic titles</td></tr>
+      <tr><td>Deal with car insurance</td><td>Find the policy PDF in Gmail</td></tr>
+      <tr><td>Prepare the presentation</td><td>Make a blank deck, type 3 section titles</td></tr>
+      <tr><td>Reply to that customer</td><td>Open the chat, type the first line only</td></tr>
+    </table>
+    </div>
+  </div>
+
+  <div class="card phase p3">
+    <header><span class="badge">3</span><h3>Close today's loop</h3><span class="time">Minutes 7 to 9</span></header>
+    <p class="why">Goal: stop replaying a decision you already made.</p>
+    <ul>
+      <li>Pick the one decision from today that bothers you most. "Did I handle that right?" "Should I have bought that?"</li>
+      <li>Write the answer to one question: <b>What did I not know at the time?</b></li>
+      <li>Use 15 words or fewer. A short answer stops this from turning into a long worry session.</li>
+    </ul>
+    <p>The question moves the decision from feeling to information. You judged with what you had then. Today you have more. That gap is data, not a fault.</p>
+    <div class="grid two">
+      <div class="bad"><b>Too long and too hard</b><br>"I should have known better, I always rush, I never check the details before posting."</div>
+      <div class="good"><b>Right size (11 words)</b><br>"I did not know the product link had expired before I posted."</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Part 4. A sample page, start to finish</h2>
+  <p>This is one made-up night, to show what the paper can look like. Yours can be messier.</p>
+  <div class="paper">
+    <h4>Phase 1 · Clear</h4>
+    Links for tomorrow's post. Reply to Mira. Caption feels flat. Buy cooking oil. Pay phone bill. Video idea for Friday. Is the new content plan too much?
+    <h4>Phase 2 · First action</h4>
+    Links: open Shopee, copy link of product 1.<br>
+    Mira: open chat, type "Hi, I will send it tonight".<br>
+    Caption: read it out loud once in the morning.<br>
+    Oil and phone bill: add both to the shopping note.<br>
+    Friday video: write 1 title.<br>
+    Content plan: cut it to 3 posts, write the 3 days.
+    <h4>Phase 3 · Close the loop</h4>
+    Decision: I posted late today.<br>
+    I did not know the traffic was lower after 9 pm.
+  </div>
+  <p style="margin-top:10px">Pen down. Light off. The list stays on the table until morning.</p>
+</section>
+
+<section>
+  <h2>Part 5. Make it stick</h2>
+  <div class="grid two">
+    <div class="card"><h3>Set up</h3><ul>
+      <li>Keep one notebook and one pen on the bedside table.</li>
+      <li>Use one page per night. Date it.</li>
+      <li>Phone in another place, or face down and silent.</li></ul></div>
+    <div class="card"><h3>Timer</h3><ul>
+      <li>Use a soft timer, or three chimes of 3 minutes.</li>
+      <li>When it ends, stop, even if you are mid-line.</li>
+      <li>This is a shutdown ritual, not a planning session.</li></ul></div>
+    <div class="card"><h3>Morning</h3><ul>
+      <li>Read the page once, with coffee or tea.</li>
+      <li>Move the real tasks to your normal list or calendar.</li>
+      <li>Do the first action of the top item.</li></ul></div>
+    <div class="card"><h3>When it does not work</h3><ul>
+      <li>If you are still awake after 20 minutes, get up and sit somewhere dim, then return when sleepy.</li>
+      <li>If you often cannot sleep for weeks, speak to a doctor. This routine is a habit tool, not medical advice.</li></ul></div>
+  </div>
+</section>
+
+<section>
+  <h2>Part 6. 7-day practice log</h2>
+  <p>Tick what you did each night. Rate how fast you fell asleep from 1 (slow) to 5 (fast). It saves on this device only.</p>
+  <div class="tablewrap">
+  <table id="log">
+    <thead><tr><th>Night</th><th>Clear</th><th>First action</th><th>Close loop</th><th>Sleep speed</th></tr></thead>
+    <tbody></tbody>
+  </table>
+  </div>
+  <p style="margin-top:12px"><button class="ghost" id="resetLog" type="button">Clear the log</button></p>
+  <p id="logSummary" class="score" aria-live="polite"></p>
+</section>
+
+<section>
+  <h2>Part 7. Self-check quiz</h2>
+  <div id="quiz"></div>
+  <p class="score" id="quizScore" aria-live="polite"></p>
+  <button type="button" id="quizReset" class="ghost">Try again</button>
+</section>
+
+<section>
+  <h2>Part 8. After 7 days, reflect</h2>
+  <p>Write short answers. Three lines each is enough.</p>
+  <label for="r1"><b>1. Which phase helped most, and why?</b></label>
+  <textarea id="r1"></textarea>
+  <label for="r2" style="display:block;margin-top:12px"><b>2. What kept coming back every night?</b></label>
+  <textarea id="r2"></textarea>
+  <label for="r3" style="display:block;margin-top:12px"><b>3. What will I change in my work routine because of it?</b></label>
+  <textarea id="r3"></textarea>
+</section>
+
+<section>
+  <h2>Glossary</h2>
+  <dl>
+    <dt>Open loop</dt><dd>Any task or decision your mind is still holding.</dd>
+    <dt>Zeigarnik effect</dt><dd>The tendency to keep unfinished tasks active in the mind.</dd>
+    <dt>First action</dt><dd>The smallest physical step that starts a task, doable in under two minutes.</dd>
+    <dt>Rumination</dt><dd>Replaying the same thought or past decision again and again.</dd>
+    <dt>Hindsight</dt><dd>Judging a past choice with information you only have now.</dd>
+  </dl>
+</section>
+
+<section>
+  <div class="card check">
+    <h2>Save this: nightly checklist</h2>
+    <label><input type="checkbox" class="ck"> Notebook, pen and timer are on the bedside table</label>
+    <label><input type="checkbox" class="ck"> Phone is away</label>
+    <label><input type="checkbox" class="ck"> Phase 1: wrote everything, no sorting</label>
+    <label><input type="checkbox" class="ck"> Phase 2: every item has a first action I can start in 2 minutes</label>
+    <label><input type="checkbox" class="ck"> Phase 3: one decision, answer in 15 words or fewer</label>
+    <label><input type="checkbox" class="ck"> Pen down, light off, list stays closed until morning</label>
+  </div>
+</section>
+
+<footer>
+  <b>Sources and credit</b>
+  <ul>
+    <li>The 9-minute bedtime method was shared as a written routine. The original author is not named in the material, so none is credited here. If you find the author, add the name.</li>
+    <li>Masicampo, E. J., and Baumeister, R. F. (2011). "Consider it done! Plan making can eliminate the cognitive effects of unfulfilled goals." Journal of Personality and Social Psychology, 101(4), 667-683. doi:10.1037/a0024192</li>
+    <li>Zeigarnik, B. (1927). Original work on memory for unfinished tasks. Later studies of this memory effect have had mixed results, so this module relies on the plan-making findings above.</li>
+  </ul>
+  <p>For study and personal habit-building only. Not medical advice.</p>
+</footer>
+</div>
+
+<script>
+(function(){
+  var KEY="bedtime-module-v1";
+  var state={log:{},ck:{},r:{},quiz:{}};
+  try{var s=localStorage.getItem(KEY); if(s){state=Object.assign(state,JSON.parse(s));}}catch(e){}
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}}
+
+  // Log
+  var tb=document.querySelector("#log tbody");
+  for(var d=1; d<=7; d++){
+    var tr=document.createElement("tr");
+    var h='<td>Night '+d+'</td>';
+    ["c","f","l"].forEach(function(k,i){
+      var names=["Clear","First action","Close loop"];
+      h+='<td><input type="checkbox" data-d="'+d+'" data-k="'+k+'" id="l'+d+k+'" aria-label="Night '+d+' '+names[i]+'"></td>';
+    });
+    h+='<td><select data-d="'+d+'" data-k="s" id="l'+d+'s" aria-label="Night '+d+' sleep speed"><option value="">-</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td>';
+    tr.innerHTML=h; tb.appendChild(tr);
+  }
+  function renderLog(){
+    document.querySelectorAll("#log [data-d]").forEach(function(el){
+      var v=(state.log[el.dataset.d]||{})[el.dataset.k];
+      if(el.type==="checkbox"){el.checked=!!v;} else {el.value=v||"";}
+    });
+    var full=0, sum=0, n=0;
+    for(var d=1; d<=7; d++){var x=state.log[d]||{}; if(x.c&&x.f&&x.l) full++; if(x.s){sum+=+x.s;n++;}}
+    var t=full+" of 7 nights fully done";
+    if(n) t+=" · average sleep speed "+(sum/n).toFixed(1)+" of 5";
+    document.getElementById("logSummary").textContent=t;
+  }
+  document.querySelector("#log").addEventListener("change",function(e){
+    var el=e.target; if(!el.dataset.d) return;
+    state.log[el.dataset.d]=state.log[el.dataset.d]||{};
+    state.log[el.dataset.d][el.dataset.k]= el.type==="checkbox"? el.checked : el.value;
+    save(); renderLog();
+  });
+  document.getElementById("resetLog").addEventListener("click",function(){state.log={};save();renderLog();});
+  renderLog();
+
+  // Checklist
+  document.querySelectorAll(".ck").forEach(function(c,i){
+    c.checked=!!state.ck[i];
+    c.addEventListener("change",function(){state.ck[i]=c.checked;save();});
+  });
+
+  // Reflection
+  ["r1","r2","r3"].forEach(function(id){
+    var t=document.getElementById(id); t.value=state.r[id]||"";
+    t.addEventListener("input",function(){state.r[id]=t.value;save();});
+  });
+
+  // Quiz
+  var Q=[
+    {q:"What did Masicampo and Baumeister find about unfinished goals?",o:["Only finishing the task removes the mental pull","A specific plan can reduce the mental pull even before the task is done","Writing on a phone works better than paper","Sleeping longer removes the effect"],a:1,f:"A specific plan for where and how to start reduced the effect, even though the goal was not finished."},
+    {q:"In Phase 1 (Clear), what should you NOT do?",o:["Write small errands","Write vague worries","Sort and rank the items","Stop when nothing new comes"],a:2,f:"Sorting slows you down and keeps loops in your head. Sorting happens tomorrow."},
+    {q:"Which one is a good first action?",o:["Fix the budget","Be more organised","Deal with car insurance","Find the policy PDF in Gmail"],a:3,f:"A first action is a physical step you can start in under two minutes."},
+    {q:"What question is used in Phase 3?",o:["Why did I fail today?","What was I missing at the time?","Who caused this?","How can I do it perfectly next time?"],a:1,f:"The answer is in 15 words or fewer, so it stays as information and does not become self-criticism."},
+    {q:"When the 9 minutes are up, what do you do?",o:["Review and organise the list","Reply to messages","Pen down, light off, review tomorrow","Add more items to the list"],a:2,f:"The list stays closed until morning."}
+  ];
+  var qa=document.getElementById("quiz"), qs=document.getElementById("quizScore");
+  function renderQuiz(){
+    qa.innerHTML=""; var score=0, done=0;
+    Q.forEach(function(item,i){
+      var div=document.createElement("div"); div.className="q";
+      var p=document.createElement("p"); p.textContent=(i+1)+". "+item.q; div.appendChild(p);
+      var picked=state.quiz[i];
+      item.o.forEach(function(txt,j){
+        var b=document.createElement("button"); b.type="button"; b.className="opt"; b.textContent=txt;
+        if(picked!==undefined){
+          if(j===item.a) b.className+=" right"; else if(j===picked) b.className+=" wrong";
+          b.disabled=true;
+        }
+        b.addEventListener("click",function(){state.quiz[i]=j;save();renderQuiz();});
+        div.appendChild(b);
+      });
+      if(picked!==undefined){
+        done++; if(picked===item.a) score++;
+        var f=document.createElement("div"); f.className="fb"; f.textContent=item.f; div.appendChild(f);
+      }
+      qa.appendChild(div);
+    });
+    qs.textContent= done? ("Score: "+score+" of "+Q.length+(done<Q.length?" (answered "+done+")":"")) : "";
+  }
+  document.getElementById("quizReset").addEventListener("click",function(){state.quiz={};save();renderQuiz();});
+  renderQuiz();
+})();
+</script>
+</body>
+</html>
